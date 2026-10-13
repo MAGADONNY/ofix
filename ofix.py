@@ -8,7 +8,7 @@ str_lib.set_page_config(
 )
 
 # --- 1. GORNJI DEO (HEADER) ZA GLAVNU SLIKU ---
-str_lib.markdown("### OFIX – Knjigovodstveno-kancelarijsko rešenje")
+str_lib.markdown("## OFIX – Knjigovodstveno-kancelarijsko rešenje")
 str_lib.write(
     "Vaš svakodnevni alat za brzo izdavanje računa i evidenciju poslovanja."
 )
