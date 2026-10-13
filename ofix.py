@@ -7,6 +7,18 @@ str_lib.set_page_config(
     layout="wide",
 )
 
+# ---CSS BLOK ---
+str_lib.markdown(
+    """
+    <style>
+    .block-container {
+        padding-top: 1rem; 
+    }
+    </style>
+""",
+    unsafe_allow_html=True,
+
+
 # --- 1. GORNJI DEO (HEADER) ZA GLAVNU SLIKU ---
 str_lib.markdown("## OFIX – Knjigovodstveno-kancelarijsko rešenje")
 str_lib.write(
