@@ -16,7 +16,7 @@ str_lib.write(
 # Zameni 'glavna_slika.png' nazivom svoje slike u repozitorijumu (ili ostavi prazno ako je nemaš još uvek)
 try:
   str_lib.image(
-      "glavna_slika.png",
+      "newofix.jpg",
       use_container_width=True,
       caption="Glavni ekran programa OFIX",
   )
