@@ -52,10 +52,11 @@ with kolona_tekst:
         * Optimizovano za rad na neograničenom broju računara.
         * Uz program se dobija godina dana besplatne tehničke podrške autora.
 
-        ### Kontaktirajte nas:
-        Za dodatne informacije i prezentaciju, obratite nam se putem email-a:
+        ### Kontakt:
+        Za dodatne informacije i demo verziju mozete nas kontaktirati:
         * magicamp@bluewin.ch
         * magy@usa.com
+        * Tel. 063 310 850
     """)
 
 with kolona_slike:
