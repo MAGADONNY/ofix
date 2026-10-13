@@ -17,7 +17,7 @@ str_lib.markdown(
     </style>
 """,
     unsafe_allow_html=True,
-
+    )
 
 # --- 1. GORNJI DEO (HEADER) ZA GLAVNU SLIKU ---
 str_lib.markdown("## OFIX – Knjigovodstveno-kancelarijsko rešenje")
