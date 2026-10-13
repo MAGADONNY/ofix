@@ -12,7 +12,7 @@ str_lib.markdown(
     """
     <style>
     .block-container {
-        padding-top: 1rem; 
+        padding-top: 2rem; 
     }
     </style>
 """,
