@@ -10,7 +10,7 @@ str_lib.set_page_config(
 # --- 1. GORNJI DEO (HEADER) ZA GLAVNU SLIKU ---
 str_lib.markdown("## OFIX – Knjigovodstveno-kancelarijsko rešenje")
 str_lib.write(
-    "Vaš svakodnevni alat za brzo izdavanje računa i evidenciju poslovanja."
+    "Alat za brzo izdavanje A4 računa i evidenciju poslovanja."
 )
 
 # Zameni 'glavna_slika.png' nazivom svoje slike u repozitorijumu (ili ostavi prazno ako je nemaš još uvek)
