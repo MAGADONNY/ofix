@@ -89,5 +89,6 @@ with kolona_slike:
     try:
         str_lib.image("2.JPG", caption="Prikaz rada u programu", use_container_width=True)
         str_lib.image("3.JPG", caption="Kreiranje računa", use_container_width=True)
+        str_lib.image("4.JPG", caption="Izgled gotovog računa spremnog za stampu", use_container_width=True)
     except:
         str_lib.info("[Dodajte slike slika_programa1.jpg i slika_programa2.jpg u GitHub repo da se prikažu ovde]")
