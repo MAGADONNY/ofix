@@ -25,7 +25,7 @@ str_lib.write(
     "#### Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja."
 )
 
-# Zameni 'glavna_slika.png' nazivom svoje slike u repozitorijumu (ili ostavi prazno ako je nemaš još uvek)
+# ----- 'glavna_slika ------
 try:
   str_lib.image(
       "newofix.jpg",
