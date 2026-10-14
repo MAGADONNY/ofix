@@ -87,7 +87,7 @@ with kolona_slike:
     str_lib.header("Ekran programa")
     
     try:
-        str_lib.image("slika_programa1.jpg", caption="Prikaz rada u programu", use_container_width=True)
-        str_lib.image("slika_programa2.jpg", caption="Kreiranje računa", use_container_width=True)
+        str_lib.image("2.JPG", caption="Prikaz rada u programu", use_container_width=True)
+        str_lib.image("3.JPG", caption="Kreiranje računa", use_container_width=True)
     except:
         str_lib.info("[Dodajte slike slika_programa1.jpg i slika_programa2.jpg u GitHub repo da se prikažu ovde]")
