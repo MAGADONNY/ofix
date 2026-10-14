@@ -54,7 +54,7 @@ with kolona_tekst:
     # Ključne funkcije
     str_lib.write("### Ključne funkcije:")
     str_lib.write("* **Jednostavna baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.")
-    str_lib.write("* **Evidencija:** stanja lagera, potraživanja i dugovanja.")
+    str_lib.write("* **Evidencija:** stanja lageru, potraživanja i dugovanja.")
     str_lib.write("* **Izveštaji:** automatski kreirani izveštaji po kupcu, datumu, artiklu...")
     str_lib.write("* **Jednostavnost:** prilagođeno korisnicima bez IT predznanja.")
     str_lib.write("* **Veoma brz:** velicina svega oko 20MB, radi i bez interneta i na starijim racunarima.")
@@ -85,7 +85,6 @@ with kolona_tekst:
     str_lib.write("* **magicamp@bluewin.ch**")
     str_lib.write("* **magy@usa.com**")
     str_lib.write("* Tel. **063 310 850**")
-
 
 
 # --- 3. SEGMENT SA DESNE STRANE ZA SLIKE ---
