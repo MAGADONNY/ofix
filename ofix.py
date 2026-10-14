@@ -22,9 +22,9 @@ str_lib.divider()
 # 4. Kreiranje polja: Tekst levo (širi deo), tri slike vertikalno desno (uži deo)
 kolona_tekst, kolona_slike = str_lib.columns([2, 1])
 
-# --- DESNA KOLONA: 3 SLIKE VERTIKALNO (Složeno sa strane) ---
+# --- DESNA KOLONA: 3 SLIKE VERTIKALNO ---
 with kolona_slike:
-    str_lib.markdown("### **Ekrani programa**")
+    str_lib.markdown("### Ekrani programa")
     slike_lista = [
         ("2.JPG", "Prikaz rada u programu"),
         ("3.JPG", "Kreiranje računa"),
@@ -33,16 +33,16 @@ with kolona_slike:
     for fajl, opis in slike_lista:
         try:
             str_lib.image(fajl, caption=opis, use_container_width=True)
-            str_lib.write("") # Mali razmak između slika
+            str_lib.write("")  # Razmak između slika
         except:
             str_lib.info(f"[Slika {fajl} nedostaje]")
 
 # --- LEVA KOLONA: STRUKTURIRANI SADRŽAJ ---
 with kolona_tekst:
-    str_lib.markdown("## **O programu OFIX**")
-    str_lib.markdown("**OFIX** je knjigovodstveno-kancelarijski program, namenjen za brzo i jednostavno izdavanje računa i predračuna. Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.")
+    str_lib.markdown("## O programu OFIX")
+    str_lib.markdown("OFIX je knjigovodstveno-kancelarijski program, namenjen za brzo i jednostavno izdavanje računa i predračuna. Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.")
     
-    # Sav tekst organizovan na jednom mestu unutar čiste Python strukture
+    # Podaci spakovani u čist Python rečnik
     sajt_data = {
         "Ključne funkcije": [
             ("Jednostavna baza podataka", "kupaca, artikala, dobavljača i izdatih dokumenata."),
@@ -66,7 +66,7 @@ with kolona_tekst:
             ("Modeli", "Godišnja pretplata & Trajna kupovina."),
             ("OFIX STANDARD", "59€ / godišnje ili 249€ / trajna licenca."),
             ("OFIX RABAT", "89€ / godišnje ili 349€ / trajna licenca."),
-            ("Podrška", "Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
+            ("Podrška", "Autor pruža besplatnu tehničke podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
         ],
         "Kontakt": [
             ("Upiti", "Za dodatne informacije i besplatnu demo verziju možete nas kontaktirati:"),
@@ -76,14 +76,14 @@ with kolona_tekst:
         ]
     }
 
-    # JEDNA PETLJA ZA SVE: Automatski ispisuje naslove i ističe ključne reči preko ugrađene Streamlit funkcije
+    # Ispis kroz čiste i standardne Streamlit stringove
     for sekcija, stavke in sajt_data.items():
-        str_lib.markdown(f"### **{sekcija}**")
+        str_lib.markdown(f"### {sekcija}")
         
         for kljuc, vrednost in stavke:
-            # Ako je u pitanju običan pasus (tekst koji stoji samostalno unutar sekcije)
             if kljuc in ["Napomena", "Modeli", "Podrška", "Upiti"]:
                 str_lib.write(vrednost)
             else:
-                # Koristimo čist Python / Streamlit prikaz koji se savršeno vidi na svim uređajima i browserima
-                str_lib.write(f"🔹", str_lib.write(kljuc), f": {vrednost}")
+                # Koristimo ugrađeno Streamlit formatiranje boja za isticanje teksta
+                # :orange[Tekst] će obojiti i vizuelno jasno razdvojiti labelu od ostatka rečenice u svim browserima
+                str_lib.write(f"🔹 :orange[{kljuc}]: {vrednost}")
