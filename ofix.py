@@ -72,7 +72,7 @@ Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih pr
         * Godisnja preplata & Trajna kupovina
         * OFIX STANDARD 59€/godisnje. ili 249€/trajna licenca
         * OFIX RABAT 89€/godisnje ili 349€/trajna licenca.  
-Autor pruza besplatnu tehnicku podrsku godinu dana {Telefonom, emailom ili putem TeamViewer-a)
+        Autor pruza besplatnu tehnicku podrsku godinu dana {Telefonom, emailom ili putem TeamViewer-a)
 
         ### Kontakt:
         Za dodatne informacije i **besplatnu** demo verziju mozete nas kontaktirati:
