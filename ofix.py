@@ -58,23 +58,24 @@ with kolona_tekst:
         * **Veoma brz velicina svega oko 20MB, radi i bez interneta i na starijim racunarima
 
         ### Nudimo dve Verzije OFIX-a:
-        * STANDARD -  mogucnost odobravanja rabata na ceo iznos racuna
-        * RABAT - mogucnost rabata (razlicitog) na svaku stavku na racunu.  
-          Jedina razlika izmedju verzija je ta sto RABAT verzija omogucava razlicit rabat za svaku stavku na racunu a STANDARD rabat na ceo iznos racuna.
+        * **STANDARD** -  mogucnost odobravanja rabata na ceo iznos racuna
+        * **RABAT** - mogucnost rabata (razlicitog) na svaku stavku na racunu.  
+          Jedina razlika izmedju verzija je ta sto RABAT verzija omogucava razlicit rabat za **svaku stavku** na racunu a STANDARD rabat na ceo iznos racuna.
 
         ### Važne napomene:
-        * Za pokretanje OFIX-a je potrebno imati instaliran Microsoft ACCESS 32bitni.
+        * Za pokretanje OFIX-a je potrebno imati instaliran **Microsoft ACCESS** (vise informacija)
         * OFIX ne služi za izdavanje e-faktura.
-        * Optimizovano za rad na neograničenom broju računara.
+        * Omogucena instalacija i rad na neograničenom broju računara.
         * Godinu dana besplatne tehničke podrške autora.
 
         ### Nacin kupovine i cena:
-        * Godisnja preplata.   &.    Trajna kupovina
-        * OFIX STANDARD 59€/god.           249€
-        * OFIX RABAT.   89€/god.           349€
+        * Godisnja preplata & Trajna kupovina
+        * OFIX STANDARD 59€/godisnje. ili 249€/trajna licenca
+        * OFIX RABAT 89€/godisnje ili 349€/trajna licenca.  
+Autor pruza besplatnu tehnicku podrsku godinu dana {Telefonom, emailom ili putem TeamViewer-a)
 
         ### Kontakt:
-        Za dodatne informacije i demo verziju mozete nas kontaktirati:
+        Za dodatne informacije i **besplatnu** demo verziju mozete nas kontaktirati:
         * magicamp@bluewin.ch
         * magy@usa.com
         * Tel. 063 310 850
