@@ -7,17 +7,20 @@ str_lib.set_page_config(
     layout="wide",
 )
 
-# 2. Glavna slika na vrhu (Header)
+# 2. TEKST NA SAMOM VRHU STRANICE (IZNAD SLIKE)
+str_lib.title("OFIX – Knjigovodstveno-kancelarijski program")
+str_lib.subheader("Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.")
+
+# 3. Glavna slika na vrhu (Header) ispod teksta
 try:
     str_lib.image("newofix.jpg", use_container_width=True)
 except:
-    str_lib.title("OFIX – Knjigovodstveno-kancelarijski program")
-    str_lib.subheader("Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.")
+    str_lib.info("[Glavna slika 'newofix.jpg' trenutno nije dostupna na GitHub-u]")
 
 str_lib.divider()
 
-# 3. Kreiranje polja: Tekst levo (širi deo), tri slike vertikalno desno (uži deo)
-kolona_tekst, kolona_slike = str_lib.columns([5, 2])
+# 4. Kreiranje polja: Tekst levo (širi deo), tri slike vertikalno desno (uži deo)
+kolona_tekst, kolona_slike = str_lib.columns([2, 1])
 
 # --- DESNA KOLONA: 3 SLIKE VERTIKALNO (Složeno sa strane) ---
 with kolona_slike:
@@ -34,7 +37,7 @@ with kolona_slike:
         except:
             str_lib.info(f"[Slika {fajl} nedostaje]")
 
-# --- LEVA KOLONA: STRUKTURIRANI SADRŽAJ (Čist Python bez ponavljanja komandi) ---
+# --- LEVA KOLONA: STRUKTURIRANI SADRŽAJ ---
 with kolona_tekst:
     str_lib.markdown("## **O programu OFIX**")
     str_lib.markdown("OFIX je knjigovodstveno-kancelarijski program, namenjen za brzo i jednostavno izdavanje računa i predračuna. Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.")
@@ -79,9 +82,7 @@ with kolona_tekst:
         
         for kljuc, vrednost in stavke:
             # Ako je u pitanju običan pasus (tekst koji stoji samostalno unutar sekcije)
-            if kljuc in ["Napomena", "Modeli", "Uprška", "Upiti"]:
+            if kljuc in ["Napomena", "Modeli", "Podrška", "Upiti"]:
                 str_lib.markdown(f"{vrednost}")
             else:
-                # Da bismo prevarili loše ponašanje browsera sa boldom, spajamo naslov stavke kroz HTML 'b' tag. 
-                # Ovo je 100% otporno na tamne teme, telefone i različite browsere.
                 str_lib.markdown(f"🔹 <b>{kljuc}:</b> {vrednost}", unsafe_allow_html=True)
