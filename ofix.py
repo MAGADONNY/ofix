@@ -67,9 +67,8 @@ with kolona_tekst:
         * Optimizovano za rad na neograničenom broju računara.
         * Godinu dana besplatne tehničke podrške autora.
 
-        ### Nacin kupovine i cena, nudimo vise opcija:
+        ### Nacin kupovine i cena:
         * Godisnja preplata.   &.    Trajna kupovina
-
         * OFIX STANDARD 59€/god.           249€
         * OFIX RABAT.   89€/god.           349€
 
