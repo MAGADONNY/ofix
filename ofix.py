@@ -46,7 +46,7 @@ kolona_tekst, kolona_slike = str_lib.columns([2, 1])
 
 with kolona_tekst:
   str_lib.header("O programu OFIX")
-  str_lib.markdown("""
+  str.markdown("""
 **OFIX** je knjigovodstveno-kancelarijski program, namenjen za brzo i jednostavno izdavanje računa i predračuna.  
 Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.  
 
