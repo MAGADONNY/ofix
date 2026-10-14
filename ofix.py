@@ -59,8 +59,8 @@ with kolona_tekst:
 
         ### Nudimo dve Verzije OFIX-a:
         * STANDARD -  mogucnost odobravanja rabata na ceo iznos racuna
-        * RABAT - mogucnost rabata (razlicitog) na svaku stavku na racunu
-          jedina razlika izmedju verzija je ta sto RABAT verzija omogucava razlicit rabat za svaku stavku na racunu a STANDARD rabat na ceo iznos racuna.
+        * RABAT - mogucnost rabata (razlicitog) na svaku stavku na racunu.  
+          Jedina razlika izmedju verzija je ta sto RABAT verzija omogucava razlicit rabat za svaku stavku na racunu a STANDARD rabat na ceo iznos racuna.
 
         ### Važne napomene:
         * Za pokretanje OFIX-a je potrebno imati instaliran Microsoft ACCESS 32bitni.
