@@ -42,6 +42,7 @@ str_lib.write("---")  # Horizontalna linija za razdvajanje
 
 # --- 2. GLAVNI SADRŽAJ: ---
 
+# Linija 49: Vraćamo tačnu proporciju kolona (tekst širi, slike užasne)
 kolona_tekst, kolona_slike = str_lib.columns([2, 1])
 
 with kolona_tekst:
@@ -80,3 +81,13 @@ Za dodatne informacije i **besplatnu** demo verziju mozete nas kontaktirati:
 * magy@usa.com
 * Tel. 063 310 850
 """)
+
+# --- 3. SEGMENT SA DESNE STRANE ZA SLIKE ---
+with kolona_slike:
+    str_lib.header("Ekran programa")
+    
+    try:
+        str_lib.image("slika_programa1.jpg", caption="Prikaz rada u programu", use_container_width=True)
+        str_lib.image("slika_programa2.jpg", caption="Kreiranje računa", use_container_width=True)
+    except:
+        str_lib.info("[Dodajte slike slika_programa1.jpg i slika_programa2.jpg u GitHub repo da se prikažu ovde]")
