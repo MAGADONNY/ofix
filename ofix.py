@@ -42,7 +42,7 @@ str_lib.write("---")  # Horizontalna linija za razdvajanje
 
 # --- 2. GLAVNI SADRŽAJ: ---
 
-# kolona_tekst, kolona_slike = str_lib.columns([2, 1])
+kolona_tekst, kolona_slike = str_lib.columns([2, 1])
 
 with kolona_tekst:
   str_lib.header("O programu OFIX")
