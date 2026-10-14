@@ -51,55 +51,31 @@ with kolona_tekst:
 Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.  
 
         ### Ključne funkcije:
-        * **Jednostavna baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.
-        * **Evidencija:** stanja lagera, potraživanja i dugovanja.
-        * **Izveštaji:** automatski kreirani izveštaji po kupcu, datumu, artiklu...
-        * **Jednostavnost:** prilagođeno korisnicima bez IT predznanja.
-        * **Veoma brz** velicina svega oko 20MB, radi i bez interneta i na starijim racunarima
+* **Jednostavna baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.
+* **Evidencija:** stanja lagera, potraživanja i dugovanja.
+* **Izveštaji:** automatski kreirani izveštaji po kupcu, datumu, artiklu...
+* **Jednostavnost:** prilagođeno korisnicima bez IT predznanja.
+* **Veoma brz:** veličina svega oko 20MB, radi i bez interneta i na starijim računarima.
 
-        ### Nudimo dve Verzije OFIX-a:
-        * **STANDARD** -  mogucnost odobravanja rabata na ceo iznos racuna
-        * **RABAT** - mogucnost rabata (razlicitog) na svaku stavku na racunu.  
-        Jedina razlika izmedju verzija je ta sto RABAT verzija omogucava razlicit rabat za svaku stavku na racunu a STANDARD rabat na ceo iznos racuna.
+### Nudimo dve Verzije OFIX-a:
+* **STANDARD** - mogućnost odobravanja rabata na ceo iznos računa.
+* **RABAT** - mogućnost rabata (različitog) na svaku stavku na računu.  
+Jedina razlika između verzija je ta što RABAT verzija omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa.
 
-        ### Važne napomene:
-        * Za pokretanje OFIX-a je potrebno imati instaliran Microsoft ACCESS (vise informacija)
-        * OFIX ne služi za izdavanje e-faktura.
-        * Omogucena instalacija i rad na neograničenom broju računara.
-        * Godinu dana besplatne tehničke podrške autora.
+### Važne napomene:
+* Za pokretanje OFIX-a je potrebno imati instaliran Microsoft ACCESS (više informacija).
+* OFIX ne služi za izdavanje e-faktura.
+* Omogućena instalacija i rad na neograničenom broju računara.
+* Godinu dana besplatne tehničke podrške autora.
 
-        ### Nacin kupovine i cena:
-        * Godisnja preplata & Trajna kupovina
-        * OFIX STANDARD 59€/godisnje. ili 249€/trajna licenca
-        * OFIX RABAT 89€/godisnje ili 349€/trajna licenca.  
-        Autor pruza besplatnu tehnicku podrsku godinu dana {Telefonom, emailom ili putem TeamViewer-a)
+### Način kupovine i cena:
+* Godišnja pretplata & Trajna kupovina
+* OFIX STANDARD 59€/godišnje ili 249€/trajna licenca
+* OFIX RABAT 89€/godišnje ili 349€/trajna licenca  
+Autor pruža besplatnu tehničku podršku godinu dana (Telefonom, emailom ili putem TeamViewer-a).
 
-        ### Kontakt:
-        Za dodatne informacije i **besplatnu** demo verziju mozete nas kontaktirati:
-        * magicamp@bluewin.ch
-        * magy@usa.com
-        * Tel. 063 310 850
-    """)
-
-with kolona_slike:
-  str_lib.subheader("Galerija")
-
-  # 3 slike jedna ispod druge sa desne strane
-  slike_nazivi = [
-      "2.JPG",
-      "3.JPG",
-      "4.JPG",
-  ]  
-  for i, naziv in enumerate(slike_nazivi, start=1):
-    try:
-      str_lib.image(
-          naziv, use_container_width=True, caption=f"Detalj {i}"
-      )
-    except:
-      str_lib.text(f"[Slika {i} - dodajte u repo: {naziv}]")
-
-# Podnožje stranice
-str_lib.write("---")
-str_lib.caption(
-    "© 2026 OFIX by Magicomp. Sva prava zadržana."
-)
+### Kontakt:
+Za dodatne informacije i **besplatnu** demo verziju možete nas kontaktirati:
+* magicamp@bluewin.ch
+* magy@usa.com
+* Tel. 063 310 850
