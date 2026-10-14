@@ -7,9 +7,10 @@ str_lib.set_page_config(
     layout="wide",
 )
 
-# 2. TEKST NA SAMOM VRHU STRANICE (IZNAD SLIKE)
-str_lib.title(":blue[OFIX – Knjigovodstveno-kancelarijski program]")
-str_lib.subheader("Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.")
+# 2. REDIZAJNIRANI ELEGANTNI HEADER (Centriran i smanjen font)
+str_lib.markdown("<h2 style='text-align: center;'>OFIX – Knjigovodstveno-kancelarijski program</h2>", unsafe_allow_html=True)
+str_lib.markdown("<p style='text-align: center; font-size: 18px; color: #888888;'>Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.</p>", unsafe_allow_html=True)
+str_lib.write("")  # Mali vizuelni razmak ispod teksta
 
 # 3. Glavna slika na vrhu (Header) ispod teksta
 try:
@@ -19,7 +20,7 @@ except:
 
 str_lib.divider()
 
-# 4. Kreiranje polja: Popravljena linija dodavanjem [2, 1] unutar zagrada columns()
+# 4. Kreiranje polja: Tekst levo (širi deo), tri slike vertikalno desno (uži deo)
 kolona_tekst, kolona_slike = str_lib.columns([2, 1])
 
 # --- DESNA KOLONA: 3 SLIKE VERTIKALNO ---
