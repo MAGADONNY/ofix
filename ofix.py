@@ -75,7 +75,7 @@ with kolona_slike:
 
   # 3 slike jedna ispod druge sa desne strane
   slike_nazivi = [
-      "slika1.png",
+      "2.jpg",
       "slika2.png",
       "slika3.png",
   ]  # Zameni sa svojim nazivima fajlova
