@@ -52,7 +52,7 @@ with kolona_tekst:
 Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.  
 
 ### Ključne funkcije:
-* **Baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.
+* **Jednostavna baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.
 * **Evidencija:** stanja lagera, potraživanja i dugovanja.
 * **Izveštaji:** automatski kreirani izveštaji po kupcu, datumu, artiklu...
 * **Jednostavnost:** prilagođeno korisnicima bez IT predznanja.
@@ -81,6 +81,7 @@ Za dodatne informacije i **besplatnu** demo verziju mozete nas kontaktirati:
 * magy@usa.com
 * Tel. 063 310 850
 """)
+
 
 # --- 3. SEGMENT SA DESNE STRANE ZA SLIKE ---
 with kolona_slike:
