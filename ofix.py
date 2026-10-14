@@ -7,8 +7,8 @@ str_lib.set_page_config(
     layout="wide",
 )
 
-# 2. TEKST NA SAMOM VRHU STRANICE (IZNAD SLIKE)
-str_lib.title("OFIX – Knjigovodstveno-kancelarijski program")
+# 2. TEKST NA SAMOM VRHU STRANICE (IZNAD SLIKE) - Dodata plava boja za naslove
+str_lib.title(":blue[OFIX – Knjigovodstveno-kancelarijski program]")
 str_lib.subheader("Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.")
 
 # 3. Glavna slika na vrhu (Header) ispod teksta
@@ -20,11 +20,11 @@ except:
 str_lib.divider()
 
 # 4. Kreiranje polja: Tekst levo (širi deo), tri slike vertikalno desno (uži deo)
-kolona_tekst, kolona_slike = str_lib.columns([2, 1])
+kolona_tekst, kolona_slike = str_lib.columns()
 
 # --- DESNA KOLONA: 3 SLIKE VERTIKALNO ---
 with kolona_slike:
-    str_lib.markdown("### Ekrani programa")
+    str_lib.markdown("### :blue[Ekrani programa]")
     slike_lista = [
         ("2.JPG", "Prikaz rada u programu"),
         ("3.JPG", "Kreiranje računa"),
@@ -39,7 +39,7 @@ with kolona_slike:
 
 # --- LEVA KOLONA: STRUKTURIRANI SADRŽAJ ---
 with kolona_tekst:
-    str_lib.markdown("## O programu OFIX")
+    str_lib.markdown("<h2>:blue[O programu OFIX]</h2>", unsafe_allow_html=True)
     str_lib.markdown("OFIX je knjigovodstveno-kancelarijski program, namenjen za brzo i jednostavno izdavanje računa i predračuna. Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.")
     
     # Podaci spakovani u čist Python rečnik
@@ -78,12 +78,11 @@ with kolona_tekst:
 
     # Ispis kroz čiste i standardne Streamlit stringove
     for sekcija, stavke in sajt_data.items():
-        str_lib.markdown(f"### {sekcija}")
+        str_lib.markdown(f"### :blue[{sekcija}]")
         
         for kljuc, vrednost in stavke:
             if kljuc in ["Napomena", "Modeli", "Podrška", "Upiti"]:
                 str_lib.write(vrednost)
             else:
-                # Koristimo ugrađeno Streamlit formatiranje boja za isticanje teksta
-                # :orange[Tekst] će obojiti i vizuelno jasno razdvojiti labelu od ostatka rečenice u svim browserima
-                str_lib.write(f"🔹 :orange[{kljuc}]: {vrednost}")
+                # Promenjeno u :blue[...] za plave labele i bolji estetski sklad sa programom
+                str_lib.write(f"🔹 :blue[{kljuc}]: {vrednost}")
