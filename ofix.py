@@ -20,9 +20,9 @@ str_lib.markdown(
     )
 
 # --- 1. GORNJI DEO (HEADER) ZA GLAVNU SLIKU ---
-str_lib.markdown("## OFIX – Knjigovodstveno-kancelarijsko rešenje")
+str_lib.markdown("## OFIX – Knjigovodstveno-kancelarijski program")
 str_lib.write(
-    "Alat za brzo izdavanje A4 računa i evidenciju poslovanja."
+    "Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja."
 )
 
 # Zameni 'glavna_slika.png' nazivom svoje slike u repozitorijumu (ili ostavi prazno ako je nemaš još uvek)
@@ -40,29 +40,28 @@ except:
 
 str_lib.write("---")  # Horizontalna linija za razdvajanje
 
-# --- 2. GLAVNI SADRŽAJ: LEVO TEKST, DESNO 3 SLIKE JEDNA ISPOD DRUGE ---
+# --- 2. GLAVNI SADRŽAJ: ---
 
-# Delimo stranicu na 2 glavne kolone: leva šira (za tekst), desna uža (za 3 slike)
-kolona_tekst, kolona_slike = str_lib.columns([2, 1])
+# kolona_tekst, kolona_slike = str_lib.columns([2, 1])
 
 with kolona_tekst:
   str_lib.header("O programu OFIX")
   str_lib.write("""
-        **OFIX** je knjigovodstveno-kancelarijsko rešenje, namenjeno za brzo i jednostavno izdavanje računa i predračuna. 
+        **OFIX** je knjigovodstveno-kancelarijski program, namenjen za brzo i jednostavno izdavanje računa i predračuna. 
         Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.
 
         ### Ključne funkcije:
         * **Jednostavna baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.
         * **Evidencija:** stanja lagera, potraživanja i dugovanja.
-        * **Izveštaji:** automatski kreirani izveštaji po kupcu i datumu.
+        * **Izveštaji:** automatski kreirani izveštaji po kupcu, datumu, artiklu...
         * **Jednostavnost:** prilagođeno korisnicima bez IT predznanja.
+        * **Veoma brz velicina svega oko 20MB, radi i bez interneta i na starijim racunarima
 
         ### Važne napomene:
+        * Za pokretanje OFIX-a je potrebno imati instaliran Microsoft ACCESS 32bitni.
         * OFIX ne služi za izdavanje e-faktura.
-        * Nije zamena za knjigovođu niti štampa knjige.
-        * Predstavlja efikasan poslovni alat za internu evidenciju i brže poslovanje.
         * Optimizovano za rad na neograničenom broju računara.
-        * Uz program se dobija godina dana besplatne tehničke podrške autora.
+        * Godinu dana besplatne tehničke podrške autora.
 
         ### Kontakt:
         Za dodatne informacije i demo verziju mozete nas kontaktirati:
