@@ -30,7 +30,7 @@ try:
   str_lib.image(
       "newofix.jpg",
       use_container_width=True,
-      caption="Glavni ekran programa OFIX",
+      #caption="Glavni ekran programa OFIX",
   )
 except:
   str_lib.info(
