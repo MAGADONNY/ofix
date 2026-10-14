@@ -48,7 +48,8 @@ with kolona_tekst:
   str_lib.header("O programu OFIX")
   str_lib.markdown("""
 **OFIX** je knjigovodstveno-kancelarijski program, namenjen za brzo i jednostavno izdavanje računa i predračuna.  
-Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.### Ključne funkcije:
+Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.  
+        ### Ključne funkcije:
         * **Jednostavna baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.
         * **Evidencija:** stanja lagera, potraživanja i dugovanja.
         * **Izveštaji:** automatski kreirani izveštaji po kupcu, datumu, artiklu...
