@@ -52,7 +52,7 @@ with kolona_tekst:
 Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.  
 
 ### Ključne funkcije:
-* **Jednostavna baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.
+* **Baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.
 * **Evidencija:** stanja lagera, potraživanja i dugovanja.
 * **Izveštaji:** automatski kreirani izveštaji po kupcu, datumu, artiklu...
 * **Jednostavnost:** prilagođeno korisnicima bez IT predznanja.
