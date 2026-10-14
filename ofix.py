@@ -47,40 +47,45 @@ kolona_tekst, kolona_slike = str_lib.columns([2, 1])
 
 with kolona_tekst:
     str_lib.header("O programu OFIX")
-    str_lib.write("""
-    **OFIX** je knjigovodstveno-kancelarijski program, namenjen za brzo i jednostavno izdavanje računa i predračuna.  
-    Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.  
+    
+    # Prvi pasus
+    str_lib.write("**OFIX** je knjigovodstveno-kancelarijski program, namenjen za brzo i jednostavno izdavanje računa i predračuna.  \nIdealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.")
 
-    ### Ključne funkcije:
-    * **Jednostavna baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.
-    * **Evidencija:** stanja lagera, potraživanja i dugovanja.
-    * **Izveštaji:** automatski kreirani izveštaji po kupcu, datumu, artiklu...
-    * **Jednostavnost:** prilagođeno korisnicima bez IT predznanja.
-    * **Veoma brz:** velicina svega oko 20MB, radi i bez interneta i na starijim racunarima.
+    # Ključne funkcije
+    str_lib.write("### Ključne funkcije:")
+    str_lib.write("* **Jednostavna baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.")
+    str_lib.write("* **Evidencija:** stanja lagera, potraživanja i dugovanja.")
+    str_lib.write("* **Izveštaji:** automatski kreirani izveštaji po kupcu, datumu, artiklu...")
+    str_lib.write("* **Jednostavnost:** prilagođeno korisnicima bez IT predznanja.")
+    str_lib.write("* **Veoma brz:** velicina svega oko 20MB, radi i bez interneta i na starijim racunarima.")
 
-    ### Nudimo dve Verzije OFIX-a:
-    * **STANDARD** - mogucnost odobravanja rabata na ceo iznos racuna.
-    * **RABAT** - mogucnost rabata (razlicitog) na svaku stavku na racunu.  
-    Jedina razlika izmedju verzija je ta sto RABAT verzija omogucava razlicit rabat za svaku stavku na racunu a STANDARD rabat na ceo iznos racuna.
+    # Verzije
+    str_lib.write("### Nudimo dve Verzije OFIX-a:")
+    str_lib.write("* **STANDARD** - mogucnost odobravanja rabata na ceo iznos racuna.")
+    str_lib.write("* **RABAT** - mogucnost rabata (razlicitog) na svaku stavku na racunu.")
+    str_lib.write("Jedina razlika izmedju verzija je ta sto RABAT verzija omogucava razlicit rabat za svaku stavku na racunu a STANDARD rabat na ceo iznos racuna.")
 
-    ### Važne napomene:
-    * Za pokretanje OFIX-a je potrebno imati instaliran **Microsoft ACCESS** (vise informacija).
-    * OFIX ne služi za izdavanje e-faktura.
-    * Omogucena instalacija i rad na **neograničenom broju računara**.
-    * Godinu dana **besplatne tehničke podrške** autora.
+    # Važne napomene
+    str_lib.write("### Važne napomene:")
+    str_lib.write("* Za pokretanje OFIX-a je potrebno imati instaliran **Microsoft ACCESS** (vise informacija).")
+    str_lib.write("* OFIX ne služi za izdavanje e-faktura.")
+    str_lib.write("* Omogucena instalacija i rad na **neograničenom broju računara**.")
+    str_lib.write("* Godinu dana **besplatne tehničke podrške** autora.")
 
-    ### Nacin kupovine i cena:
-    * Godisnja preplata & Trajna kupovina.
-    * **OFIX STANDARD** 59€/godisnje ili 249€/trajna licenca.
-    * **OFIX RABAT** 89€/godisnje ili 349€/trajna licenca.  
-    Autor pruza besplatnu tehnicku podrsku godinu dana (Telefonom, emailom ili putem TeamViewer-a).
+    # Cene
+    str_lib.write("### Nacin kupovine i cena:")
+    str_lib.write("* Godisnja preplata & Trajna kupovina.")
+    str_lib.write("* **OFIX STANDARD** **59€/godisnje** ili **249€/trajna licenca**.")
+    str_lib.write("* **OFIX RABAT** **89€/godisnje** ili **349€/trajna licenca**.")
+    str_lib.write("Autor pruza besplatnu tehnicku podrsku godinu dana (Telefonom, emailom ili putem TeamViewer-a).")
 
-    ### Kontakt:
-    Za dodatne informacije i **besplatnu** demo verziju mozete nas kontaktirati:
-    * **magicamp@bluewin.ch**
-    * **magy@usa.com**
-    * Tel. **063 310 850**
-    """)
+    # Kontakt
+    str_lib.write("### Kontakt:")
+    str_lib.write("Za dodatne informacije i **besplatnu** demo verziju mozete nas kontaktirati:")
+    str_lib.write("* **magicamp@bluewin.ch**")
+    str_lib.write("* **magy@usa.com**")
+    str_lib.write("* Tel. **063 310 850**")
+
 
 
 # --- 3. SEGMENT SA DESNE STRANE ZA SLIKE ---
