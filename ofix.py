@@ -1,13 +1,13 @@
 import streamlit as str_lib
 
-# 1. Podešavanje stranice
+# 1. Podešavanje stranice za maksimalnu estetiku
 str_lib.set_page_config(
     page_title="OFIX - Knjigovodstveni program",
     page_icon="📊",
     layout="wide",
 )
 
-# 2. GLAVNA SLIKA (HEADER) NA SAMOM VRHU
+# 2. Glavna slika na vrhu (Header)
 try:
     str_lib.image("newofix.jpg", use_container_width=True)
 except:
@@ -16,88 +16,72 @@ except:
 
 str_lib.divider()
 
-# 3. GALERIJA: Prostor za 3 slike programa poređane horizontalno
-str_lib.subheader("Pogledajte izgled i rad u programu")
-kol1, kol2, kol3 = str_lib.columns(3)
+# 3. Kreiranje polja: Tekst levo (širi deo), tri slike vertikalno desno (uži deo)
+kolona_tekst, kolona_slike = str_lib.columns([5, 2])
 
-ekrani = [
-    ("2.JPG", "Prikaz rada u programu"),
-    ("3.JPG", "Kreiranje računa"),
-    ("4.JPG", "Izgled gotovog računa spremnog za štampu")
-]
-
-for kolona, (fajl, opis) in zip([kol1, kol2, kol3], ekrani):
-    with kolona:
+# --- DESNA KOLONA: 3 SLIKE VERTIKALNO (Složeno sa strane) ---
+with kolona_slike:
+    str_lib.markdown("### **Ekrani programa**")
+    slike_lista = [
+        ("2.JPG", "Prikaz rada u programu"),
+        ("3.JPG", "Kreiranje računa"),
+        ("4.JPG", "Izgled gotovog računa spreman za štampu")
+    ]
+    for fajl, opis in slike_lista:
         try:
             str_lib.image(fajl, caption=opis, use_container_width=True)
+            str_lib.write("") # Mali razmak između slika
         except:
-            str_lib.info(f"[Nedostaje slika {fajl}]")
+            str_lib.info(f"[Slika {fajl} nedostaje]")
 
-str_lib.divider()
-
-# 4. ČISTA DATA STRUKTURA: Sav tekst je spakovan na jedno mesto bez ikakvog ponavljanja komandi
-sadrzaj_sajta = [
-    {
-        "sekcija": "O programu OFIX",
-        "tekst": "OFIX je knjigovodstveno-kancelarijski program, namenjen za brzo i jednostavno izdavanje računa i predračuna. Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.",
-        "stavke": []
-    },
-    {
-        "sekcija": "Ključne funkcije",
-        "tekst": "",
-        "stavke": [
+# --- LEVA KOLONA: STRUKTURIRANI SADRŽAJ (Čist Python bez ponavljanja komandi) ---
+with kolona_tekst:
+    str_lib.markdown("## **O programu OFIX**")
+    str_lib.markdown("OFIX je knjigovodstveno-kancelarijski program, namenjen za brzo i jednostavno izdavanje računa i predračuna. Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.")
+    
+    # Sav tekst organizovan na jednom mestu unutar čiste Python strukture
+    sajt_data = {
+        "Ključne funkcije": [
             ("Jednostavna baza podataka", "kupaca, artikala, dobavljača i izdatih dokumenata."),
             ("Evidencija", "stanja lagera, potraživanja i dugovanja."),
             ("Izveštaji", "automatski kreirani izveštaji po kupcu, datumu, artiklu..."),
             ("Jednostavnost", "prilagođeno korisnicima bez IT predznanja."),
             ("Veoma brz", "veličina svega oko 20MB, radi i bez interneta i na starijim računarima.")
-        ]
-    },
-    {
-        "sekcija": "Nudimo dve verzije OFIX-a",
-        "tekst": "Jedina razlika između verzija je ta što RABAT verzija omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa.",
-        "stavke": [
+        ],
+        "Nudimo dve verzije OFIX-a": [
             ("STANDARD", "mogućnost odobravanja rabata na ceo iznos računa."),
-            ("RABAT", "mogućnost rabata (različitog) na svaku stavku na računu.")
-        ]
-    },
-    {
-        "sekcija": "Važne napomene",
-        "tekst": "",
-        "stavke": [
+            ("RABAT", "mogućnost rabata (različitog) na svaku stavku na računu."),
+            ("Napomena", "Jedina razlika između verzija je ta što RABAT verzija omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa.")
+        ],
+        "Važne napomene": [
             ("Microsoft ACCESS", "Za pokretanje OFIX-a je potrebno imati instaliran ovaj program (više informacija)."),
             ("e-fakture", "OFIX ne služi za izdavanje e-faktura."),
             ("Instalacija", "Omogućena instalacija i rad na neograničenom broju računara."),
             ("Tehnička podrška", "Godinu dana besplatne tehničke podrške autora.")
-        ]
-    },
-    {
-        "sekcija": "Način kupovine i cena",
-        "tekst": "U ponudi su godišnja pretplata i trajna kupovina. Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).",
-        "stavke": [
+        ],
+        "Način kupovine i cena": [
+            ("Modeli", "Godišnja pretplata & Trajna kupovina."),
             ("OFIX STANDARD", "59€ / godišnje ili 249€ / trajna licenca."),
-            ("OFIX RABAT", "89€ / godišnje ili 349€ / trajna licenca.")
-        ]
-    },
-    {
-        "sekcija": "Kontakt",
-        "tekst": "Za dodatne informacije i besplatnu demo verziju možete nas kontaktirati:",
-        "stavke": [
+            ("OFIX RABAT", "89€ / godišnje ili 349€ / trajna licenca."),
+            ("Podrška", "Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
+        ],
+        "Kontakt": [
+            ("Upiti", "Za dodatne informacije i besplatnu demo verziju možete nas kontaktirati:"),
             ("Email 1", "magicamp@bluewin.ch"),
             ("Email 2", "magy@usa.com"),
             ("Telefon", "063 310 850")
         ]
     }
-]
 
-# 5. AUTOMATSKI ISPIS: Jedna jedina petlja koja sama generiše kompletan sajt i garantuje BOLD font
-for grupa in sadrzaj_sajta:
-    str_lib.subheader(grupa["sekcija"])
-    
-    if grupa["tekst"]:
-        str_lib.write(grupa["tekst"])
+    # JEDNA PETLJA ZA SVE: Automatski generiše naslove, paragrafe i garantuje uočljiv BOLD font
+    for sekcija, stavke in sajt_data.items():
+        str_lib.markdown(f"### **{sekcija}**")
         
-    for stavka in grupa["stavke"]:
-        # Razdvajamo naslov stavke i opis, pa ih spajamo. 
-        # Streamlit-ov .write() sa više argumenata garantovano generiše čist i vidljiv bold!
-        str_lib.write(f"🔹 **{stavka[0]}:**", stavka[1])
+        for kljuc, vrednost in stavke:
+            # Ako je u pitanju običan pasus (tekst koji stoji samostalno unutar sekcije)
+            if kljuc in ["Napomena", "Modeli", "Uprška", "Upiti"]:
+                str_lib.markdown(f"{vrednost}")
+            else:
+                # Da bismo prevarili loše ponašanje browsera sa boldom, spajamo naslov stavke kroz HTML 'b' tag. 
+                # Ovo je 100% otporno na tamne teme, telefone i različite browsere.
+                str_lib.markdown(f"🔹 <b>{kljuc}:</b> {vrednost}", unsafe_allow_html=True)
