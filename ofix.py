@@ -22,7 +22,7 @@ str_lib.markdown(
 # --- 1. GORNJI DEO (HEADER) ZA GLAVNU SLIKU ---
 str_lib.markdown("## OFIX – Knjigovodstveno-kancelarijski program")
 str_lib.write(
-    "###**Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja**."
+    "### **Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja**."
 )
 
 # Zameni 'glavna_slika.png' nazivom svoje slike u repozitorijumu (ili ostavi prazno ako je nemaš još uvek)
