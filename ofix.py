@@ -57,11 +57,21 @@ with kolona_tekst:
         * **Jednostavnost:** prilagođeno korisnicima bez IT predznanja.
         * **Veoma brz velicina svega oko 20MB, radi i bez interneta i na starijim racunarima
 
+        ### Nudimo dve Verzije OFIX-a:
+        * STANDARD -  mogucnost odobravanja rabata na ceo iznos racuna
+        * RABAT - mogucnost rabata (razlicitog) na svaku stavku na racunu
+
         ### Važne napomene:
         * Za pokretanje OFIX-a je potrebno imati instaliran Microsoft ACCESS 32bitni.
         * OFIX ne služi za izdavanje e-faktura.
         * Optimizovano za rad na neograničenom broju računara.
         * Godinu dana besplatne tehničke podrške autora.
+
+        ### Nacin kupovine i cena, nudimo vise opcija:
+        * Godisnja preplata.   &.    Trajna kupovina
+
+        * OFIX STANDARD 59€/god.           249€
+        * OFIX RABAT.   89€/god.           349€
 
         ### Kontakt:
         Za dodatne informacije i demo verziju mozete nas kontaktirati:
