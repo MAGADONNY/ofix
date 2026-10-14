@@ -40,7 +40,7 @@ with kolona_slike:
 # --- LEVA KOLONA: STRUKTURIRANI SADRŽAJ ---
 with kolona_tekst:
     str_lib.markdown("## **O programu OFIX**")
-    str_lib.markdown("OFIX je knjigovodstveno-kancelarijski program, namenjen za brzo i jednostavno izdavanje računa i predračuna. Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.")
+    str_lib.markdown("**OFIX** je knjigovodstveno-kancelarijski program, namenjen za brzo i jednostavno izdavanje računa i predračuna. Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.")
     
     # Sav tekst organizovan na jednom mestu unutar čiste Python strukture
     sajt_data = {
@@ -76,13 +76,14 @@ with kolona_tekst:
         ]
     }
 
-    # JEDNA PETLJA ZA SVE: Automatski generiše naslove, paragrafe i garantuje uočljiv BOLD font
+    # JEDNA PETLJA ZA SVE: Automatski ispisuje naslove i ističe ključne reči preko ugrađene Streamlit funkcije
     for sekcija, stavke in sajt_data.items():
         str_lib.markdown(f"### **{sekcija}**")
         
         for kljuc, vrednost in stavke:
             # Ako je u pitanju običan pasus (tekst koji stoji samostalno unutar sekcije)
             if kljuc in ["Napomena", "Modeli", "Podrška", "Upiti"]:
-                str_lib.markdown(f"{vrednost}")
+                str_lib.write(vrednost)
             else:
-                str_lib.markdown(f"🔹 <b>{kljuc}:</b> {vrednost}", unsafe_allow_html=True)
+                # Koristimo čist Python / Streamlit prikaz koji se savršeno vidi na svim uređajima i browserima
+                str_lib.write(f"🔹", str_lib.write(kljuc), f": {vrednost}")
