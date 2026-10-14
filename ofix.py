@@ -71,7 +71,7 @@ with kolona_tekst:
     """)
 
 with kolona_slike:
-  str_lib.subheader("Galerija / Detalji")
+  str_lib.subheader("Galerija")
 
   # 3 slike jedna ispod druge sa desne strane
   slike_nazivi = [
