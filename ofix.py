@@ -60,10 +60,10 @@ Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih pr
         ### Nudimo dve Verzije OFIX-a:
         * **STANDARD** -  mogucnost odobravanja rabata na ceo iznos racuna
         * **RABAT** - mogucnost rabata (razlicitog) na svaku stavku na racunu.  
-          Jedina razlika izmedju verzija je ta sto RABAT verzija omogucava razlicit rabat za **svaku stavku** na racunu a STANDARD rabat na ceo iznos racuna.
+        Jedina razlika izmedju verzija je ta sto RABAT verzija omogucava razlicit rabat za svaku stavku na racunu a STANDARD rabat na ceo iznos racuna.
 
         ### Važne napomene:
-        * Za pokretanje OFIX-a je potrebno imati instaliran **Microsoft ACCESS** (vise informacija)
+        * Za pokretanje OFIX-a je potrebno imati instaliran Microsoft ACCESS (vise informacija)
         * OFIX ne služi za izdavanje e-faktura.
         * Omogucena instalacija i rad na neograničenom broju računara.
         * Godinu dana besplatne tehničke podrške autora.
