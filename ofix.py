@@ -7,21 +7,39 @@ st.set_page_config(
     layout="wide",
 )
 
-# ---- HERO SEKCIJA NA SAMOM VRHU (SABIJEN RAZMAK) ----
+# ---- UKLANJANJE GORNJE MARGINE STRANICE (PODIZANJE SVEGA NA GORE) ----
 st.markdown(
     """
-    <div style='margin-bottom: -15px;'>
-        <h2 style='margin-bottom: 5px; padding-bottom: 0px;'>OFIX – Knjigovodstveno-kancelarijski program</h2>
-        <p style='font-size: 1.2rem; color: #fafafa; margin-top: 0px; margin-bottom: 10px;'>Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.</p>
+    <style>
+        /* Smanjuje prazan prostor na samom vrhu aplikacije */
+        .block-container {
+            padding-top: 1.5rem !important;
+            padding-bottom: 0rem !important;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# ---- HERO SEKCIJA SA KONTROLISANIM RAZMAKOM ----
+st.markdown(
+    """
+    <div style='margin-top: 0px; margin-bottom: 25px;'>
+        <h1 style='margin-bottom: 5px; padding-bottom: 0px; font-size: 2.2rem;'>OFIX – Knjigovodstveno-kancelarijski program</h1>
+        <p style='font-size: 1.3rem; color: #e0e0e0; margin-top: 0px; margin-bottom: 0px;'>Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.</p>
     </div>
     """, 
     unsafe_allow_html=True
 )
 
-# ---- BANNER SLIKA ODMAH ISPOD TEKSTA ----
+# ---- BANNER SLIKA ISKONTROLISANA ----
 st.image("banner.jpg", width=800)
 
 st.markdown("---")
+
+# ---- GLAVNI SADRŽAJ: O PROGRAMU + SLIKE SA DESNE STRANE ----
+# (kôd dalje nastavljate normalno: col_tekst, col_slike = st.columns...)
+
 
 # ---- GLAVNI SADRŽAJ: O PROGRAMU + SLIKE SA DESNE STRANE ----
 # (ovde se kôd dalje nastavlja sa col_tekst, col_slike = st.columns...)
