@@ -1,41 +1,72 @@
 import streamlit as st
+import base64
+import os
 
-# Podešavanje stranice
+# 1. Podešavanje stranice
 st.set_page_config(
     page_title="OFIX - Knjigovodstveno-kancelarijski program",
     page_icon="📊",
     layout="wide",
 )
 
-# ---- UKLANJANJE GORNJE MARGINE STRANICE I TRANZICIONI EFEKTI ----
+# 2. Funkcija za pretvaranje lokalnih fajlova sa GitHub-a u bezbedan Base64 format
+def ucitaj_sliku_base64(putanja_slike):
+    if os.path.exists(putanja_slike):
+        with open(putanja_slike, "rb") as fajl:
+            podaci = fajl.read()
+            return "data:image/jpeg;base64," + base64.b64encode(podaci).decode()
+    return ""
+
+# Učitavanje vašeg banera
+banner_b64 = ucitaj_sliku_base64("banner.jpg")
+izvor_banera = banner_b64 if banner_b64 else "https://placeholder.com"
+
+# 3. Globalni CSS stilovi sa vašom animacijom
 st.markdown(
-    """
+    f"""
     <style>
-        /* Smanjuje prazan prostor na samom vrhu aplikacije */
-        .block-container {
-            padding-top: 1.5rem !important;
-            padding-bottom: 0rem !important;
-        }
-        
-        /* Definisanje Fade-In animacije */
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(10px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Primenjivanje animacije na elemente sa klasom 'fade-banner' */
-        .fade-banner img {
-            animation: fadeIn 1.5s ease-out forwards;
-        }
+    .block-container {{
+        padding-top: 1.5rem !important;
+        padding-bottom: 0rem !important;
+    }}
+
+    /* Kontejner za naslov i podnaslov */
+    .hero-text-container {{
+        margin-top: 0px; 
+        margin-bottom: 25px;
+    }}
+
+    /* Animacija za baner preuzeta iz vašeg koda */
+    @keyframes advancedZoomBlur {{
+        0% {{
+            transform: scale(1.08);
+            filter: blur(5px) brightness(0.6);
+            opacity: 0;
+        }}
+        100% {{
+            transform: scale(1.0);
+            filter: blur(0px) brightness(1.0);
+            opacity: 1;
+        }}
+    }}
+
+    /* Primena animacije na baner sliku */
+    .hero-banner-animated {{
+        max-width: 800px;
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+    }}
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# ---- HERO SEKCIJA SA KONTROLISANIM RAZMAKOM ----
+# ---- HERO SEKCIJA: TEKST NA SAMOM VRHU ----
 st.markdown(
     """
-    <div style='margin-top: 0px; margin-bottom: 25px;'>
+    <div class='hero-text-container'>
         <h1 style='margin-bottom: 5px; padding-bottom: 0px; font-size: 2.2rem;'>OFIX – Knjigovodstveno-kancelarijski program</h1>
         <p style='font-size: 1.3rem; color: #e0e0e0; margin-top: 0px; margin-bottom: 0px;'>Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.</p>
     </div>
@@ -43,25 +74,19 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# ---- BANNER SLIKA SA FADE-IN EFEKTOM ----
-# Koristimo st.container da bismo dodelili CSS klasu slici
-with st.container(key="fade-banner"):
-    st.image("banner.jpg", width=800)
+# ---- BANNER SLIKA SA ANIMACIJOM (PREKO BASE64 I HTML-A) ----
+st.markdown(
+    f"""
+    <img src="{izvor_banera}" class="hero-banner-animated">
+    """,
+    unsafe_allow_html=True
+)
 
 st.markdown("---")
 
 
-# ---- BANNER SLIKA ISKONTROLISANA ----
-st.image("banner.jpg", width=700)
-
-st.markdown("---")
-
 # ---- GLAVNI SADRŽAJ: O PROGRAMU + SLIKE SA DESNE STRANE ----
-# (kôd dalje nastavljate normalno: col_tekst, col_slike = st.columns...)
 
-
-# ---- GLAVNI SADRŽAJ: O PROGRAMU + SLIKE SA DESNE STRANE ----
-# (ovde se kôd dalje nastavlja sa col_tekst, col_slike = st.columns...)
 
 col_tekst, col_slike = st.columns([3, 2], gap="large")
 
