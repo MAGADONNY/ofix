@@ -53,22 +53,22 @@ with col_slike:
   st.markdown("---")
 
     # Druga slika sa desne strane
-    st.image(
+  st.image(
         "2.JPG",
         caption="Izdavanje A4 računa",
         use_container_width=True
     )
 
-    st.markdown("---")
+  st.markdown("---")
 
     # Treća slika sa desne strane
-    st.image(
+  st.image(
         "3.JPG",
         caption="Baza Artikla",
         use_container_width=True
     )
 
-    st.markdown("---")
+  st.markdown("---")
 
 
 # ---- VERZIJE PROGRAMA ----
