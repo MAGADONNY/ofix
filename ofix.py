@@ -82,7 +82,7 @@ st.markdown(
 st.markdown(
     f"""
     <div style="text-align: left;">
-        <img src="{izvor_banera}" class="hero-banner-animated" style="max-width: 850px; width: 100%;">
+        <img src="{izvor_banera}" class="hero-banner-animated" style="max-width: 950px; width: 100%;">
     </div>
     """,
     unsafe_allow_html=True
