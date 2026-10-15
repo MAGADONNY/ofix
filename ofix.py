@@ -7,15 +7,18 @@ st.set_page_config(
     layout="wide",
 )
 
-# ---- MESTO ZA BACKGROUND / BANNER SLIKU NA VRHU ----
-# Ovde ubacite vašu baner sliku sa GitHub-a (npr. "banner.jpg" ili "top.png")
-st.image("banner.jpg", use_container_width=True)
-
-# ---- HERO SEKCIJA ----
+# ---- HERO SEKCIJA NA SAMOM VRHU ----
 st.markdown("## OFIX – Knjigovodstveno-kancelarijski program")
 st.subheader("Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.")
 
 st.markdown("---")
+
+# ---- BANNER SLIKU ISPOD TEKSTA (SMANJENA) ----
+# Postavljanjem width=800 slika neće biti ogromna na računaru
+st.image("banner.jpg", width=800)
+
+st.markdown("---")
+
 
 # ---- GLAVNI SADRŽAJ: O PROGRAMU + SLIKE SA DESNE STRANE ----
 col_tekst, col_slike = st.columns([3, 2], gap="large")
