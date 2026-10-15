@@ -150,7 +150,7 @@ with col_slike:
     # Druga slika sa desne strane (Smanjena)
     st.image(
         "2.JPG",
-        caption="Izdavanje A4 računa",
+        caption="Izgled gotovog A4 računa",
         width=280
     )
 
@@ -159,7 +159,7 @@ with col_slike:
     # Treća slika sa desne strane (Smanjena)
     st.image(
         "3.JPG",
-        caption="Baza Artikla",
+        caption="Forma za kreiranje racuna",
         width=280
     )
 
