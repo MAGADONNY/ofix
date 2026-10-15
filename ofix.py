@@ -24,7 +24,7 @@ st.markdown(
 # ---- HERO SEKCIJA SA KONTROLISANIM RAZMAKOM ----
 st.markdown(
     """
-    <div style='margin-top: 0px; margin-bottom: 25px;'>
+    <div style='margin-top: 0px; margin-bottom: 15px;'>
         <h1 style='margin-bottom: 5px; padding-bottom: 0px; font-size: 2.2rem;'>OFIX – Knjigovodstveno-kancelarijski program</h1>
         <p style='font-size: 1.3rem; color: #e0e0e0; margin-top: 0px; margin-bottom: 0px;'>Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.</p>
     </div>
