@@ -59,19 +59,6 @@ st.markdown(
         opacity: 0; /* Osigurava da je slika sakrivena pre starta animacije */
         animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s forwards;
 
-/* Za ekrane šire od 992px (računari) - smanji baner i poravnaj ga */
-@media (min-width: 992px) {
-    .hero-banner-animated {
-        width: 660px !important;
-    }
-}
-
-/* Za male ekrane (telefoni) - neka ide od ruba do ruba */
-@media (max-width: 991px) {
-    .hero-banner-animated {
-        width: 100% !important;
-    }
-}
 
 
     }
@@ -94,9 +81,12 @@ st.markdown(
 # ---- BANNER SLIKA SA ANIMACIJOM ----
 st.markdown(
     f"""
-    <img src="{izvor_banera}" class="hero-banner-animated">
+    <div style="text-align: left;">
+        <img src="{izvor_banera}" class="hero-banner-animated" style="max-width: 660px; width: 100%;">
+    </div>
     """,
     unsafe_allow_html=True
+
 )
 st.markdown("<div style='margin-top: -30px;'></div>", unsafe_allow_html=True)
 
