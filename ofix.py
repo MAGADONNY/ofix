@@ -83,8 +83,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-st.markdown("---")
+st.markdown("<div style='margin-top: -30px;'></div>", unsafe_allow_html=True)
 
 # ---- GLAVNI SADRŽAJ: O PROGRAMU + SLIKE SA DESNE STRANE ----
 col_tekst, col_slike = st.columns([3, 2], gap="large")
