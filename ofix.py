@@ -116,7 +116,6 @@ with col_tekst:
       </div>
       """,
       unsafe_allow_html=True
-  )
 
 )
 
