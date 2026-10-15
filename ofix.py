@@ -57,7 +57,7 @@ st.markdown(
         height: auto;
         border-radius: 6px;
         opacity: 0; /* Osigurava da je slika sakrivena pre starta animacije */
-        animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.2s forwards 0.4s;
+        animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.2s 0.4s forwards;
     }
     </style>
     """,
