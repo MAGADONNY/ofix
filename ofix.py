@@ -1,88 +1,111 @@
-import streamlit as str_lib
+import streamlit as st
 
-# 1. Podešavanje stranice za maksimalnu estetiku
-str_lib.set_page_config(
-    page_title="OFIX - Knjigovodstveni program",
+# Podešavanje stranice
+st.set_page_config(
+    page_title="OFIX - Knjigovodstveno-kancelarijski program",
     page_icon="📊",
     layout="wide",
 )
 
-# 2. REDIZAJNIRANI ELEGANTNI HEADER (Centriran i smanjen font)
-str_lib.markdown("<h2 style='text-align: center;'>OFIX – Knjigovodstveno-kancelarijski program</h2>", unsafe_allow_html=True)
-str_lib.markdown("<p style='text-align: center; font-size: 18px; color: #888888;'>Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.</p>", unsafe_allow_html=True)
-str_lib.write("")  # Mali vizuelni razmak ispod teksta
+# ---- HERO SEKCIJA ----
+st.title("OFIX – Knjigovodstveno-kancelarijski program")
+st.subheader("Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.")
 
-# 3. Glavna slika na vrhu (Header) ispod teksta
-try:
-    str_lib.image("newofix.jpg", use_container_width=True)
-except:
-    str_lib.info("[Glavna slika 'newofix.jpg' trenutno nije dostupna na GitHub-u]")
+st.markdown("---")
 
-str_lib.divider()
+# ---- SEKCIJA ZA SLIKE (PLACEHOLDERI) ----
+st.markdown("### Galerija programa")
+col_img1, col_img2 = st.columns(2)
 
-# 4. Kreiranje polja: Tekst levo (širi deo), tri slike vertikalno desno (uži deo)
-kolona_tekst, kolona_slike = str_lib.columns([2, 1])
+with col_img1:
+  # Ovde možete zameniti putanju ili URL do prve slike
+  st.image(
+      "https://via.placeholder.com/600x400.png?text=OFIX+-+Glavni+meni",
+      caption="Glavni prozor programa",
+      use_container_width=True,
+  )
 
-# --- DESNA KOLONA: 3 SLIKE VERTIKALNO ---
-with kolona_slike:
-    str_lib.markdown("### :blue[Ekrani programa]")
-    slike_lista = [
-        ("2.JPG", "Prikaz rada u programu"),
-        ("3.JPG", "Kreiranje računa"),
-        ("4.JPG", "Izgled gotovog računa spreman za štampu")
-    ]
-    for fajl, opis in slike_lista:
-        try:
-            str_lib.image(fajl, caption=opis, use_container_width=True)
-            str_lib.write("")  # Razmak između slika
-        except:
-            str_lib.info(f"[Slika {fajl} nedostaje]")
+with col_img2:
+  # Ovde možete zameniti putanju ili URL do druge slike
+  st.image(
+      "https://via.placeholder.com/600x400.png?text=OFIX+-+Izdavanje+racuna",
+      caption="Izdavanje računa i unosa stavki",
+      use_container_width=True,
+  )
 
-# --- LEVA KOLONA: STRUKTURIRANI SADRŽAJ ---
-with kolona_tekst:
-    str_lib.markdown("## :blue[O programu OFIX]")
-    str_lib.markdown("OFIX je knjigovodstveno-kancelarijski program, namenjen za brzo i jednostavno izdavanje računa i predračuna. Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.")
-    
-    # Podaci spakovani u čist Python rečnik
-    sajt_data = {
-        "Ključne funkcije": [
-            ("Jednostavna baza podataka", "kupaca, artikala, dobavljača i izdatih dokumenata."),
-            ("Evidencija", "stanja lagera, potraživanja i dugovanja."),
-            ("Izveštaji", "automatski kreirani izveštaji po kupcu, datumu, artiklu..."),
-            ("Jednostavnost", "prilagođeno korisnicima bez IT predznanja."),
-            ("Veoma brz", "veličina svega oko 20MB, radi i bez interneta i na starijim računarima.")
-        ],
-        "Nudimo dve verzije OFIX-a": [
-            ("STANDARD", "mogućnost odobravanja rabata na ceo iznos računa."),
-            ("RABAT", "mogućnost rabata (različitog) na svaku stavku na računu."),
-            ("Napomena", "Jedina razlika između verzija je ta što RABAT verzija omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa.")
-        ],
-        "Važne napomene": [
-            ("Microsoft ACCESS", "Za pokretanje OFIX-a je potrebno imati instaliran ovaj program (više informacija)."),
-            ("e-fakture", "OFIX ne služi za izdavanje e-faktura."),
-            ("Instalacija", "Omogućena instalacija i rad na neograničenom broju računara."),
-            ("Tehnička podrška", "Godinu dana besplatne tehničke podrške autora.")
-        ],
-        "Način kupovine i cena": [
-            ("Modeli", "Godišnja pretplata & Trajna kupovina."),
-            ("OFIX STANDARD", "59€ / godišnje ili 249€ / trajna licenca."),
-            ("OFIX RABAT", "89€ / godišnje ili 349€ / trajna licenca."),
-            ("Podrška", "Autor pruža besplatnu tehničke podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
-        ],
-        "Kontakt": [
-            ("Upiti", "Za dodatne informacije i besplatnu demo verziju možete nas kontaktirati:"),
-            ("Email 1", "magicamp@bluewin.ch"),
-            ("Email 2", "magy@usa.com"),
-            ("Telefon", "063 310 850")
-        ]
-    }
+st.markdown("---")
 
-    # Ispis kroz čiste i standardne Streamlit stringove
-    for sekcija, stavke in sajt_data.items():
-        str_lib.markdown(f"### :blue[{sekcija}]")
-        
-        for kljuc, vrednost in stavke:
-            if kljuc in ["Napomena", "Modeli", "Podrška", "Upiti"]:
-                str_lib.write(vrednost)
-            else:
-                str_lib.write(f"🔹 :blue[{kljuc}]: {vrednost}")
+# ---- O PROGRAMU ----
+col_info1, col_info2 = st.colums([2, 1])
+
+with col_info1:
+  st.markdown("## O programu OFIX")
+  st.write(
+      "**OFIX** je knjigovodstveno-kancelarijski program, namenjen za brzo i"
+      " jednostavno izdavanje računa i predračuna. Idealan je alat za"
+      " svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća,"
+      " zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja."
+  )
+
+  st.markdown("### Ključne funkcije")
+  st.markdown("- 🔹 **Jednostavna baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.")
+  st.markdown("- 🔹 **Evidencija:** stanja lagera, potraživanja i dugovanja.")
+  st.markdown("- 🔹 **Izveštaji:** automatski kreirani izveštaji po kupcu, datumu, artiklu...")
+  st.markdown("- 🔹 **Jednostavnost:** prilagođeno korisnicima bez IT predznanja.")
+  st.markdown("- 🔹 **Veoma brz:** veličina svega oko 20MB, radi i bez interneta i na starijim računarima.")
+
+with col_info2:
+  st.info(
+      "**Važne napomene:**\n\n"
+      "🔸 **Microsoft ACCESS:** Potreban za pokretanje.\n\n"
+      "🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.\n\n"
+      "🔸 **Instalacija:** Neograničen broj računara.\n\n"
+      "🔸 **Podrška:** Godinu dana besplatne tehničke podrške autora."
+  )
+
+st.markdown("---")
+
+# ---- VERZIJE PROGRAMA ----
+st.markdown("## Nudimo dve verzije OFIX-a")
+
+c_ver1, c_ver2 = st.columns(2)
+
+with c_ver1:
+  st.markdown("### 🔹 OFIX STANDARD")
+  st.write("Mogućnost odobravanja rabata na **ceo iznos računa**.")
+
+with c_ver2:
+  st.markdown("### 🔹 OFIX RABAT")
+  st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
+
+st.markdown(
+    "> *Jedina razlika između verzija je ta što RABAT verzija omogućava"
+    " različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos"
+    " računa.*"
+)
+
+st.markdown("---")
+
+# ---- CENE I LICENCE ----
+st.markdown("## Način kupovine i cena")
+st.write("Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
+
+price_col1, price_col2 = st.columns(2)
+
+with price_col1:
+  st.metric(label="OFIX STANDARD - Godišnja pretplata", value="59 €")
+  st.metric(label="OFIX STANDARD - Trajna licenca", value="249 €")
+
+with price_col2:
+  st.metric(label="OFIX RABAT - Godišnja pretplata", value="89 €")
+  st.metric(label="OFIX RABAT - Trajna licenca", value="349 €")
+
+st.markdown("---")
+
+# ---- KONTAKT ----
+st.markdown("## Kontaktirajte nas")
+st.write("Za dodatne informacije i besplatnu demo verziju možete nas kontaktirati putem:")
+
+st.markdown("- ✉️ **Email 1:** magicamp@bluewin.ch")
+st.markdown("- ✉️ **Email 2:** magy@usa.com")
+st.markdown("- 📞 **Telefon:** 063 310 850")
