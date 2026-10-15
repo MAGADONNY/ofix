@@ -18,20 +18,22 @@ def ucitaj_sliku_base64(putanja_slike):
     return ""
 
 # Učitavanje vašeg banera
-banner_b64 = ucitaj_sliku_base64("banner.jpg")
-izvor_banera = banner_b64 if banner_b64 else "https://placeholder.com"
-
-# 3. Globalni CSS stilovi sa vašom animacijom
+# 3. Globalni CSS stilovi sa vašom animacijom (ISPRAVLJEN F-STRING)
 st.markdown(
-    f"""
+    """
     <style>
-    .block-container {{
+    .block-container {
         padding-top: 1.5rem !important;
         padding-bottom: 0rem !important;
-    }}
+    }
 
     /* Kontejner za naslov i podnaslov */
-       /* Animacija za baner preuzeta iz vašeg koda */
+    .hero-text-container {
+        margin-top: 0px; 
+        margin-bottom: 25px;
+    }
+
+    /* Animacija za baner preuzeta iz vašeg koda s PC optimizacijom */
     @keyframes advancedZoomBlur {
         0% {
             transform: scale(1.08);
@@ -47,21 +49,18 @@ st.markdown(
 
     /* Primena animacije na baner sliku sa PC optimizacijom */
     .hero-banner-animated {
-        max-width: 700px;
+        max-width: 800px;
         width: 100%;
         height: auto;
         border-radius: 6px;
         opacity: 0; /* Osigurava da je slika sakrivena pre starta animacije */
         animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.2s forwards;
     }
-
-        border-radius: 6px;
-        animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
-    }}
     </style>
     """,
     unsafe_allow_html=True
 )
+
 
 # ---- HERO SEKCIJA: TEKST NA SAMOM VRHU ----
 st.markdown(
