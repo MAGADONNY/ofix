@@ -104,7 +104,7 @@ with col_tekst:
 
 # ------------ BLOK KLJUCNE FUNKCIJE -------
 
-      st.markdown("### Ključne funkcije")
+  st.markdown("### Ključne funkcije")
   st.markdown(
       """
       <div style='line-height: 1.5;'>
