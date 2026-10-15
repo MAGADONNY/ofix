@@ -47,10 +47,85 @@ with col_slike:
   st.image(
       "https://via.placeholder.com/600x400.png?text=OFIX+-+Glavni+meni",
       caption="Glavni ekran i navigacija",
-      use_container_width=True,
+      use_column_width=True,
   )
 
   st.markdown("---")
 
   # Druga slika sa desne strane
-  st.image
+  st.image(
+      "https://via.placeholder.com/600x400.png?text=OFIX+-+Izdavanje+racuna",
+      caption="Izdavanje A4 računa",
+      use_column_width=True,
+  )
+
+st.markdown("---")
+
+# ---- VERZIJE PROGRAMA ----
+st.markdown("## Nudimo dve verzije OFIX-a")
+
+c_ver1, c_ver2 = st.columns(2)
+
+with c_ver1:
+  st.markdown("### 🔹 OFIX STANDARD")
+  st.write("Mogućnost odobravanja rabata na **ceo iznos računa**.")
+
+with c_ver2:
+  st.markdown("### 🔹 OFIX RABAT")
+  st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
+
+st.markdown(
+    "> *Jedina razlika između verzija je ta što RABAT verzija omogućava"
+    " različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos"
+    " računa.*"
+)
+
+st.markdown("---")
+
+# ---- CENE I LICENCE ----
+st.markdown("## Način kupovine i cena")
+st.write("Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
+
+price_col1, price_col2 = st.columns(2)
+
+with price_col1:
+  st.metric(label="OFIX STANDARD - Godišnja pretplata", value="59 €")
+  st.metric(label="OFIX STANDARD - Trajna licenca", value="249 €")
+
+with price_col2:
+  st.metric(label="OFIX RABAT - Godišnja pretplata", value="89 €")
+  st.metric(label="OFIX RABAT - Trajna licenca", value="349 €")
+
+st.markdown("---")
+
+# ---- DEMO PREUZIMANJE I KONTAKT FORMA ----
+col_demo, col_kontakt = st.columns(2, gap="large")
+
+with col_demo:
+  st.markdown("## Preuzmite Demo Verziju")
+  st.write("Isprobajte besplatno OFIX program i uverite se u jednostavnost korišćenja.")
+  
+  st.download_button(
+      label="📥 Preuzmi Besplatni Demo (20MB)",
+      data=b"Demo verzija fajl placeholder",
+      file_name="OFIX_Demo_Setup.exe",
+      mime="application/octet-stream",
+  )
+
+with col_kontakt:
+  st.markdown("## Kontaktirajte nas")
+  st.write("Imate pitanje ili želite da naručite licencu?")
+
+  with st.form("kontakt_forma"):
+    ime = st.text_input("Vaše ime / Naziv firme")
+    email = st.text_input("Vaš Email")
+    poruka = st.text_area("Poruka")
+    poslato = st.form_submit_button("Pošalji poruku")
+    
+    if poslato:
+      st.success("Hvala! Vaša poruka je uspešno poslata.")
+
+  st.markdown("---")
+  st.markdown("🔹 **Email 1:** magicamp@bluewin.ch")
+  st.markdown("🔹 **Email 2:** magy@usa.com")
+  st.markdown("🔹 **Telefon:** 063 310 850")
