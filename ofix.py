@@ -7,36 +7,16 @@ st.set_page_config(
     layout="wide",
 )
 
-# ---- SLIKE U BOČNOJ TRACI (SIDEBAR) ----
-with st.sidebar:
-  st.markdown("### Galerija programa")
-  
-  # Prva slika u sidebaru
-  st.image(
-      "https://via.placeholder.com/600x400.png?text=OFIX+-+Glavni+meni",
-      caption="Glavni prozor programa",
-      use_container_width=True,
-  )
-  
-  st.markdown("---")
-  
-  # Druga slika u sidebaru
-  st.image(
-      "https://via.placeholder.com/600x400.png?text=OFIX+-+Izdavanje+racuna",
-      caption="Izdavanje računa i unosa stavki",
-      use_container_width=True,
-  )
-
 # ---- HERO SEKCIJA ----
 st.title("OFIX – Knjigovodstveno-kancelarijski program")
 st.subheader("Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.")
 
 st.markdown("---")
 
-# ---- O PROGRAMU ----
-col_info1, col_info2 = st.columns([2, 1])
+# ---- O PROGRAMU + SLIKE SA DESNE STRANE ----
+col_tekst, col_slike = st.columns([3, 2], gap="large")
 
-with col_info1:
+with col_tekst:
   st.markdown("## O programu OFIX")
   st.write(
       "**OFIX** je knjigovodstveno-kancelarijski program, namenjen za brzo i"
@@ -52,7 +32,6 @@ with col_info1:
   st.markdown("- 🔹 **Jednostavnost:** prilagođeno korisnicima bez IT predznanja.")
   st.markdown("- 🔹 **Veoma brz:** veličina svega oko 20MB, radi i bez interneta i na starijim računarima.")
 
-with col_info2:
   st.info(
       "**Važne napomene:**\n\n"
       "🔸 **Microsoft ACCESS:** Potreban za pokretanje.\n\n"
@@ -61,49 +40,17 @@ with col_info2:
       "🔸 **Podrška:** Godinu dana besplatne tehničke podrške autora."
   )
 
-st.markdown("---")
+with col_slike:
+  st.markdown("### Prikaz programa")
+  
+  # Prva slika sa desne strane
+  st.image(
+      "https://via.placeholder.com/600x400.png?text=OFIX+-+Glavni+meni",
+      caption="Glavni ekran i navigacija",
+      use_container_width=True,
+  )
 
-# ---- VERZIJE PROGRAMA ----
-st.markdown("## Nudimo dve verzije OFIX-a")
+  st.markdown("---")
 
-c_ver1, c_ver2 = st.columns(2)
-
-with c_ver1:
-  st.markdown("### 🔹 OFIX STANDARD")
-  st.write("Mogućnost odobravanja rabata na **ceo iznos računa**.")
-
-with c_ver2:
-  st.markdown("### 🔹 OFIX RABAT")
-  st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
-
-st.markdown(
-    "> *Jedina razlika između verzija je ta što RABAT verzija omogućava"
-    " različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos"
-    " računa.*"
-)
-
-st.markdown("---")
-
-# ---- CENE I LICENCE ----
-st.markdown("## Način kupovine i cena")
-st.write("Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
-
-price_col1, price_col2 = st.columns(2)
-
-with price_col1:
-  st.metric(label="OFIX STANDARD - Godišnja pretplata", value="59 €")
-  st.metric(label="OFIX STANDARD - Trajna licenca", value="249 €")
-
-with price_col2:
-  st.metric(label="OFIX RABAT - Godišnja pretplata", value="89 €")
-  st.metric(label="OFIX RABAT - Trajna licenca", value="349 €")
-
-st.markdown("---")
-
-# ---- KONTAKT ----
-st.markdown("## Kontaktirajte nas")
-st.write("Za dodatne informacije i besplatnu demo verziju možete nas kontaktirati putem:")
-
-st.markdown("- ✉️ **Email 1:** magicamp@bluewin.ch")
-st.markdown("- ✉️ **Email 2:** magy@usa.com")
-st.markdown("- 📞 **Telefon:** 063 310 850")
+  # Druga slika sa desne strane
+  st.image
