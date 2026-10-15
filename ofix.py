@@ -7,20 +7,25 @@ st.set_page_config(
     layout="wide",
 )
 
-# ---- HERO SEKCIJA NA SAMOM VRHU ----
-st.markdown("## OFIX – Knjigovodstveno-kancelarijski program")
-st.subheader("Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.")
+# ---- HERO SEKCIJA NA SAMOM VRHU (SABIJEN RAZMAK) ----
+st.markdown(
+    """
+    <div style='margin-bottom: -15px;'>
+        <h2 style='margin-bottom: 5px; padding-bottom: 0px;'>OFIX – Knjigovodstveno-kancelarijski program</h2>
+        <p style='font-size: 1.2rem; color: #fafafa; margin-top: 0px; margin-bottom: 10px;'>Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.</p>
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
 
-st.markdown("---")
-
-# ---- BANNER SLIKU ISPOD TEKSTA (SMANJENA) ----
-# Postavljanjem width=800 slika neće biti ogromna na računaru
+# ---- BANNER SLIKA ODMAH ISPOD TEKSTA ----
 st.image("banner.jpg", width=800)
 
 st.markdown("---")
 
-
 # ---- GLAVNI SADRŽAJ: O PROGRAMU + SLIKE SA DESNE STRANE ----
+# (ovde se kôd dalje nastavlja sa col_tekst, col_slike = st.columns...)
+
 col_tekst, col_slike = st.columns([3, 2], gap="large")
 
 with col_tekst:
