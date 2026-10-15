@@ -31,30 +31,30 @@ st.markdown(
     }}
 
     /* Kontejner za naslov i podnaslov */
-    .hero-text-container {{
-        margin-top: 0px; 
-        margin-bottom: 25px;
-    }}
-
-    /* Animacija za baner preuzeta iz vašeg koda */
-    @keyframes advancedZoomBlur {{
-        0% {{
+       /* Animacija za baner preuzeta iz vašeg koda */
+    @keyframes advancedZoomBlur {
+        0% {
             transform: scale(1.08);
             filter: blur(5px) brightness(0.6);
             opacity: 0;
-        }}
-        100% {{
+        }
+        100% {
             transform: scale(1.0);
             filter: blur(0px) brightness(1.0);
             opacity: 1;
-        }}
-    }}
+        }
+    }
 
-    /* Primena animacije na baner sliku */
-    .hero-banner-animated {{
-        max-width: 800px;
+    /* Primena animacije na baner sliku sa PC optimizacijom */
+    .hero-banner-animated {
+        max-width: 700px;
         width: 100%;
         height: auto;
+        border-radius: 6px;
+        opacity: 0; /* Osigurava da je slika sakrivena pre starta animacije */
+        animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.2s forwards;
+    }
+
         border-radius: 6px;
         animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
     }}
