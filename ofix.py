@@ -7,36 +7,34 @@ st.set_page_config(
     layout="wide",
 )
 
-# ---- HERO SEKCIJA ----
-st.title("OFIX – Knjigovodstveno-kancelarijski program")
-st.subheader("Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.")
-
-st.markdown("---")
-
-# ---- SEKCIJA ZA SLIKE (PLACEHOLDERI) ----
-st.markdown("### Galerija programa")
-col_img1, col_img2 = st.columns(2)
-
-with col_img1:
-  # Ovde možete zameniti putanju ili URL do prve slike
+# ---- SLIKE U BOČNOJ TRACI (SIDEBAR) ----
+with st.sidebar:
+  st.markdown("### Galerija programa")
+  
+  # Prva slika u sidebaru
   st.image(
       "https://via.placeholder.com/600x400.png?text=OFIX+-+Glavni+meni",
       caption="Glavni prozor programa",
       use_container_width=True,
   )
-
-with col_img2:
-  # Ovde možete zameniti putanju ili URL do druge slike
+  
+  st.markdown("---")
+  
+  # Druga slika u sidebaru
   st.image(
       "https://via.placeholder.com/600x400.png?text=OFIX+-+Izdavanje+racuna",
       caption="Izdavanje računa i unosa stavki",
       use_container_width=True,
   )
 
+# ---- HERO SEKCIJA ----
+st.title("OFIX – Knjigovodstveno-kancelarijski program")
+st.subheader("Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.")
+
 st.markdown("---")
 
 # ---- O PROGRAMU ----
-col_info1, col_info2 = st.colums([2, 1])
+col_info1, col_info2 = st.columns([2, 1])
 
 with col_info1:
   st.markdown("## O programu OFIX")
