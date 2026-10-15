@@ -62,7 +62,7 @@ st.markdown(
 /* Za ekrane šire od 992px (računari) - smanji baner i poravnaj ga */
 @media (min-width: 992px) {
     .hero-banner-animated {
-        width: 740px !important;
+        width: 660px !important;
     }
 }
 
