@@ -33,7 +33,7 @@ st.markdown(
 )
 
 # ---- BANNER SLIKA ISKONTROLISANA ----
-st.image("banner.jpg", width=600)
+st.image("banner.jpg", width=700)
 
 st.markdown("---")
 
