@@ -45,7 +45,7 @@ with col_slike:
   
   # Prva slika sa desne strane
   st.image(
-      "1.JPG?text=OFIX+-+Glavni+meni",
+      "https://via.placeholder.com/600x400.png?text=OFIX+-+Glavni+meni",
       caption="Glavni ekran i navigacija",
       use_column_width=True,
   )
