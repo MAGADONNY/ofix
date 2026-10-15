@@ -104,9 +104,9 @@ with col_tekst:
 
 # ------------ BLOK KLJUCNE FUNKCIJE -------
 
-      st.markdown("### Ključne funkcije")
-      st.markdown(
-      """
+    st.markdown("### Ključne funkcije")
+    st.markdown(
+    """
       <div style='line-height: 1.5;'>
           <p style='margin-bottom: 6px;'>🔹 <b>Jednostavna baza podataka:</b> kupaca, artikala, dobavljača i izdatih dokumenata.</p>
           <p style='margin-bottom: 6px;'>🔹 <b>Evidencija:</b> stanja lagera, potraživanja i dugovanja.</p>
@@ -115,7 +115,7 @@ with col_tekst:
           <p style='margin-bottom: 6px;'>🔹 <b>Veoma brz:</b> veličina svega oko 20MB, radi i bez interneta i na starijim računarima.</p>
       </div>
       """,
-      unsafe_allow_html=True
+    unsafe_allow_html=True
 
 )
 
