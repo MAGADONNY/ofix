@@ -55,7 +55,7 @@ with col_slike:
 
   # Druga slika sa desne strane
   st.image(
-      "2.jpg",
+      "2.JPG",
       caption="Izdavanje A4 računa",
       use_column_width=True,
   )
