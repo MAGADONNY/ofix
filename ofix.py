@@ -50,7 +50,7 @@ with col_slike:
         use_container_width=True
     )
 
-    st.markdown("---")
+  st.markdown("---")
 
     # Druga slika sa desne strane
     st.image(
