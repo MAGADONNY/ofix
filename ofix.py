@@ -8,7 +8,7 @@ st.set_page_config(
 )
 
 # ---- HERO SEKCIJA ----
-st.title("OFIX – Knjigovodstveno-kancelarijski program")
+st.title("## OFIX – Knjigovodstveno-kancelarijski program")
 st.subheader("Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.")
 
 st.markdown("---")
