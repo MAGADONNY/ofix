@@ -102,12 +102,21 @@ with col_tekst:
         " zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja."
     )
 
-    st.markdown("### Ključne funkcije")
-    st.markdown("- 🔹 **Jednostavna baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.")
-    st.markdown("- 🔹 **Evidencija:** stanja lagera, potraživanja i dugovanja.")
-    st.markdown("- 🔹 **Izveštaji:** automatski kreirani izveštaji po kupcu, datumu, artiklu...")
-    st.markdown("- 🔹 **Jednostavnost:** prilagođeno korisnicima bez IT predznanja.")
-    st.markdown("- 🔹 **Veoma brz:** veličina svega oko 20MB, radi i bez interneta i na starijim računarima.")
+# ------------ BLOK KLJUCNE FUNKCIJE -------
+
+      st.markdown("### Ključne funkcije")
+  st.markdown(
+      """
+      <div style='line-height: 1.5;'>
+          <p style='margin-bottom: 6px;🔹 <b>Jednostavna baza podataka:</b> kupaca, artikala, dobavljača i izdatih dokumenata.</p>
+          <p style='margin-bottom: 6px;🔹 <b>Evidencija:</b> stanja lagera, potraživanja i dugovanja.</p>
+          <p style='margin-bottom: 6px;🔹 <b>Izveštaji:</b> automatski kreirani izveštaji po kupcu, datumu, artiklu...</p>
+          <p style='margin-bottom: 6px;🔹 <b>Jednostavnost:</b> prilagođeno korisnicima bez IT predznanja.</p>
+          <p style='margin-bottom: 6px;🔹 <b>Veoma brz:</b> veličina svega oko 20MB, radi i bez interneta i na starijim računarima.</p>
+      </div>
+      """,
+      unsafe_allow_html=True
+)
 
     st.info(
         "**Važne napomene:**\n\n"
