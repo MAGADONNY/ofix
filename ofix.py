@@ -44,7 +44,7 @@ with col_slike:
   st.markdown("### Prikaz programa")
   
        # Prva slika sa desne strane
-    st.image(
+  st.image(
         "1.JPG",
         caption="Glavni ekran i navigacija",
         use_container_width=True
