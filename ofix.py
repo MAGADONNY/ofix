@@ -2,7 +2,7 @@ import streamlit as st
 
 # Podešavanje stranice
 st.set_page_config(
-    page_title="##OFIX - Knjigovodstveno-kancelarijski program",
+    page_title="OFIX - Knjigovodstveno-kancelarijski program",
     page_icon="📊",
     layout="wide",
 )
