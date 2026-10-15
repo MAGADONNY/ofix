@@ -60,6 +60,13 @@ with col_slike:
       use_column_width=True,
   )
 
+st.image(
+    "3.JPG",
+    caption="Baza Artikala",
+    use_container_width=True
+)
+
+
 st.markdown("---")
 
 # ---- VERZIJE PROGRAMA ----
