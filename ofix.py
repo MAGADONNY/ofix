@@ -55,7 +55,7 @@ with col_slike:
 
   # Druga slika sa desne strane
   st.image(
-      "https://via.placeholder.com/600x400.png?text=OFIX+-+Izdavanje+racuna",
+      "2.jpg",
       caption="Izdavanje A4 računa",
       use_column_width=True,
   )
