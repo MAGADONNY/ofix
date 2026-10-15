@@ -53,7 +53,7 @@ st.markdown(
     /* Primena animacije na baner sliku sa PC optimizacijom */
     .hero-banner-animated {
         max-width: 800px;
-        width: 90%;
+        width: 87%;
         height: auto;
         border-radius: 6px;
         opacity: 0; /* Osigurava da je slika sakrivena pre starta animacije */
