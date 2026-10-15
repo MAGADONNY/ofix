@@ -45,10 +45,11 @@ with col_slike:
   
   # Prva slika sa desne strane
   st.image(
-      "https://via.placeholder.com/600x400.png?text=OFIX+-+Glavni+meni",
-      caption="Glavni ekran i navigacija",
-      use_column_width=True,
-  )
+    "1.JPG",
+    caption="Glavni ekran i navigacija",
+    use_container_width=True
+)
+
 
   st.markdown("---")
 
