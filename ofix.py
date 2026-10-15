@@ -7,7 +7,7 @@ st.set_page_config(
     layout="wide",
 )
 
-# ---- UKLANJANJE GORNJE MARGINE STRANICE (PODIZANJE SVEGA NA GORE) ----
+# ---- UKLANJANJE GORNJE MARGINE STRANICE I TRANZICIONI EFEKTI ----
 st.markdown(
     """
     <style>
@@ -15,6 +15,17 @@ st.markdown(
         .block-container {
             padding-top: 1.5rem !important;
             padding-bottom: 0rem !important;
+        }
+        
+        /* Definisanje Fade-In animacije */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Primenjivanje animacije na elemente sa klasom 'fade-banner' */
+        .fade-banner img {
+            animation: fadeIn 1.5s ease-out forwards;
         }
     </style>
     """,
@@ -24,13 +35,21 @@ st.markdown(
 # ---- HERO SEKCIJA SA KONTROLISANIM RAZMAKOM ----
 st.markdown(
     """
-    <div style='margin-top: 0px; margin-bottom: 10px;'>
+    <div style='margin-top: 0px; margin-bottom: 25px;'>
         <h1 style='margin-bottom: 5px; padding-bottom: 0px; font-size: 2.2rem;'>OFIX – Knjigovodstveno-kancelarijski program</h1>
         <p style='font-size: 1.3rem; color: #e0e0e0; margin-top: 0px; margin-bottom: 0px;'>Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.</p>
     </div>
     """, 
     unsafe_allow_html=True
 )
+
+# ---- BANNER SLIKA SA FADE-IN EFEKTOM ----
+# Koristimo st.container da bismo dodelili CSS klasu slici
+with st.container(key="fade-banner"):
+    st.image("banner.jpg", width=800)
+
+st.markdown("---")
+
 
 # ---- BANNER SLIKA ISKONTROLISANA ----
 st.image("banner.jpg", width=700)
