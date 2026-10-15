@@ -44,25 +44,28 @@ with col_slike:
   st.markdown("### Prikaz programa")
   
   # Prva slika sa desne strane
-  st.image(
+  # Prva slika sa desne strane
+st.image(
     "1.JPG",
     caption="Glavni ekran i navigacija",
     use_container_width=True
 )
 
+st.markdown("---")
 
-  st.markdown("---")
+# Druga slika sa desne strane
+st.image(
+    "2.JPG",
+    caption="Izdavanje A4 računa",
+    use_container_width=True  # Promenjeno sa use_column_width na use_container_width
+)
 
-  # Druga slika sa desne strane
-  st.image(
-      "2.JPG",
-      caption="Izdavanje A4 računa",
-      use_column_width=True,
-  )
+st.markdown("---")
 
+# Treća slika sa desne strane (Mora biti u istom bloku/indentaciji kao i prve dve)
 st.image(
     "3.JPG",
-    caption="Baza Artikala",
+    caption="Baza Artikla",
     use_container_width=True
 )
 
