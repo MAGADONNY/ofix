@@ -105,7 +105,7 @@ with col_tekst:
 # ------------ BLOK KLJUCNE FUNKCIJE -------
 
     st.markdown("### Ključne funkcije")
-    st.info(
+    st.markdown(
     """
       <div style='line-height: 1.5;'>
           <p style='margin-bottom: 6px;'>🔹 <b>Baza podataka:</b> kupaca, artikala, dobavljača i izdatih dokumenata.</p>
