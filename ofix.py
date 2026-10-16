@@ -114,7 +114,7 @@ with col_tekst:
     )
 
     st.markdown(
-        "**Napomene:**\n\n"
+        "**Napomene:**\n"
         "🔸 **Microsoft ACCESS:** Potreban za pokretanje.\n\n"
         "🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.\n\n"
         "🔸 **Instalacija:** Neograničen broj računara.\n\n"
