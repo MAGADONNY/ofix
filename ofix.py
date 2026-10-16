@@ -104,13 +104,20 @@ with col_tekst:
 
 # ------------ BLOK FUNKCIJE -------
 
-    st.info(
-        "🔹 **Baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.\n\n"
-        "🔹 **Evidencija:** stanja lagera, potraživanja i dugovanja.\n\n"
-        "🔹 **Izveštaji:** automatski kreirani izveštaji po kupcu, datumu, artiklu...\n\n"
-        "🔹 **Jednostavnost:** prilagođeno korisnicima bez IT predznanja.\n\n"
-        "🔹 **Veoma brz:** veličina svega oko 20MB, radi i bez interneta i na starijim računarima."
+    st.markdown("### Ključne funkcije")
+    st.markdown(
+        """
+        <div style="background-color: #e8f4f8; padding: 1rem; border-radius: 0.5rem; border-left: 5px solid #1f77b4;">
+            🔹 <b>Baza podataka:</b> kupaca, artikala, dobavljača i izdatih dokumenata.<br>
+            🔹 <b>Evidencija:</b> stanja lagera, potraživanja i dugovanja.<br>
+            🔹 <b>Izveštaji:</b> automatski kreirani izveštaji po kupcu, datumu, artiklu...<br>
+            🔹 <b>Jednostavnost:</b> prilagođeno korisnicima bez IT predznanja.<br>
+            🔹 <b>Veoma brz:</b> veličina svega oko 20MB, radi i bez interneta i na starijim računarima.
+        </div>
+        """,
+        unsafe_allow_html=True
     )
+
 
 
 
