@@ -113,12 +113,17 @@ with col_tekst:
         "🔹 **Veoma brz:** veličina svega oko 20MB, radi i bez interneta i na starijim računarima."
     )
 
+    # ====BOX NAPOMENE
     
-    st.markdown("**Napomene:**")
-    st.markdown("🔸 **Microsoft ACCESS:** Potreban za pokretanje.")
-    st.markdown("🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.")
-    st.markdown("🔸 **Instalacija:** Neograničen broj računara.")
-    st.markdown("🔸 **Podrška:** Godinu dana besplatne tehničke podrške autora.")
+        st.markdown(
+        "**Napomene:**<br>"
+        "🔸 **Microsoft ACCESS:** Potreban za pokretanje.<br>"
+        "🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.<br>"
+        "🔸 **Instalacija:** Neograničen broj računara.<br>"
+        "🔸 **Podrška:** Godinu dana besplatne tehničke podrške autora.",
+        unsafe_allow_html=True
+    )
+
 
     
     st.markdown("---")
