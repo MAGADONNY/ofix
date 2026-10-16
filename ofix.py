@@ -113,18 +113,17 @@ with col_tekst:
         "🔹 **Veoma brz:** veličina svega oko 20MB, radi i bez interneta i na starijim računarima."
     )
 
-    st.markdown(
-        "**Napomene:**\n"
-        "🔸 **Microsoft ACCESS:** Potreban za pokretanje.\n\n"
-        "🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.\n\n"
-        "🔸 **Instalacija:** Neograničen broj računara.\n\n"
-        "🔸 **Podrška:** Godinu dana besplatne tehničke podrške autora."
-    )
+    
+    st.markdown("**Napomene:**")
+    st.markdown("🔸 **Microsoft ACCESS:** Potreban za pokretanje.")
+    st.markdown("🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.")
+    st.markdown("🔸 **Instalacija:** Neograničen broj računara.")
+    st.markdown("🔸 **Podrška:** Godinu dana besplatne tehničke podrške autora.")
 
     
     st.markdown("---")
     
-    # Nudimo dve verzije OFIX-a (Prebačeno ovde radi boljeg balansa prostora)
+    # ----Nudimo dve verzije OFIX-a -------
     st.markdown("## Nudimo dve verzije OFIX-a")
     c_ver1, c_ver2 = st.columns(2)
     with c_ver1:
