@@ -118,7 +118,7 @@ st.info("""
 """)
 
 
-)
+
 
     st.info(
         "**Važne napomene:**\n\n"
