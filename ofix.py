@@ -105,7 +105,7 @@ with col_tekst:
 # ------------ BLOK FUNKCIJE -------
 
 st.markdown("### Ključne funkcije")
-st.info("""
+ st.info("""
 🔹 **Baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.
 
 🔹 **Evidencija:** stanja lagera, potraživanja i dugovanja.
@@ -120,7 +120,7 @@ st.info("""
 
 
 
-st.info(
+ st.info(
         "**Važne napomene:**\n\n"
         "🔸 **Microsoft ACCESS:** Potreban za pokretanje.\n\n"
         "🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.\n\n"
@@ -128,10 +128,10 @@ st.info(
         "🔸 **Podrška:** Godinu dana besplatne tehničke podrške autora."
     )
     
-st.markdown("---")
+ st.markdown("---")
     
     # Nudimo dve verzije OFIX-a (Prebačeno ovde radi boljeg balansa prostora)
-    st.markdown("## Nudimo dve verzije OFIX-a")
+ st.markdown("## Nudimo dve verzije OFIX-a")
     c_ver1, c_ver2 = st.columns(2)
     with c_ver1:
         st.markdown("### 🔹 OFIX STANDARD")
@@ -140,7 +140,7 @@ st.markdown("---")
         st.markdown("### 🔹 OFIX RABAT")
         st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
         
-st.markdown(
+ st.markdown(
         "> *Jedina razlika između verzija je ta što RABAT verzija omogućava"
         " različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos"
         " računa.*"
