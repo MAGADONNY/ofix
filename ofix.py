@@ -113,8 +113,8 @@ with col_tekst:
         "🔹 **Veoma brz:** veličina svega oko 20MB, radi i bez interneta i na starijim računarima."
     )
 
-    st.info(
-        "**Važne napomene:**\n\n"
+    st.markdown(
+        "**Napomene:**\n\n"
         "🔸 **Microsoft ACCESS:** Potreban za pokretanje.\n\n"
         "🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.\n\n"
         "🔸 **Instalacija:** Neograničen broj računara.\n\n"
