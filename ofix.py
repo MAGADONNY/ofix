@@ -104,7 +104,7 @@ with col_tekst:
 
 # ------------ BLOK FUNKCIJE -------
 
-        st.info(
+    st.info(
         "🔹 **Baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.<br>"
         "🔹 **Evidencija:** stanja lagera, potraživanja i dugovanja.<br>"
         "🔹 **Izveštaji:** automatski kreirani izveštaji po kupcu, datumu, artiklu...<br>"
