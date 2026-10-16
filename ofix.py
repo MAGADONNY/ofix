@@ -104,16 +104,17 @@ with col_tekst:
 
 # ------------ BLOK FUNKCIJE -------
 
-    st.markdown("### Ključne funkcije")
-    st.info(
-        "🔹 **Baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.\n\n"
-        "🔹 **Evidencija:** stanja lagera, potraživanja i dugovanja.\n\n"
-        "🔹 **Izveštaji:** automatski kreirani izveštaji po kupcu, datumu, artiklu...\n\n"
-        "🔹 **Jednostavnost:** prilagođeno korisnicima bez IT predznanja.\n\n"
-        "🔹 **Veoma brz:** veličina svega oko 20MB, radi i bez interneta i na starijim računarima."
+        st.info(
+        "🔹 **Baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.<br>"
+        "🔹 **Evidencija:** stanja lagera, potraživanja i dugovanja.<br>"
+        "🔹 **Izveštaji:** automatski kreirani izveštaji po kupcu, datumu, artiklu...<br>"
+        "🔹 **Jednostavnost:** prilagođeno korisnicima bez IT predznanja.<br>"
+        "🔹 **Veoma brz:** veličina svega oko 20MB, radi i bez interneta i na starijim računarima.",
+        unsafe_allow_html=True
     )
 
-    # ====BOX NAPOMENE
+
+    # ====BOX NAPOMENE======
     
     st.markdown(
         "**Napomene:**<br>"
