@@ -115,7 +115,7 @@ with col_tekst:
 
     # ====BOX NAPOMENE
     
-        st.markdown(
+    st.markdown(
         "**Napomene:**<br>"
         "🔸 **Microsoft ACCESS:** Potreban za pokretanje.<br>"
         "🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.<br>"
