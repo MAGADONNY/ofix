@@ -104,7 +104,7 @@ with col_tekst:
 
 # ------------ BLOK FUNKCIJE -------
 
-        st.markdown("### Ključne funkcije")
+    st.markdown("### Ključne funkcije")
     st.markdown(
         """
         <div style="background-color: rgba(28, 131, 225, 0.1); padding: 1rem; border-radius: 0.5rem; border-left: 5px solid #1f77b4;">
