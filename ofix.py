@@ -108,7 +108,7 @@ with col_tekst:
     st.markdown(
         """
         <div style="background-color: rgba(28, 131, 225, 0.1); padding: 1rem; border-radius: 0.5rem; border-left: 5px solid #1f77b4;">
-            🔹 <b>Baza podataka:</b> kupaca, artikala, dobavljača i izdatih dokumenata.<br>
+            🔹 <b>Baza podataka:</b> kupaca, artikala, dobavljača, dokumenata<br>
             🔹 <b>Evidencija:</b> stanja lagera, potraživanja i dugovanja.<br>
             🔹 <b>Izveštaji:</b> automatski izveštaji po kupcu, datumu, artiklu<br>
             🔹 <b>Jednostavnost:</b> prilagođeno korisnicima bez IT predznanja<br>
