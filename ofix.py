@@ -113,12 +113,10 @@ with col_tekst:
             🔹 <b>Izveštaji:</b> automatski kreirani izveštaji po kupcu, datumu, artiklu...<br>
             🔹 <b>Jednostavnost:</b> prilagođeno korisnicima bez IT predznanja.<br>
             🔹 <b>Veoma brz:</b> veličina svega oko 20MB, radi i bez interneta i na starijim računarima.
-        </div>
+        </div><br>
         """,
         unsafe_allow_html=True
     )
-
-
 
 
 
