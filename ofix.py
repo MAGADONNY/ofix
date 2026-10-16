@@ -105,7 +105,7 @@ with col_tekst:
 # ------------ BLOK FUNKCIJE -------
 
 st.markdown("### Ključne funkcije")
-st.info("""
+  st.info("""
 🔹 **Baza podataka:** kupaca, artikala, dobavljača i izdatih dokumenata.
 
 🔹 **Evidencija:** stanja lagera, potraživanja i dugovanja.
