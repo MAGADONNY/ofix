@@ -120,7 +120,7 @@ st.info("""
 
 
 
-    st.info(
+st.info(
         "**Važne napomene:**\n\n"
         "🔸 **Microsoft ACCESS:** Potreban za pokretanje.\n\n"
         "🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.\n\n"
