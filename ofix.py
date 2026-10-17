@@ -125,31 +125,16 @@ with col_tekst:
 
 with col_slike:
     st.markdown("### Prikaz programa")
-  
-    # Prva slika sa desne strane
-    st.image(
-        "1.JPG",
-        caption="Glavni ekran i navigacija",
-        width=280
-    )
-
-    st.markdown("---")
-
-    # Druga slika sa desne strane
-    st.image(
-        "2.JPG",
-        caption="Izgled gotovog A4 računa",
-        width=280
-    )
-
-    st.markdown("---")
-
-    # Treća slika sa desne strane
-    st.image(
-        "3.JPG",
-        caption="Forma za kreiranje računa",
-        width=280
-    )
+    
+    # Slike pakujemo u prelepe Tabove da ne bi pravile predugačku kolonu
+    tab1, tab2, tab3 = st.tabs(["🖥️ Glavni ekran", "📄 A4 Račun", "📝 Forma računa"])
+    
+    with tab1:
+        st.image("1.JPG", caption="Glavni ekran i navigacija", use_container_width=True)
+    with tab2:
+        st.image("2.JPG", caption="Izgled gotovog A4 računa", use_container_width=True)
+    with tab3:
+        st.image("3.JPG", caption="Forma za kreiranje računa", use_container_width=True)
 
 st.markdown("---")
 
