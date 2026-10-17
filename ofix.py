@@ -58,9 +58,6 @@ st.markdown(
         border-radius: 6px;
         opacity: 0; /* Osigurava da je slika sakrivena pre starta animacije */
         animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s forwards;
-
-
-
     }
     </style>
     """,
@@ -86,7 +83,6 @@ st.markdown(
     </div>
     """,
     unsafe_allow_html=True
-
 )
 st.markdown("<div style='margin-top: -30px;'></div>", unsafe_allow_html=True)
 
@@ -102,8 +98,7 @@ with col_tekst:
         " zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja."
     )
 
-# ------------ BLOK FUNKCIJE -------
-
+    # ------------ BLOK FUNKCIJE -------
     st.markdown("### Ključne funkcije")
     st.markdown(
         """
@@ -118,10 +113,7 @@ with col_tekst:
         unsafe_allow_html=True
     )
 
-
-
     # ====BOX NAPOMENE======
-    
     st.markdown(
         "**Napomene:**<br>"
         "🔸 **Microsoft ACCESS:** Potreban za pokretanje.<br>"
@@ -131,11 +123,37 @@ with col_tekst:
         unsafe_allow_html=True
     )
 
+with col_slike:
+    st.markdown("### Prikaz programa")
+  
+    # Prva slika sa desne strane
+    st.image(
+        "1.JPG",
+        caption="Glavni ekran i navigacija",
+        width=280
+    )
 
-    
     st.markdown("---")
 
-    # ----Nudimo dve verzije OFIX-a -------
+    # Druga slika sa desne strane
+    st.image(
+        "2.JPG",
+        caption="Izgled gotovog A4 računa",
+        width=280
+    )
+
+    st.markdown("---")
+
+    # Treća slika sa desne strane
+    st.image(
+        "3.JPG",
+        caption="Forma za kreiranje računa",
+        width=280
+    )
+
+st.markdown("---")
+
+# ----Nudimo dve verzije OFIX-a -------
 st.markdown("## Nudimo dve verzije OFIX-a")
 st.write("")  # Dodatni vertikalni razmak za bolju preglednost
 
@@ -161,50 +179,34 @@ st.info(
 )
 # =====. kraj bloka verzije =====
 
-
-with col_slike:
-    st.markdown("### Prikaz programa")
-  
-    # Prva slika sa desne strane (Smanjena na umerenu veličinu)
-    st.image(
-        "1.JPG",
-        caption="Glavni ekran i navigacija",
-        width=280
-    )
-
-    st.markdown("---")
-
-    # Druga slika sa desne strane (Smanjena)
-    st.image(
-        "2.JPG",
-        caption="Izgled gotovog A4 računa",
-        width=280
-    )
-
-    st.markdown("---")
-
-    # Treća slika sa desne strane (Smanjena)
-    st.image(
-        "3.JPG",
-        caption="Forma za kreiranje racuna",
-        width=280
-    )
-
 st.markdown("---")
 
 # ---- CENE I LICENCE ----
 st.markdown("## Način kupovine i cena")
 st.write("Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
+st.write("")
 
-price_col1, price_col2 = st.columns(2)
+price_col1, price_col2 = st.columns(2, gap="large")
 
 with price_col1:
-    st.metric(label="OFIX STANDARD - Godišnja pretplata", value="59 €")
-    st.metric(label="OFIX STANDARD - Trajna licenca", value="249 €")
+    with st.container(border=True):
+        st.markdown("### 🏷️ OFIX STANDARD")
+        st.caption("Za standardno fakturisanje na ceo račun")
+        m1, m2 = st.columns(2)
+        with m1:
+            st.metric(label="Godišnja pretplata", value="59 €")
+        with m2:
+            st.metric(label="Trajna licenca", value="249 €")
 
 with price_col2:
-    st.metric(label="OFIX RABAT - Godišnja pretplata", value="89 €")
-    st.metric(label="OFIX RABAT - Trajna licenca", value="349 €")
+    with st.container(border=True):
+        st.markdown("### 🏷️ OFIX RABAT")
+        st.caption("Za napredno fakturisanje po pojedinačnim stavkama")
+        m3, m4 = st.columns(2)
+        with m3:
+            st.metric(label="Godišnja pretplata", value="89 €")
+        with m4:
+            st.metric(label="Trajna licenca", value="349 €")
 
 st.markdown("---")
 
@@ -214,12 +216,14 @@ col_demo, col_kontakt = st.columns(2, gap="large")
 with col_demo:
     st.markdown("## Preuzmite Demo Verziju")
     st.write("Isprobajte besplatno OFIX program i uverite se u jednostavnost korišćenja.")
+    st.write("")
   
     st.download_button(
         label="📥 Preuzmi Besplatni Demo (20MB)",
         data=b"Demo verzija fajl placeholder",
         file_name="OFIX_Demo_Setup.exe",
         mime="application/octet-stream",
+        use_container_width=True
     )
 
 with col_kontakt:
@@ -230,7 +234,7 @@ with col_kontakt:
         ime = st.text_input("Vaše ime / Naziv firme")
         email = st.text_input("Vaš Email")
         poruka = st.text_area("Poruka")
-        poslato = st.form_submit_button("Pošalji poruku")
+        poslato = st.form_submit_button("Pošalji poruku", use_container_width=True)
     
         if poslato:
             st.success("Hvala! Vaša poruka je uspešno poslata.")
