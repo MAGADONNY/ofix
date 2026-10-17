@@ -86,19 +86,19 @@ st.markdown(
 )
 st.markdown("<div style='margin-top: -30px;'></div>", unsafe_allow_html=True)
 
-# ---- GLAVNI SADRŽAJ: O PROGRAMU + SLIKE SA DESNE STRANE ----
-col_tekst, col_slike = st.columns([3, 2], gap="large")
+# ---- GLAVNI SADRŽAJ: O PROGRAMU ----
+st.markdown("## O programu OFIX")
+st.write(
+    "**OFIX** je knjigovodstveno-kancelarijski program, namenjen za brzo i"
+    " jednostavno izdavanje računa i predračuna. Idealan je alat za"
+    " svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća,"
+    " zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja."
+)
 
-with col_tekst:
-    st.markdown("## O programu OFIX")
-    st.write(
-        "**OFIX** je knjigovodstveno-kancelarijski program, namenjen za brzo i"
-        " jednostavno izdavanje računa i predračuna. Idealan je alat za"
-        " svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća,"
-        " zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja."
-    )
+# ------------ BLOK FUNKCIJE I NAPOMENE (U DVE KOLONE) -------
+col_funkcije, col_napomene = st.columns([3, 2], gap="large")
 
-    # ------------ BLOK FUNKCIJE -------
+with col_funkcije:
     st.markdown("### Ključne funkcije")
     st.markdown(
         """
@@ -108,33 +108,38 @@ with col_tekst:
             🔹 <b>Izveštaji:</b> automatski izveštaji po kupcu, datumu, artiklu<br>
             🔹 <b>Jednostavnost:</b> prilagođeno korisnicima bez IT predznanja<br>
             🔹 <b>Veoma brz:</b> veličina 20MB, radi i bez interneta i na starijim računarima
-        </div><br>
+        </div>
         """,
         unsafe_allow_html=True
     )
 
-    # ====BOX NAPOMENE======
+with col_napomene:
+    st.markdown("### Napomene")
     st.markdown(
-        "**Napomene:**<br>"
-        "🔸 **Microsoft ACCESS:** Potreban za pokretanje.<br>"
-        "🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.<br>"
-        "🔸 **Instalacija:** Neograničen broj računara.<br>"
-        "🔸 **Podrška:** Godinu dana besplatne tehničke podrške autora.",
+        """
+        🔸 **Microsoft ACCESS:** Potreban za pokretanje.<br>
+        🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.<br>
+        🔸 **Instalacija:** Neograničen broj računara.<br>
+        🔸 **Podrška:** Godinu dana besplatne tehničke podrške autora.
+        """,
         unsafe_allow_html=True
     )
 
-with col_slike:
-    st.markdown("### Prikaz programa")
-    
-    # Slike pakujemo u prelepe Tabove da ne bi pravile predugačku kolonu
-    tab1, tab2, tab3 = st.tabs(["🖥️ Glavni ekran", "📄 A4 Račun", "📝 Forma računa"])
-    
-    with tab1:
-        st.image("1.JPG", caption="Glavni ekran i navigacija", use_container_width=True)
-    with tab2:
-        st.image("2.JPG", caption="Izgled gotovog A4 računa", use_container_width=True)
-    with tab3:
-        st.image("3.JPG", caption="Forma za kreiranje računa", use_container_width=True)
+st.markdown("---")
+
+# ---- GALERIJA SLIKA: SVE 3 SLIKE ODJEDNOM U JEDNOM REDU ----
+st.markdown("## Prikaz programa")
+
+col_img1, col_img2, col_img3 = st.columns(3, gap="medium")
+
+with col_img1:
+    st.image("1.JPG", caption="Glavni ekran i navigacija", use_container_width=True)
+
+with col_img2:
+    st.image("2.JPG", caption="Izgled gotovog A4 računa", use_container_width=True)
+
+with col_img3:
+    st.image("3.JPG", caption="Forma za kreiranje računa", use_container_width=True)
 
 st.markdown("---")
 
@@ -171,60 +176,4 @@ st.markdown("## Način kupovine i cena")
 st.write("Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
 st.write("")
 
-price_col1, price_col2 = st.columns(2, gap="large")
-
-with price_col1:
-    with st.container(border=True):
-        st.markdown("### 🏷️ OFIX STANDARD")
-        st.caption("Za standardno fakturisanje na ceo račun")
-        m1, m2 = st.columns(2)
-        with m1:
-            st.metric(label="Godišnja pretplata", value="59 €")
-        with m2:
-            st.metric(label="Trajna licenca", value="249 €")
-
-with price_col2:
-    with st.container(border=True):
-        st.markdown("### 🏷️ OFIX RABAT")
-        st.caption("Za napredno fakturisanje po pojedinačnim stavkama")
-        m3, m4 = st.columns(2)
-        with m3:
-            st.metric(label="Godišnja pretplata", value="89 €")
-        with m4:
-            st.metric(label="Trajna licenca", value="349 €")
-
-st.markdown("---")
-
-# ---- DEMO PREUZIMANJE I KONTAKT FORMA ----
-col_demo, col_kontakt = st.columns(2, gap="large")
-
-with col_demo:
-    st.markdown("## Preuzmite Demo Verziju")
-    st.write("Isprobajte besplatno OFIX program i uverite se u jednostavnost korišćenja.")
-    st.write("")
-  
-    st.download_button(
-        label="📥 Preuzmi Besplatni Demo (20MB)",
-        data=b"Demo verzija fajl placeholder",
-        file_name="OFIX_Demo_Setup.exe",
-        mime="application/octet-stream",
-        use_container_width=True
-    )
-
-with col_kontakt:
-    st.markdown("## Kontaktirajte nas")
-    st.write("Imate pitanje ili želite da naručite licencu?")
-
-    with st.form("kontakt_forma"):
-        ime = st.text_input("Vaše ime / Naziv firme")
-        email = st.text_input("Vaš Email")
-        poruka = st.text_area("Poruka")
-        poslato = st.form_submit_button("Pošalji poruku", use_container_width=True)
-    
-        if poslato:
-            st.success("Hvala! Vaša poruka je uspešno poslata.")
-
-    st.markdown("---")
-    st.markdown("🔹 **Email 1:** magicamp@bluewin.ch")
-    st.markdown("🔹 **Email 2:** magy@usa.com")
-    st.markdown("🔹 **Telefon:** 063 310 850")
+price_col1
