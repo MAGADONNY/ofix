@@ -56,7 +56,7 @@ st.markdown(
         width: 100%;
         height: auto;
         border-radius: 6px;
-        opacity: 0; /* Osigurava da je slika sakrivena pre starta animacije */
+        opacity: 0; 
         animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s forwards;
     }
     </style>
@@ -86,8 +86,8 @@ st.markdown(
 )
 st.markdown("<div style='margin-top: -30px;'></div>", unsafe_allow_html=True)
 
-# ---- GLAVNI SADRŽAJ: O PROGRAMU + SLIKE SA DESNE STRANE ----
-col_tekst, col_slike = st.columns([3, 2], gap="large")
+# ---- GLAVNI SADRŽAJ: O PROGRAMU (Lijeva strana) + SLIKE I NAPOMENE (Desna strana) ----
+col_tekst, col_slike = st.columns([1.2, 1], gap="large")
 
 with col_tekst:
     st.markdown("## O programu OFIX")
@@ -113,67 +113,54 @@ with col_tekst:
         unsafe_allow_html=True
     )
 
-    # ====BOX NAPOMENE======
-    st.markdown(
-        "**Napomene:**<br>"
-        "🔸 **Microsoft ACCESS:** Potreban za pokretanje.<br>"
-        "🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.<br>"
-        "🔸 **Instalacija:** Neograničen broj računara.<br>"
-        "🔸 **Podrška:** Godinu dana besplatne tehničke podrške autora.",
-        unsafe_allow_html=True
-    )
-
-    st.write("") # Razmak
-
-    # ----Nudimo dve verzije OFIX-a -------
-    st.markdown("## Nudimo dve verzije OFIX-a")
-    st.write("")
-
-    c_ver1, c_ver2 = st.columns(2, gap="medium")
-
-    with c_ver1:
-        st.markdown("### 🔹 OFIX STANDARD")
-        st.caption("Standardni model fakturisanja")
-        st.write("Mogućnost odobravanja rabata na **ceo iznos računa**.")
-
-    with c_ver2:
-        st.markdown("### 🔹 OFIX RABAT")
-        st.caption("Napredni model fakturisanja")
-        st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
-
-    st.write("")  # Razmak pre napomene
-
-    # Elegantna i uočljiva info-napomena umesto običnog teksta
-    st.info(
-        "💡 **Napomena:** Jedina razlika između verzija je ta što RABAT verzija"
-        " omogućava različit rabat za svaku stavku na računu, a STANDARD rabat"
-        " na ceo iznos računa."
-    )
-    # =====. kraj bloka verzije =====
-
 with col_slike:
     st.markdown("### Prikaz programa")
   
-    # Prva slika sa desne strane
-    st.image(
-        "1.JPG",
-        caption="Glavni ekran i navigacija",
-        width=250
+    # Slike sa desne strane u ravni banera
+    st.image("1.JPG", caption="Glavni ekran i navigacija", use_container_width=True)
+    st.image("2.JPG", caption="Izgled gotovog A4 računa", use_container_width=True)
+    st.image("3.JPG", caption="Forma za kreiranje računa", use_container_width=True)
+
+    st.markdown("---")
+
+    # ----BOX NAPOMENE (Smešteno tačno ispod slika da popuni prazninu) ----
+    st.markdown("### Napomene")
+    st.markdown(
+        """
+        🔸 **Microsoft ACCESS:** Potreban za pokretanje.<br>
+        🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.<br>
+        🔸 **Instalacija:** Neograničen broj računara.<br>
+        🔸 **Podrška:** Godinu dana besplatne tehničke podrške autora.
+        """,
+        unsafe_allow_html=True
     )
 
-    # Druga slika sa desne strane
-    st.image(
-        "2.JPG",
-        caption="Izgled gotovog A4 računa",
-        width=250
-    )
+st.markdown("---")
 
-    # Treća slika sa desne strane
-    st.image(
-        "3.JPG",
-        caption="Forma za kreiranje računa",
-        width=250
-    )
+# ----Nudimo dve verzije OFIX-a -------
+st.markdown("## Nudimo dve verzije OFIX-a")
+st.write("")  
+
+c_ver1, c_ver2 = st.columns(2, gap="large")
+
+with c_ver1:
+    st.markdown("### 🔹 OFIX STANDARD")
+    st.caption("Standardni model fakturisanja")
+    st.write("Mogućnost odobravanja rabata na **ceo iznos računa**.")
+
+with c_ver2:
+    st.markdown("### 🔹 OFIX RABAT")
+    st.caption("Napredni model fakturisanja")
+    st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
+
+st.write("")  
+
+st.info(
+    "💡 **Napomena:** Jedina razlika između verzija je ta što RABAT verzija"
+    " omogućava različit rabat za svaku stavku na računu, a STANDARD rabat"
+    " na ceo iznos računa."
+)
+# =====. kraj bloka verzije =====
 
 st.markdown("---")
 
