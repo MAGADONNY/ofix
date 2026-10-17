@@ -134,22 +134,33 @@ with col_tekst:
 
     
     st.markdown("---")
-    
+
     # ----Nudimo dve verzije OFIX-a -------
-    st.markdown("## Nudimo dve verzije OFIX-a")
-    c_ver1, c_ver2 = st.columns(2)
-    with c_ver1:
-        st.markdown("### 🔹 OFIX STANDARD")
-        st.write("Mogućnost odobravanja rabata na **ceo iznos računa**.")
-    with c_ver2:
-        st.markdown("### 🔹 OFIX RABAT")
-        st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
-        
-    st.markdown(
-        "> *Jedina razlika između verzija je ta što RABAT verzija omogućava"
-        " različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos"
-        " računa.*"
-    )
+st.markdown("## Nudimo dve verzije OFIX-a")
+st.write("")  # Dodatni vertikalni razmak za bolju preglednost
+
+c_ver1, c_ver2 = st.columns(2, gap="large")
+
+with c_ver1:
+    st.markdown("### 🔹 OFIX STANDARD")
+    st.caption("Standardni model fakturisanja")
+    st.write("Mogućnost odobravanja rabata na **ceo iznos računa**.")
+
+with c_ver2:
+    st.markdown("### 🔹 OFIX RABAT")
+    st.caption("Napredni model fakturisanja")
+    st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
+
+st.write("")  # Razmak pre napomene
+
+# Elegantna i uočljiva info-napomena umesto običnog teksta
+st.info(
+    "💡 **Napomena:** Jedina razlika između verzija je ta što RABAT verzija"
+    " omogućava različit rabat za svaku stavku na računu, a STANDARD rabat"
+    " na ceo iznos računa."
+)
+# =====. kraj bloka verzije =====
+
 
 with col_slike:
     st.markdown("### Prikaz programa")
