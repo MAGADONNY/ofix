@@ -86,8 +86,8 @@ st.markdown(
 )
 st.markdown("<div style='margin-top: -30px;'></div>", unsafe_allow_html=True)
 
-# ---- GLAVNI SADRŽAJ: O PROGRAMU (Lijeva strana) + SLIKE I NAPOMENE (Desna strana) ----
-col_tekst, col_slike = st.columns([1.2, 1], gap="large")
+# ---- GLAVNI SADRŽAJ: BALANSIRANA DVA STUBA ----
+col_tekst, col_slike = st.columns([1.1, 1], gap="large")
 
 with col_tekst:
     st.markdown("## O programu OFIX")
@@ -113,17 +113,7 @@ with col_tekst:
         unsafe_allow_html=True
     )
 
-with col_slike:
-    st.markdown("### Prikaz programa")
-  
-    # Slike sa desne strane u ravni banera
-    st.image("1.JPG", caption="Glavni ekran i navigacija", use_container_width=True)
-    st.image("2.JPG", caption="Izgled gotovog A4 računa", use_container_width=True)
-    st.image("3.JPG", caption="Forma za kreiranje računa", use_container_width=True)
-
-    st.markdown("---")
-
-    # ----BOX NAPOMENE (Smešteno tačno ispod slika da popuni prazninu) ----
+    # ----BOX NAPOMENE (Smešteno levo da popuni prostor) ----
     st.markdown("### Napomene")
     st.markdown(
         """
@@ -134,6 +124,14 @@ with col_slike:
         """,
         unsafe_allow_html=True
     )
+
+with col_slike:
+    st.markdown("### Prikaz programa")
+  
+    # Slike sa desne strane u ravni
+    st.image("1.JPG", caption="Glavni ekran i navigacija", use_container_width=True)
+    st.image("2.JPG", caption="Izgled gotovog A4 računa", use_container_width=True)
+    st.image("3.JPG", caption="Forma za kreiranje računa", use_container_width=True)
 
 st.markdown("---")
 
