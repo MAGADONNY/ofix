@@ -147,9 +147,9 @@ with col_tekst:
     "🔸 **Podrška:** Za obe verzije besplatna tehnička podrška autora."
 )
 
-    )
+    
 
-# ----- BLOK SLIKE DESNO (SMANJEN ZA ~20%) -----
+# ----- BLOK SLIKE DESNO  -----
 with col_slike:
     st.markdown("### Prikaz programa")
   
