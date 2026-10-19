@@ -121,7 +121,6 @@ with col_tekst:
         🔸 **Microsoft ACCESS:** Potreban za pokretanje.<br>
         🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.<br>
         🔸 **Instalacija:** Neograničen broj računara.<br>
-        🔸 **Podrška:** Godinu dana besplatne tehničke podrške autora.
         """,
         unsafe_allow_html=True
     )
@@ -145,7 +144,8 @@ with col_tekst:
     st.info(
         "💡 **Napomena:** Jedina razlika između verzija je ta što RABAT verzija"
         " omogućava različit rabat za svaku stavku na računu, a STANDARD rabat"
-        " na ceo iznos računa."
+        " na ceo iznos računa.  
+        🔸 **Podrška:** Na obe verzije besplatna tehnička podrška autora."
     )
 
 # ----- BLOK SLIKE DESNO (SMANJEN ZA ~20%) -----
