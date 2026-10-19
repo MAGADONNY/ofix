@@ -152,4 +152,84 @@ with col_tekst:
 
     st.info(
         "💡 **Napomena:** Jedina razlika između verzija je ta što RABAT verzija "
-        "omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa
+        "omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa.\n\n"
+        "🔸 **Podrška:** Za obe verzije besplatna tehnička podrška autora."
+    )
+
+# ----- BLOK SLIKE DESNO  -----
+with col_slike:
+    st.markdown("### Prikaz programa")
+  
+    st.image("1.JPG", caption="Glavni ekran i navigacija", use_container_width=True)
+    st.image("2.JPG", caption="Forma baze artikala", use_container_width=True)
+    st.image("3.JPG", caption="Forma za kreiranje računa", use_container_width=True)
+    st.image("4.JPG", caption="Izgled gotovog računa", use_container_width=True)
+
+st.markdown("---")
+
+# ---- CENE I LICENCE ----
+st.markdown("## Način kupovine i cena")
+st.write("Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
+st.write("")
+
+price_col1, price_col2 = st.columns(2, gap="large")
+
+with price_col1:
+    st.markdown(
+        """
+        <div class="price-box">
+            <h3>🏷️ OFIX STANDARD</h3>
+            <p style="color: #A9A9A9; font-size: 0.9rem; margin-top: -10px;">Za standardno fakturisanje na ceo račun</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    m1, m2 = st.columns(2)
+    with m1:
+        st.metric(label="Godišnja pretplata", value="59 €")
+    with m2:
+        st.metric(label="Trajna licenca", value="249 €")
+
+with price_col2:
+    st.markdown(
+        """
+        <div class="price-box">
+            <h3>🏷️ OFIX RABAT</h3>
+            <p style="color: #A9A9A9; font-size: 0.9rem; margin-top: -10px;">Za napredno fakturisanje po pojedinačnim stavkama</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+    m3, m4 = st.columns(2)
+    with m3:
+        st.metric(label="Godišnja pretplata", value="89 €")
+    with m4:
+        st.metric(label="Trajna licenca", value="349 €")
+
+st.markdown("---")
+
+# ---- DEMO PREUZIMANJE I KONTAKT FORMA ----
+col_demo, col_kontakt = st.columns(2, gap="large")
+
+with col_demo:
+    st.markdown("## Preuzmite Demo Verziju")
+    st.write("Isprobajte besplatno OFIX program i uverite se u jednostavnost korišćenja.")
+    st.write("")
+  
+    st.download_button(
+        label="📥 Preuzmi Besplatni Demo (20MB)",
+        data=b"Demo verzija fajl placeholder",
+        file_name="OFIX_Demo_Setup.exe",
+        mime="application/octet-stream",
+        use_container_width=True
+    )
+
+with col_kontakt:
+    st.markdown("## Kontaktirajte nas")
+    st.write("Imate pitanje ili želite da naručite licencu?")
+
+    with st.form("kontakt_forma"):
+        ime = st.text_input("Vaše ime / Naziv firme")
+        email = st.text_input("Vaš Email")
+        poruka = st.text_area("Poruka")
+        poslato = st.form_submit_button
