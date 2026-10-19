@@ -9,19 +9,27 @@ st.set_page_config(
     layout="wide",
 )
 
-# 2. Funkcija za pretvaranje lokalnih fajlova sa GitHub-a u bezbedan Base64 format
+# 2. Funkcija za pretvaranje lokalnih fajlova u bezbedan Base64 format za HTML
 def ucitaj_sliku_base64(putanja_slike):
     if os.path.exists(putanja_slike):
+        ext = putanja_slike.split(".")[-1].lower()
+        mime_type = "image/png" if ext == "png" else "image/jpeg"
         with open(putanja_slike, "rb") as fajl:
             podaci = fajl.read()
-            return "data:image/jpeg;base64," + base64.b64encode(podaci).decode()
+            return f"data:{mime_type};base64," + base64.b64encode(podaci).decode()
     return ""
 
-# Učitavanje vašeg banera sa GitHub-a
+# Učitavanje banera
 banner_b64 = ucitaj_sliku_base64("banner.jpg")
 izvor_banera = banner_b64 if banner_b64 else "https://placeholder.com"
 
-# 3. Globalni CSS stilovi sa vašom animacijom (PC i telefon optimizacija)
+# Učitavanje slika za prikaz programa u base64
+img1_b64 = ucitaj_sliku_base64("1.JPG") or ucitaj_sliku_base64("1.jpg")
+img2_b64 = ucitaj_sliku_base64("2.JPG") or ucitaj_sliku_base64("2.jpg")
+img3_b64 = ucitaj_sliku_base64("3.JPG") or ucitaj_sliku_base64("3.jpg")
+img4_b64 = ucitaj_sliku_base64("4.JPG") or ucitaj_sliku_base64("4.jpg")
+
+# 3. Globalni CSS stilovi sa vašom animacijom + HOVER ZOOM EFEKTOM za slike
 st.markdown(
     """
     <style>
@@ -94,6 +102,42 @@ st.markdown(
         font-size: 1.8rem;
         font-weight: bold;
         color: #1f77b4;
+    }
+
+    /* --- STIL ZA ZUMIRANJE SLIKA NA HOVER (ROLLOVER) --- */
+    .zoom-img-container {
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        margin-bottom: 5px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #0e1117;
+    }
+
+    .zoom-img-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.4s ease-in-out;
+        cursor: pointer;
+    }
+
+    /* Efekat uvećavanja kada se mišem pređe preko slike */
+    .zoom-img-container:hover img {
+        transform: scale(1.25);
+    }
+
+    .zoom-img-container:hover {
+        box-shadow: 0 10px 20px rgba(31, 119, 180, 0.4);
+        z-index: 10;
+        position: relative;
+    }
+
+    .img-caption {
+        text-align: center;
+        font-size: 0.85rem;
+        color: #A9A9A9;
+        margin-bottom: 20px;
     }
     </style>
     """,
@@ -182,20 +226,67 @@ with col_tekst:
         "🔸 **Podrška:** Za obe verzije besplatna tehnička podrška autora."
     )
 
-# ----- BLOK SLIKE DESNO  -----
+# ----- BLOK SLIKE DESNO (SA HOVER ZOOM EFEKTOM) -----
 with col_slike:
     st.markdown("### Prikaz programa")
   
-    st.image("1.JPG", caption="Glavni ekran i navigacija", use_container_width=True)
-    st.image("2.JPG", caption="Forma baze artikala", use_container_width=True)
-    st.image("3.JPG", caption="Forma za kreiranje računa", use_container_width=True)
-    st.image("4.JPG", caption="Izgled gotovog računa", use_container_width=True)
+    # Slika 1
+    st.markdown(
+        f"""
+        <div class="zoom-img-container">
+            <a href="{img1_b64}" target="_blank">
+                <img src="{img1_b64}" title="Kliknite za prikaz u punoj veličini">
+            </a>
+        </div>
+        <div class="img-caption">Glavni ekran i navigacija</div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # Slika 2
+    st.markdown(
+        f"""
+        <div class="zoom-img-container">
+            <a href="{img2_b64}" target="_blank">
+                <img src="{img2_b64}" title="Kliknite za prikaz u punoj veličini">
+            </a>
+        </div>
+        <div class="img-caption">Forma baze artikala</div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # Slika 3
+    st.markdown(
+        f"""
+        <div class="zoom-img-container">
+            <a href="{img3_b64}" target="_blank">
+                <img src="{img3_b64}" title="Kliknite za prikaz u punoj veličini">
+            </a>
+        </div>
+        <div class="img-caption">Forma za kreiranje računa</div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # Slika 4
+    st.markdown(
+        f"""
+        <div class="zoom-img-container">
+            <a href="{img4_b64}" target="_blank">
+                <img src="{img4_b64}" title="Kliknite za prikaz u punoj veličini">
+            </a>
+        </div>
+        <div class="img-caption">Izgled gotovog računa</div>
+        """,
+        unsafe_allow_html=True
+    )
 
 st.markdown("---")
 
 # ---- CENE I LICENCE ----
 st.markdown("## Način kupovine i cena")
-st.write("Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
+st.write("Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehnička podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
 st.write("")
 
 price_col1, price_col2 = st.columns(2, gap="large")
