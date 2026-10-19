@@ -61,15 +61,6 @@ st.markdown(
         animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s forwards;
     }
 
-    /* Okvir za sekciju sa dve verzije */
-    .versions-card-blue {
-        background-color: rgba(28, 131, 225, 0.04);
-        border: 2px solid #1f77b4;
-        padding: 1.2rem;
-        border-radius: 0.8rem;
-        margin-bottom: 1.5rem;
-    }
-
     /* Plavi stil za box-ove sa cijenama */
     .price-card-blue {
         background-color: rgba(28, 131, 225, 0.1);
@@ -134,4 +125,152 @@ st.markdown(
     """
     <div class='hero-text-container'>
         <h1 style='margin-bottom: 5px; padding-bottom: 0px; font-size: 2.2rem;'>OFIX – Knjigovodstveno-kancelarijski program</h1>
-        <p style='font-size: 1.3rem; color: #A9A9A9; margin-top: 0px; margin-bottom: 0px;'>Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja
+        <p style='font-size: 1.3rem; color: #A9A9A9; margin-top: 0px; margin-bottom: 0px;'>Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.</p>
+    </div>
+    """, 
+    unsafe_allow_html=True
+)
+
+# ---- BANNER SLIKA SA ANIMACIJOM ----
+st.markdown(
+    f"""
+    <div style="text-align: left;">
+        <img src="{izvor_banera}" class="hero-banner-animated" style="max-width: 980px; width: 100%;">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown("<div style='margin-top: -30px;'></div>", unsafe_allow_html=True)
+
+# ---- GLAVNI SADRŽAJ: BALANSIRANA DVA STUBA ----
+col_tekst, col_slike = st.columns([1.3, 0.8], gap="large")
+
+with col_tekst:
+    st.markdown("## O programu OFIX")
+    st.write(
+        "**OFIX** je knjigovodstveno-kancelarijski program, namenjen za brzo i"
+        " jednostavno izdavanje računa i predračuna. Idealan je alat za"
+        " svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća,"
+        " zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja."
+    )
+
+    # ------------ BLOK FUNKCIJE -------
+    st.markdown("### Ključne funkcije")
+    st.markdown(
+        """
+        <div style="background-color: rgba(28, 131, 225, 0.1); padding: 1rem; border-radius: 0.5rem; border-left: 5px solid #1f77b4;">
+            🔹 <b>Baza podataka:</b> kupaca, artikala, dobavljača, dokumenata<br>
+            🔹 <b>Evidencija:</b> stanja lagera, potraživanja i dugovanja.<br>
+            🔹 <b>Izveštaji:</b> automatski izveštaji po kupcu, datumu, artiklu<br>
+            🔹 <b>Jednostavnost:</b> prilagođeno korisnicima bez IT predznanja<br>
+            🔹 <b>Veoma brz:</b> veličina 20MB, radi i bez interneta i na starijim računarima
+        </div><br>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # ---- BOX NAPOMENE ----
+    st.markdown("### Napomene")
+    st.markdown(
+        """
+        🔸 **Microsoft ACCESS:** Potreban za pokretanje.<br>
+        🔸 **e-fakture:** Program ne služi za izdavanje e-faktura.<br>
+        🔸 **Instalacija:** Neograničen broj računara.<br>
+        """,
+        unsafe_allow_html=True
+    )
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # ---- OKVIR SA DVE VERZIJE OFIX-a ----
+    st.markdown("### Nudimo dve verzije OFIX-a")
+    
+    with st.container(border=True):
+        c_ver1, c_ver2 = st.columns(2, gap="medium")
+
+        with c_ver1:
+            st.markdown("#### 🔹 OFIX STANDARD")
+            st.caption("Standardni model fakturisanja")
+            st.write("Mogućnost odobravanja rabata na **ceo iznos računa**.")
+
+        with c_ver2:
+            st.markdown("#### 🔹 OFIX RABAT")
+            st.caption("Napredni model fakturisanja")
+            st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
+
+    st.info(
+        "💡 **Napomena:** Jedina razlika između verzija je ta što RABAT verzija "
+        "omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa.\n\n"
+        "🔸 **Podrška:** Za obe verzije besplatna tehnička podrška autora."
+    )
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # ---- DUGME ZA PREUZIMANJE ----
+    st.download_button(
+        label="📥 Preuzmi Besplatni Demo (20MB)",
+        data=b"Demo verzija fajl placeholder",
+        file_name="OFIX_Demo_Setup.exe",
+        mime="application/octet-stream",
+        use_container_width=True
+    )
+
+# ----- DIJALOG ZA OTVARANJE SLIKE NA KLIK TEKSTA -----
+@st.dialog("Prikaz slike u velikom formatu")
+def prikazi_veliku_sliku(putanja_slike, naslov):
+    st.image(putanja_slike, caption=naslov, use_container_width=True)
+
+# ----- BLOK SLIKE DESNO -----
+with col_slike:
+    st.markdown("### Prikaz programa")
+  
+    # Slika 1
+    st.image("1.JPG", use_container_width=True)
+    if st.button("🔍 Glavni ekran i navigacija", key="btn1", use_container_width=True):
+        prikazi_veliku_sliku("1.JPG", "Glavni ekran i navigacija")
+
+    # Slika 2
+    st.image("2.JPG", use_container_width=True)
+    if st.button("🔍 Forma baze artikala", key="btn2", use_container_width=True):
+        prikazi_veliku_sliku("2.JPG", "Forma baze artikala")
+
+    # Slika 3
+    st.image("3.JPG", use_container_width=True)
+    if st.button("🔍 Forma za kreiranje računa", key="btn3", use_container_width=True):
+        prikazi_veliku_sliku("3.JPG", "Forma za kreiranje računa")
+
+    # Slika 4
+    st.image("4.JPG", use_container_width=True)
+    if st.button("🔍 Izgled gotovog računa", key="btn4", use_container_width=True):
+        prikazi_veliku_sliku("4.JPG", "Izgled gotovog računa")
+
+st.markdown("---")
+
+# ---- CENE I LICENCE ----
+st.markdown("## Način kupovine i cena")
+st.write("Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podrшку godinu dana (telefonom, emailom ili putem TeamViewer-a).")
+st.write("")
+
+price_col1, price_col2 = st.columns(2, gap="large")
+
+with price_col1:
+    st.markdown(
+        """
+        <div class="price-card-blue">
+            <h3 style="margin-bottom: 0px; margin-top: 0px;">🏷️ OFIX STANDARD</h3>
+            <p style="color: #A9A9A9; font-size: 0.9rem; margin-top: 2px; margin-bottom: 0px;">Za standardno fakturisanje na ceo račun</p>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="price-label">Godišnja pretplata</div>
+                    <div class="price-value">59 €</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-label">Trajna licenca</div>
+                    <div class="price-value">249 €</div>
+                </div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+with price_col
