@@ -61,6 +61,13 @@ st.markdown(
         animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s forwards;
     }
 
+    /* Vertikalna linija na sredini za razdvajanje verzija */
+    .vertical-divider {
+        border-left: 2px solid rgba(31, 119, 180, 0.3);
+        height: 100%;
+        margin: 0 auto;
+    }
+
     /* Plavi stil za box-ove sa cijenama */
     .price-card-blue {
         background-color: rgba(28, 131, 225, 0.1);
@@ -181,16 +188,19 @@ with col_tekst:
     )
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # ---- OKVIR SA DVE VERZIJE OFIX-a ----
+    # ---- OKVIR SA DVE VERZIJE OFIX-a (SA VERTIKALNOM LINIJOM) ----
     st.markdown("### Nudimo dve verzije OFIX-a")
     
     with st.container(border=True):
-        c_ver1, c_ver2 = st.columns(2, gap="medium")
+        c_ver1, c_linija, c_ver2 = st.columns([10, 1, 10], gap="small")
 
         with c_ver1:
             st.markdown("#### 🔹 OFIX STANDARD")
             st.caption("Standardni model fakturisanja")
             st.write("Mogućnost odobravanja rabata na **ceo iznos računa**.")
+
+        with c_linija:
+            st.markdown('<div class="vertical-divider"></div>', unsafe_allow_html=True)
 
         with c_ver2:
             st.markdown("#### 🔹 OFIX RABAT")
@@ -247,7 +257,7 @@ st.markdown("---")
 
 # ---- CENE I LICENCE ----
 st.markdown("## Način kupovine i cena")
-st.write("Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podrшку godinu dana (telefonom, emailom ili putem TeamViewer-a).")
+st.write("Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
 st.write("")
 
 price_col1, price_col2 = st.columns(2, gap="large")
@@ -304,12 +314,4 @@ with st.form("kontakt_forma"):
     ime = st.text_input("Vaše ime / Naziv firme")
     email = st.text_input("Vaš Email")
     poruka = st.text_area("Poruka")
-    poslato = st.form_submit_button("Pošalji poruku", use_container_width=True)
-
-    if poslato:
-        st.success("Hvala! Vaša poruka je uspešno poslata.")
-
-st.markdown("---")
-st.markdown("🔹 **Email 1:** magicamp@bluewin.ch")
-st.markdown("🔹 **Email 2:** magy@usa.com")
-st.markdown("🔹 **Telefon:** 063 310 850")
+    pos
