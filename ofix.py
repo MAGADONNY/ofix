@@ -183,36 +183,33 @@ with col_tekst:
         "🔸 **Podrška:** Za obe verzije besplatna tehnička podrška autora."
     )
 
-# ----- DIJALOG ZAN OTVARANJE SLIKA NA TABLETU/TELEFONU -----
+# ----- DIJALOG ZA OTVARANJE SLIKE NA KLIK TEKSTA -----
 @st.dialog("Prikaz slike u velikom formatu")
 def prikazi_veliku_sliku(putanja_slike, naslov):
     st.image(putanja_slike, caption=naslov, use_container_width=True)
 
-# ----- BLOK SLIKE DESNO (OPTIMIZOVANO ZA TABLET I TELEFON) -----
+# ----- BLOK SLIKE DESNO (TEKST KAO DUGME BEZ NEPOTREBNIH REDOVA) -----
 with col_slike:
     st.markdown("### Prikaz programa")
   
     # Slika 1
-    st.image("1.JPG", caption="Glavni ekran i navigacija", use_container_width=True)
-    if st.button("🔍 Uvećaj sliku 1", key="btn1", use_container_width=True):
+    st.image("1.JPG", use_container_width=True)
+    if st.button("🔍 Glavni ekran i navigacija", key="btn1", use_container_width=True):
         prikazi_veliku_sliku("1.JPG", "Glavni ekran i navigacija")
-    st.write("")
 
     # Slika 2
-    st.image("2.JPG", caption="Forma baze artikala", use_container_width=True)
-    if st.button("🔍 Uvećaj sliku 2", key="btn2", use_container_width=True):
+    st.image("2.JPG", use_container_width=True)
+    if st.button("🔍 Forma baze artikala", key="btn2", use_container_width=True):
         prikazi_veliku_sliku("2.JPG", "Forma baze artikala")
-    st.write("")
 
     # Slika 3
-    st.image("3.JPG", caption="Forma za kreiranje računa", use_container_width=True)
-    if st.button("🔍 Uvećaj sliku 3", key="btn3", use_container_width=True):
+    st.image("3.JPG", use_container_width=True)
+    if st.button("🔍 Forma za kreiranje računa", key="btn3", use_container_width=True):
         prikazi_veliku_sliku("3.JPG", "Forma za kreiranje računa")
-    st.write("")
 
     # Slika 4
-    st.image("4.JPG", caption="Izgled gotovog računa", use_container_width=True)
-    if st.button("🔍 Uvećaj sliku 4", key="btn4", use_container_width=True):
+    st.image("4.JPG", use_container_width=True)
+    if st.button("🔍 Izgled gotovog računa", key="btn4", use_container_width=True):
         prikazi_veliku_sliku("4.JPG", "Izgled gotovog računa")
 
 st.markdown("---")
