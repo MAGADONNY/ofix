@@ -87,7 +87,8 @@ st.markdown(
 st.markdown("<div style='margin-top: -30px;'></div>", unsafe_allow_html=True)
 
 # ---- GLAVNI SADRŽAJ: BALANSIRANA DVA STUBA ----
-col_tekst, col_slike = st.columns([1.1, 1], gap="large")
+# Omjer 1.3 prema 0.8 smanjuje desnu kolonu za cca 20%
+col_tekst, col_slike = st.columns([1.3, 0.8], gap="large")
 
 with col_tekst:
     st.markdown("## O programu OFIX")
@@ -113,7 +114,7 @@ with col_tekst:
         unsafe_allow_html=True
     )
 
-    # ----BOX NAPOMENE (Smešteno levo da popuni prostor) ----
+    # ---- BOX NAPOMENE ----
     st.markdown("### Napomene")
     st.markdown(
         """
@@ -124,9 +125,30 @@ with col_tekst:
         """,
         unsafe_allow_html=True
     )
+    st.markdown("<br>", unsafe_allow_html=True)
 
-#-----BLOK SLIKE DESNO -----
+    # ---- UKLOPLJEN BOX: NUDIMO DVE VERZIJE OFIX-a ----
+    st.markdown("### Nudimo dve verzije OFIX-a")
+    
+    c_ver1, c_ver2 = st.columns(2, gap="medium")
 
+    with c_ver1:
+        st.markdown("#### 🔹 OFIX STANDARD")
+        st.caption("Standardni model fakturisanja")
+        st.write("Mogućnost odobravanja rabata na **ceo iznos računa**.")
+
+    with c_ver2:
+        st.markdown("#### 🔹 OFIX RABAT")
+        st.caption("Napredni model fakturisanja")
+        st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
+
+    st.info(
+        "💡 **Napomena:** Jedina razlika između verzija je ta što RABAT verzija"
+        " omogućava različit rabat za svaku stavku na računu, a STANDARD rabat"
+        " na ceo iznos računa."
+    )
+
+# ----- BLOK SLIKE DESNO (SMANJEN ZA ~20%) -----
 with col_slike:
     st.markdown("### Prikaz programa")
   
@@ -134,34 +156,7 @@ with col_slike:
     st.image("1.JPG", caption="Glavni ekran i navigacija", use_container_width=True)
     st.image("2.JPG", caption="Forma baze artikala", use_container_width=True)
     st.image("3.JPG", caption="Forma za kreiranje računa", use_container_width=True)
-    st.image("4.JPG", caption="Izgled gotovog racuna", use_container_width=True)
-    # ---- KRAJ BLOKA SLIKE -----
-st.markdown("---")
-
-# ----Nudimo dve verzije OFIX-a -------
-st.markdown("## Nudimo dve verzije OFIX-a")
-st.write("")  
-
-c_ver1, c_ver2 = st.columns(2, gap="large")
-
-with c_ver1:
-    st.markdown("### 🔹 OFIX STANDARD")
-    st.caption("Standardni model fakturisanja")
-    st.write("Mogućnost odobravanja rabata na **ceo iznos računa**.")
-
-with c_ver2:
-    st.markdown("### 🔹 OFIX RABAT")
-    st.caption("Napredni model fakturisanja")
-    st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
-
-st.write("")  
-
-st.info(
-    "💡 **Napomena:** Jedina razlika između verzija je ta što RABAT verzija"
-    " omogućava različit rabat za svaku stavku na računu, a STANDARD rabat"
-    " na ceo iznos računa."
-)
-# =====. kraj bloka verzije =====
+    st.image("4.JPG", caption="Izgled gotovog računa", use_container_width=True)
 
 st.markdown("---")
 
