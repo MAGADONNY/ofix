@@ -314,4 +314,12 @@ with st.form("kontakt_forma"):
     ime = st.text_input("Vaše ime / Naziv firme")
     email = st.text_input("Vaš Email")
     poruka = st.text_area("Poruka")
-    pos
+    poslato = st.form_submit_button("Pošalji poruku", use_container_width=True)
+
+    if poslato:
+        st.success("Hvala! Vaša poruka je uspešno poslata.")
+
+st.markdown("---")
+st.markdown("🔹 **Email 1:** magicamp@bluewin.ch")
+st.markdown("🔹 **Email 2:** magy@usa.com")
+st.markdown("🔹 **Telefon:** 063 310 850")
