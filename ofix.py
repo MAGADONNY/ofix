@@ -130,9 +130,9 @@ with col_slike:
   
     # Slike sa desne strane u ravni
     st.image("1.JPG", caption="Glavni ekran i navigacija", use_container_width=True)
-    st.image("2.JPG", caption="Izgled gotovog A4 računa", use_container_width=True)
+    st.image("2.JPG", caption="Forma baze artikala", use_container_width=True)
     st.image("3.JPG", caption="Forma za kreiranje računa", use_container_width=True)
-
+    st.image("4.JPG", caption="Izgled gotovog racuna", use_container_width=True)
 st.markdown("---")
 
 # ----Nudimo dve verzije OFIX-a -------
