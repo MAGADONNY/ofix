@@ -188,7 +188,7 @@ with col_tekst:
 
     with c_ver1:
         with st.container(border=True):
-            st.markdown("####🔹OFIX STANDARD")
+            st.markdown("#### 🔹OFIX STANDARD")
             st.caption("Standardni model fakturisanja")
             st.write("Mogućnost odobravanja rabata na **ceo iznos računa**.")
 
