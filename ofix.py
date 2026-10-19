@@ -61,6 +61,18 @@ st.markdown(
         animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s forwards;
     }
 
+    /* Kutije jednake visine za dve verzije */
+    .version-card-equal {
+        border: 1px solid rgba(250, 250, 250, 0.2);
+        border-radius: 0.5rem;
+        padding: 1rem 1.2rem;
+        min-height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: rgba(255, 255, 255, 0.02);
+    }
+
     /* Plavi stil za box-ove sa cijenama */
     .price-card-blue {
         background-color: rgba(28, 131, 225, 0.1);
@@ -181,22 +193,36 @@ with col_tekst:
     )
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # ---- DVE ODVOJENE KARTICE ZA VERZIJE OFIX-a ----
+    # ---- DVE KARTICE JEDNAKE VISINE ZA VERZIJE OFIX-a ----
     st.markdown("### Nudimo dve verzije OFIX-a")
     
     c_ver1, c_ver2 = st.columns(2, gap="medium")
 
     with c_ver1:
-        with st.container(border=True):
-            st.markdown("#### 🔹OFIX STANDARD")
-            st.caption("Standardni model fakturisanja")
-            st.write("Mogućnost odobravanja rabata na **ceo iznos računa**.")
+        st.markdown(
+            """
+            <div class="version-card-equal">
+                <h4 style="margin-top:0px; margin-bottom:5px;">🔹 OFIX STANDARD</h4>
+                <p style="color:#A9A9A9; font-size:0.85rem; margin-top:0px; margin-bottom:10px;">Standardni model fakturisanja</p>
+                <p style="margin-bottom:0px;">Mogućnost odobravanja rabata na <b>ceo iznos računa</b>.</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
     with c_ver2:
-        with st.container(border=True):
-            st.markdown("#### 🔹OFIX RABAT")
-            st.caption("Napredni model fakturisanja")
-            st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
+        st.markdown(
+            """
+            <div class="version-card-equal">
+                <h4 style="margin-top:0px; margin-bottom:5px;">🔹 OFIX RABAT</h4>
+                <p style="color:#A9A9A9; font-size:0.85rem; margin-top:0px; margin-bottom:10px;">Napredni model fakturisanja</p>
+                <p style="margin-bottom:0px;">Mogućnost <b>različitog rabata na svaku stavku</b> na računu.</p>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+    st.markdown("<br>", unsafe_allow_html=True)
 
     st.info(
         "💡 **Napomena:** Jedina razlika između verzija je ta što RABAT verzija "
