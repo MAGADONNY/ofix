@@ -172,18 +172,4 @@ with col_tekst:
         st.caption("Standardni model fakturisanja")
         st.write("Mogućnost odobravanja rabata na **ceo iznos računa**.")
 
-    with c_ver2:
-        st.markdown("#### 🔹 OFIX RABAT")
-        st.caption("Napredni model fakturisanja")
-        st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
-
-    st.info(
-        "💡 **Napomena:** Jedina razlika između verzija je ta što RABAT verzija "
-        "omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa.\n\n"
-        "🔸 **Podrška:** Za obe verzije besplatna tehnička podrška autora."
-    )
-
-    st.markdown("<br>", unsafe_allow_html=True)
-
-    # ---- DEMO PREUZIMANJE (Prebačeno ovde) ----
-    st.markdown("###
+    with c_
