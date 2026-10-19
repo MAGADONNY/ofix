@@ -142,9 +142,11 @@ with col_tekst:
         st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
 
     st.info(
-        "💡 **Napomena:** Jedina razlika između verzija je ta što RABAT verzija"
-        " omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa." 
-        " 🔸**Podrška:** Za obe verzije besplatna tehnička podrška autora."
+    "💡 **Napomena:** Jedina razlika između verzija je ta što RABAT verzija "
+    "omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa.\n\n"
+    "🔸 **Podrška:** Za obe verzije besplatna tehnička podrška autora."
+)
+
     )
 
 # ----- BLOK SLIKE DESNO (SMANJEN ZA ~20%) -----
