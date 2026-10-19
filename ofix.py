@@ -96,6 +96,25 @@ st.markdown(
         font-weight: bold;
         color: #1f77b4;
     }
+
+    /* Bojenje Download dugmeta u upečatljivu plavu boju */
+    div.stDownloadButton > button {
+        background-color: #1f77b4 !important;
+        color: white !important;
+        border: none !important;
+        font-weight: bold !important;
+        font-size: 1.05rem !important;
+        padding: 0.6rem 1rem !important;
+        border-radius: 0.5rem !important;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    div.stDownloadButton > button:hover {
+        background-color: #155d8d !important;
+        box-shadow: 0 6px 12px rgba(31, 119, 180, 0.3) !important;
+        transform: translateY(-2px);
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -185,10 +204,7 @@ with col_tekst:
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # ---- DEMO PREUZIMANJE ----
-    st.markdown("### Preuzmite Demo Verziju")
-    st.write("Isprobajte besplatno OFIX program i uverite se u jednostavnost korišćenja.")
-    
+    # ---- DUGME ZA PREUZIMANJE (BEZ TEKSTA I NASLOVA) ----
     st.download_button(
         label="📥 Preuzmi Besplatni Demo (20MB)",
         data=b"Demo verzija fajl placeholder",
