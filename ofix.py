@@ -60,16 +60,40 @@ st.markdown(
         animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s forwards;
     }
 
-    /* Plavi stil za box-ove sa cijenama */
+    /* Plavi stil za kompletne box-ove sa cijenama */
     .price-card-blue {
         background-color: rgba(28, 131, 225, 0.1);
         border-left: 5px solid #1f77b4;
         border-top: 1px solid rgba(31, 119, 180, 0.3);
         border-right: 1px solid rgba(31, 119, 180, 0.3);
         border-bottom: 1px solid rgba(31, 119, 180, 0.3);
-        padding: 1rem 1.2rem;
+        padding: 1.2rem;
         border-radius: 0.5rem;
         margin-bottom: 1rem;
+    }
+
+    .price-grid {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        padding-top: 10px;
+        border-top: 1px dashed rgba(31, 119, 180, 0.3);
+    }
+
+    .price-item {
+        flex: 1;
+    }
+
+    .price-label {
+        font-size: 0.85rem;
+        color: #A9A9A9;
+        margin-bottom: 2px;
+    }
+
+    .price-value {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #1f77b4;
     }
     </style>
     """,
@@ -182,15 +206,20 @@ with price_col1:
         <div class="price-card-blue">
             <h3 style="margin-bottom: 0px; margin-top: 0px;">🏷️ OFIX STANDARD</h3>
             <p style="color: #A9A9A9; font-size: 0.9rem; margin-top: 2px; margin-bottom: 0px;">Za standardno fakturisanje na ceo račun</p>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="price-label">Godišnja pretplata</div>
+                    <div class="price-value">59 €</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-label">Trajna licenca</div>
+                    <div class="price-value">249 €</div>
+                </div>
+            </div>
         </div>
         """,
         unsafe_allow_html=True
     )
-    m1, m2 = st.columns(2)
-    with m1:
-        st.metric(label="Godišnja pretplata", value="59 €")
-    with m2:
-        st.metric(label="Trajna licenca", value="249 €")
 
 with price_col2:
     st.markdown(
@@ -198,15 +227,20 @@ with price_col2:
         <div class="price-card-blue">
             <h3 style="margin-bottom: 0px; margin-top: 0px;">🏷️ OFIX RABAT</h3>
             <p style="color: #A9A9A9; font-size: 0.9rem; margin-top: 2px; margin-bottom: 0px;">Za napredno fakturisanje po pojedinačnim stavkama</p>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="price-label">Godišnja pretplata</div>
+                    <div class="price-value">89 €</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-label">Trajna licenca</div>
+                    <div class="price-value">349 €</div>
+                </div>
+            </div>
         </div>
         """,
         unsafe_allow_html=True
     )
-    m3, m4 = st.columns(2)
-    with m3:
-        st.metric(label="Godišnja pretplata", value="89 €")
-    with m4:
-        st.metric(label="Trajna licenca", value="349 €")
 
 st.markdown("---")
 
