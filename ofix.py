@@ -9,7 +9,7 @@ st.set_page_config(
     layout="wide",
 )
 
-# 2. Funkcija za pretvaranje lokalnih fajlova u bezbedan Base64 format za HTML
+# 2. Funkcija za pretvaranje lokalnih fajlova u Base64 format za prikaz
 def ucitaj_sliku_base64(putanja_slike):
     if os.path.exists(putanja_slike):
         ext = putanja_slike.split(".")[-1].lower()
@@ -23,13 +23,7 @@ def ucitaj_sliku_base64(putanja_slike):
 banner_b64 = ucitaj_sliku_base64("banner.jpg")
 izvor_banera = banner_b64 if banner_b64 else "https://placeholder.com"
 
-# Učitavanje slika za prikaz programa u base64
-img1_b64 = ucitaj_sliku_base64("1.JPG") or ucitaj_sliku_base64("1.jpg")
-img2_b64 = ucitaj_sliku_base64("2.JPG") or ucitaj_sliku_base64("2.jpg")
-img3_b64 = ucitaj_sliku_base64("3.JPG") or ucitaj_sliku_base64("3.jpg")
-img4_b64 = ucitaj_sliku_base64("4.JPG") or ucitaj_sliku_base64("4.jpg")
-
-# 3. Globalni CSS stilovi sa vašom animacijom + HOVER ZOOM EFEKTOM za slike
+# 3. Globalni CSS stilovi
 st.markdown(
     """
     <style>
@@ -44,7 +38,7 @@ st.markdown(
         margin-bottom: 25px;
     }
 
-    /* Animacija za baner preuzeta iz vašeg koda s PC optimizacijom */
+    /* Animacija za baner */
     @keyframes advancedZoomBlur {
         0% {
             transform: scale(1.08);
@@ -58,7 +52,6 @@ st.markdown(
         }
     }
 
-    /* Primena animacije na baner sliku sa PC optimizacijom */
     .hero-banner-animated {
         max-width: 800px;
         width: 100%;
@@ -68,7 +61,7 @@ st.markdown(
         animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s forwards;
     }
 
-    /* Plavi stil za kompletne box-ove sa cijenama */
+    /* Plavi stil za box-ove sa cijenama */
     .price-card-blue {
         background-color: rgba(28, 131, 225, 0.1);
         border-left: 5px solid #1f77b4;
@@ -102,42 +95,6 @@ st.markdown(
         font-size: 1.8rem;
         font-weight: bold;
         color: #1f77b4;
-    }
-
-    /* --- STIL ZA ZUMIRANJE SLIKA NA HOVER (ROLLOVER) --- */
-    .zoom-img-container {
-        overflow: hidden;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        margin-bottom: 5px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        background-color: #0e1117;
-    }
-
-    .zoom-img-container img {
-        width: 100%;
-        height: auto;
-        display: block;
-        transition: transform 0.4s ease-in-out;
-        cursor: pointer;
-    }
-
-    /* Efekat uvećavanja kada se mišem pređe preko slike */
-    .zoom-img-container:hover img {
-        transform: scale(1.25);
-    }
-
-    .zoom-img-container:hover {
-        box-shadow: 0 10px 20px rgba(31, 119, 180, 0.4);
-        z-index: 10;
-        position: relative;
-    }
-
-    .img-caption {
-        text-align: center;
-        font-size: 0.85rem;
-        color: #A9A9A9;
-        margin-bottom: 20px;
     }
     </style>
     """,
@@ -226,67 +183,43 @@ with col_tekst:
         "🔸 **Podrška:** Za obe verzije besplatna tehnička podrška autora."
     )
 
-# ----- BLOK SLIKE DESNO (SA HOVER ZOOM EFEKTOM) -----
+# ----- DIJALOG ZAN OTVARANJE SLIKA NA TABLETU/TELEFONU -----
+@st.dialog("Prikaz slike u velikom formatu")
+def prikazi_veliku_sliku(putanja_slike, naslov):
+    st.image(putanja_slike, caption=naslov, use_container_width=True)
+
+# ----- BLOK SLIKE DESNO (OPTIMIZOVANO ZA TABLET I TELEFON) -----
 with col_slike:
     st.markdown("### Prikaz programa")
   
     # Slika 1
-    st.markdown(
-        f"""
-        <div class="zoom-img-container">
-            <a href="{img1_b64}" target="_blank">
-                <img src="{img1_b64}" title="Kliknite za prikaz u punoj veličini">
-            </a>
-        </div>
-        <div class="img-caption">Glavni ekran i navigacija</div>
-        """,
-        unsafe_allow_html=True
-    )
+    st.image("1.JPG", caption="Glavni ekran i navigacija", use_container_width=True)
+    if st.button("🔍 Uvećaj sliku 1", key="btn1", use_container_width=True):
+        prikazi_veliku_sliku("1.JPG", "Glavni ekran i navigacija")
+    st.write("")
 
     # Slika 2
-    st.markdown(
-        f"""
-        <div class="zoom-img-container">
-            <a href="{img2_b64}" target="_blank">
-                <img src="{img2_b64}" title="Kliknite za prikaz u punoj veličini">
-            </a>
-        </div>
-        <div class="img-caption">Forma baze artikala</div>
-        """,
-        unsafe_allow_html=True
-    )
+    st.image("2.JPG", caption="Forma baze artikala", use_container_width=True)
+    if st.button("🔍 Uvećaj sliku 2", key="btn2", use_container_width=True):
+        prikazi_veliku_sliku("2.JPG", "Forma baze artikala")
+    st.write("")
 
     # Slika 3
-    st.markdown(
-        f"""
-        <div class="zoom-img-container">
-            <a href="{img3_b64}" target="_blank">
-                <img src="{img3_b64}" title="Kliknite za prikaz u punoj veličini">
-            </a>
-        </div>
-        <div class="img-caption">Forma za kreiranje računa</div>
-        """,
-        unsafe_allow_html=True
-    )
+    st.image("3.JPG", caption="Forma za kreiranje računa", use_container_width=True)
+    if st.button("🔍 Uvećaj sliku 3", key="btn3", use_container_width=True):
+        prikazi_veliku_sliku("3.JPG", "Forma za kreiranje računa")
+    st.write("")
 
     # Slika 4
-    st.markdown(
-        f"""
-        <div class="zoom-img-container">
-            <a href="{img4_b64}" target="_blank">
-                <img src="{img4_b64}" title="Kliknite za prikaz u punoj veličini">
-            </a>
-        </div>
-        <div class="img-caption">Izgled gotovog računa</div>
-        """,
-        unsafe_allow_html=True
-    )
+    st.image("4.JPG", caption="Izgled gotovog računa", use_container_width=True)
+    if st.button("🔍 Uvećaj sliku 4", key="btn4", use_container_width=True):
+        prikazi_veliku_sliku("4.JPG", "Izgled gotovog računa")
 
 st.markdown("---")
 
 # ---- CENE I LICENCE ----
 st.markdown("## Način kupovine i cena")
-st.write("Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehnička podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
+st.write("Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
 st.write("")
 
 price_col1, price_col2 = st.columns(2, gap="large")
