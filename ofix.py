@@ -273,4 +273,43 @@ with price_col1:
         unsafe_allow_html=True
     )
 
-with price_col
+with price_col2:
+    st.markdown(
+        """
+        <div class="price-card-blue">
+            <h3 style="margin-bottom: 0px; margin-top: 0px;">🏷️ OFIX RABAT</h3>
+            <p style="color: #A9A9A9; font-size: 0.9rem; margin-top: 2px; margin-bottom: 0px;">Za napredno fakturisanje po pojedinačnim stavkama</p>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="price-label">Godišnja pretplata</div>
+                    <div class="price-value">89 €</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-label">Trajna licenca</div>
+                    <div class="price-value">349 €</div>
+                </div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+st.markdown("---")
+
+# ---- KONTAKT FORMA ----
+st.markdown("## Kontaktirajte nas")
+st.write("Imate pitanje ili želite da naručite licencu?")
+
+with st.form("kontakt_forma"):
+    ime = st.text_input("Vaše ime / Naziv firme")
+    email = st.text_input("Vaš Email")
+    poruka = st.text_area("Poruka")
+    poslato = st.form_submit_button("Pošalji poruku", use_container_width=True)
+
+    if poslato:
+        st.success("Hvala! Vaša poruka je uspešno poslata.")
+
+st.markdown("---")
+st.markdown("🔹 **Email 1:** magicamp@bluewin.ch")
+st.markdown("🔹 **Email 2:** magy@usa.com")
+st.markdown("🔹 **Telefon:** 063 310 850")
