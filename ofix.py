@@ -21,7 +21,7 @@ def ucitaj_sliku_base64(putanja_slike):
 banner_b64 = ucitaj_sliku_base64("banner.jpg")
 izvor_banera = banner_b64 if banner_b64 else "https://placeholder.com"
 
-# 3. Globalni CSS stilovi sa vašom animacijom (PC i telefon optimizacija)
+# 3. Globalni CSS stilovi sa vašom animacijom (PC i telefon optimizacija + Stil za cene/licence box-ove)
 st.markdown(
     """
     <style>
@@ -59,6 +59,16 @@ st.markdown(
         opacity: 0; 
         animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s forwards;
     }
+
+    /* Stil za naglašavanje box-ova cena i licenci */
+    .price-box {
+        background-color: rgba(28, 131, 225, 0.04);
+        border: 2px solid #1f77b4;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        margin-bottom: 10px;
+    }
     </style>
     """,
     unsafe_allow_html=True
@@ -87,7 +97,6 @@ st.markdown(
 st.markdown("<div style='margin-top: -30px;'></div>", unsafe_allow_html=True)
 
 # ---- GLAVNI SADRŽAJ: BALANSIRANA DVA STUBA ----
-# Omjer 1.3 prema 0.8 smanjuje desnu kolonu za cca 20%
 col_tekst, col_slike = st.columns([1.3, 0.8], gap="large")
 
 with col_tekst:
@@ -142,84 +151,5 @@ with col_tekst:
         st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
 
     st.info(
-    "💡 **Napomena:** Jedina razlika između verzija je ta što RABAT verzija "
-    "omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa.\n\n"
-    "🔸 **Podrška:** Za obe verzije besplatna tehnička podrška autora."
-)
-
-    
-
-# ----- BLOK SLIKE DESNO  -----
-with col_slike:
-    st.markdown("### Prikaz programa")
-  
-    # Slike sa desne strane u ravni
-    st.image("1.JPG", caption="Glavni ekran i navigacija", use_container_width=True)
-    st.image("2.JPG", caption="Forma baze artikala", use_container_width=True)
-    st.image("3.JPG", caption="Forma za kreiranje računa", use_container_width=True)
-    st.image("4.JPG", caption="Izgled gotovog računa", use_container_width=True)
-
-st.markdown("---")
-
-# ---- CENE I LICENCE ----
-st.markdown("## Način kupovine i cena")
-st.write("Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
-st.write("")
-
-price_col1, price_col2 = st.columns(2, gap="large")
-
-with price_col1:
-    with st.container(border=True):
-        st.markdown("### 🏷️ OFIX STANDARD")
-        st.caption("Za standardno fakturisanje na ceo račun")
-        m1, m2 = st.columns(2)
-        with m1:
-            st.metric(label="Godišnja pretplata", value="59 €")
-        with m2:
-            st.metric(label="Trajna licenca", value="249 €")
-
-with price_col2:
-    with st.container(border=True):
-        st.markdown("### 🏷️ OFIX RABAT")
-        st.caption("Za napredno fakturisanje po pojedinačnim stavkama")
-        m3, m4 = st.columns(2)
-        with m3:
-            st.metric(label="Godišnja pretplata", value="89 €")
-        with m4:
-            st.metric(label="Trajna licenca", value="349 €")
-
-st.markdown("---")
-
-# ---- DEMO PREUZIMANJE I KONTAKT FORMA ----
-col_demo, col_kontakt = st.columns(2, gap="large")
-
-with col_demo:
-    st.markdown("## Preuzmite Demo Verziju")
-    st.write("Isprobajte besplatno OFIX program i uverite se u jednostavnost korišćenja.")
-    st.write("")
-  
-    st.download_button(
-        label="📥 Preuzmi Besplatni Demo (20MB)",
-        data=b"Demo verzija fajl placeholder",
-        file_name="OFIX_Demo_Setup.exe",
-        mime="application/octet-stream",
-        use_container_width=True
-    )
-
-with col_kontakt:
-    st.markdown("## Kontaktirajte nas")
-    st.write("Imate pitanje ili želite da naručite licencu?")
-
-    with st.form("kontakt_forma"):
-        ime = st.text_input("Vaše ime / Naziv firme")
-        email = st.text_input("Vaš Email")
-        poruka = st.text_area("Poruka")
-        poslato = st.form_submit_button("Pošalji poruku", use_container_width=True)
-    
-        if poslato:
-            st.success("Hvala! Vaša poruka je uspešno poslata.")
-
-    st.markdown("---")
-    st.markdown("🔹 **Email 1:** magicamp@bluewin.ch")
-    st.markdown("🔹 **Email 2:** magy@usa.com")
-    st.markdown("🔹 **Telefon:** 063 310 850")
+        "💡 **Napomena:** Jedina razlika između verzija je ta što RABAT verzija "
+        "omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa
