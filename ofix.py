@@ -188,13 +188,13 @@ with col_tekst:
 
     with c_ver1:
         with st.container(border=True):
-            st.markdown("#### 🔹 OFIX STANDARD")
+            st.markdown("####🔹OFIX STANDARD")
             st.caption("Standardni model fakturisanja")
             st.write("Mogućnost odobravanja rabata na **ceo iznos računa**.")
 
     with c_ver2:
         with st.container(border=True):
-            st.markdown("#### 🔹 OFIX RABAT")
+            st.markdown("#### 🔹OFIX RABAT")
             st.caption("Napredni model fakturisanja")
             st.write("Mogućnost **različitog rabata na svaku stavku** na računu.")
 
