@@ -61,6 +61,13 @@ st.markdown(
         animation: advancedZoomBlur 2.2s cubic-bezier(0.1, 0.8, 0.2, 1) 0.5s forwards;
     }
 
+    /* Proširenje modalnog prozora (dialog-a) preko celog ekrana na mobilnim uređajima i tabletima */
+    [data-testid="stModal"] > div {
+        max-width: 98vw !important;
+        width: 98vw !important;
+        padding: 0.5rem !important;
+    }
+
     /* Kontejner za dve kartice jednake visine sa okvirima */
     .versions-grid {
         display: flex;
@@ -236,8 +243,8 @@ with col_tekst:
         use_container_width=True
     )
 
-# ----- DIJALOG ZA OTVARANJE SLIKE NA KLIK TEKSTA -----
-@st.dialog("Prikaz slike u velikom formatu")
+# ----- DIJALOG ZA OTVARANJE SLIKE PREKO CELOG EKRANA -----
+@st.dialog("Prikaz slike u velikom formatu", width="large")
 def prikazi_veliku_sliku(putanja_slike, naslov):
     st.image(putanja_slike, caption=naslov, use_container_width=True)
 
