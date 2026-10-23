@@ -85,25 +85,13 @@ st.markdown(
         flex-direction: column;
     }
 
-    /* Plavi stil za box-ove sa cijenama */
+    /* Plavi stil za box-ove sa cijenama i kontaktom */
     .price-card-blue {
         background-color: rgba(28, 131, 225, 0.1);
         border-left: 5px solid #1f77b4;
         border-top: 1px solid rgba(31, 119, 180, 0.3);
         border-right: 1px solid rgba(31, 119, 180, 0.3);
         border-bottom: 1px solid rgba(31, 119, 180, 0.3);
-        padding: 1.2rem;
-        border-radius: 0.5rem;
-        margin-bottom: 1rem;
-    }
-
-    /* Istaknuti stil za kontakt box u tirkiznoj boji */
-    .contact-card-distinct {
-        background-color: rgba(8, 145, 178, 0.08);
-        border-left: 5px solid #0891b2;
-        border-top: 1px solid rgba(8, 145, 178, 0.3);
-        border-right: 1px solid rgba(8, 145, 178, 0.3);
-        border-bottom: 1px solid rgba(8, 145, 178, 0.3);
         padding: 1.2rem;
         border-radius: 0.5rem;
         margin-bottom: 1rem;
@@ -337,23 +325,23 @@ with price_col2:
 
 st.markdown("---")
 
-# ---- DIREKTAN KONTAKT U ISTAKNUTOM TIRKIZNOM BOX-U ----
+# ---- DIREKTAN KONTAKT U ORIGINALNOM PLAVOM BOX-U ----
 st.markdown(
     """
-    <div class="contact-card-distinct">
-        <h3 style="margin-bottom: 0px; margin-top: 0px; color: #0891b2;">📞 Direktan kontakt</h3>
-        <div class="price-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); border-top: 1px dashed rgba(8, 145, 178, 0.3);">
+    <div class="price-card-blue">
+        <h3 style="margin-bottom: 0px; margin-top: 0px; color: #1f77b4;">📞 Direktan kontakt</h3>
+        <div class="price-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
             <div class="price-item">
                 <div class="price-label">Email adresa 1</div>
-                <div style="font-size: 1.1rem; font-weight: bold; color: #0891b2; margin-top: 4px;">magicamp@bluewin.ch</div>
+                <div style="font-size: 1.1rem; font-weight: bold; color: #1f77b4; margin-top: 4px;">magicamp@bluewin.ch</div>
             </div>
             <div class="price-item">
                 <div class="price-label">Email adresa 2</div>
-                <div style="font-size: 1.1rem; font-weight: bold; color: #0891b2; margin-top: 4px;">magy@usa.com</div>
+                <div style="font-size: 1.1rem; font-weight: bold; color: #1f77b4; margin-top: 4px;">magy@usa.com</div>
             </div>
             <div class="price-item">
                 <div class="price-label">Telefon za podršku</div>
-                <div style="font-size: 1.1rem; font-weight: bold; color: #0891b2; margin-top: 4px;">063 310 850</div>
+                <div style="font-size: 1.1rem; font-weight: bold; color: #1f77b4; margin-top: 4px;">063 310 850</div>
             </div>
         </div>
     </div>
