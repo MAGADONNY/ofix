@@ -109,6 +109,20 @@ st.markdown(
         flex: 1;
     }
 
+    /* Fleksibilni raspored za kontakt sekciju prilagođen mobilnim uređajima */
+    .contact-flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 15px;
+        padding-top: 10px;
+        border-top: 1px dashed rgba(31, 119, 180, 0.3);
+    }
+
+    .contact-flex-item {
+        flex: 1 1 200px;
+    }
+
     .price-label {
         font-size: 0.85rem;
         color: #A9A9A9;
@@ -330,16 +344,16 @@ st.markdown(
     """
     <div class="price-card-blue">
         <h3 style="margin-bottom: 0px; margin-top: 0px; color: #1f77b4;">📞 Direktan kontakt</h3>
-        <div class="price-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-            <div class="price-item">
+        <div class="contact-flex-container">
+            <div class="contact-flex-item">
                 <div class="price-label">Email adresa 1</div>
                 <div style="font-size: 1.1rem; font-weight: bold; color: #1f77b4; margin-top: 4px;">magicamp@bluewin.ch</div>
             </div>
-            <div class="price-item">
+            <div class="contact-flex-item">
                 <div class="price-label">Email adresa 2</div>
                 <div style="font-size: 1.1rem; font-weight: bold; color: #1f77b4; margin-top: 4px;">magy@usa.com</div>
             </div>
-            <div class="price-item">
+            <div class="contact-flex-item">
                 <div class="price-label">Telefon za podršku</div>
                 <div style="font-size: 1.1rem; font-weight: bold; color: #1f77b4; margin-top: 4px;">063 310 850</div>
             </div>
