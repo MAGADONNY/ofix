@@ -344,7 +344,7 @@ with form_col:
 
 with info_col:
     st.markdown("### Direktan kontakt")
-    st.write("Možete nas kontaktirati direktno putem email-a ili telefona u bilo kom trenutku:")
+    st.write("Možete nas kontaktirati direktno putem email-a ili telefona:")
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("🔹 **Email 1:** magicamp@bluewin.ch")
     st.markdown("🔹 **Email 2:** magy@usa.com")
