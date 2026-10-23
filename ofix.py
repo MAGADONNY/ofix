@@ -135,8 +135,8 @@ st.markdown(
         color: #1f77b4;
     }
 
-    /* Bojenje Download dugmeta u upečatljivu plavu boju */
-    div.stDownloadButton > button {
+    /* Bojenje Download i Link dugmadi u upečatljivu plavu boju */
+    div.stDownloadButton > button, div.stLinkButton > a {
         background-color: #1f77b4 !important;
         color: white !important;
         border: none !important;
@@ -146,12 +146,17 @@ st.markdown(
         border-radius: 0.5rem !important;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
         transition: all 0.3s ease !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        width: 100% !important;
+        display: block !important;
     }
 
-    div.stDownloadButton > button:hover {
+    div.stDownloadButton > button:hover, div.stLinkButton > a:hover {
         background-color: #155d8d !important;
         box-shadow: 0 6px 12px rgba(31, 119, 180, 0.3) !important;
         transform: translateY(-2px);
+        color: white !important;
     }
     </style>
     """,
@@ -248,12 +253,18 @@ with col_tekst:
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    # ---- DUGME ZA PREUZIMANJE ----
+    # ---- DUGMAD ZA PREUZIMANJE I VIDEO DEMONSTRACIJU ----
     st.download_button(
         label="📥 Preuzmi Besplatni Demo (20MB)",
         data=b"Demo verzija fajl placeholder",
         file_name="OFIX_Demo_Setup.exe",
         mime="application/octet-stream",
+        use_container_width=True
+    )
+
+    st.link_button(
+        label="▶️ Pogledajte video demonstraciju rada programa",
+        url="https://www.youtube.com",  # Ovde možete ubaciti vaš stvarni link kada ga budete imali
         use_container_width=True
     )
 
@@ -328,7 +339,7 @@ with price_col2:
                     <div class="price-value">89 €</div>
                 </div>
                 <div class="price-item">
-                    <div class="price-label">Trajna licenca</div>
+                    <div class="price-label">Tagna licenca</div>
                     <div class="price-value">349 €</div>
                 </div>
             </div>
