@@ -85,7 +85,7 @@ st.markdown(
         flex-direction: column;
     }
 
-    /* Plavi stil za box-ove sa cijenama */
+    /* Plavi stil za box-ove sa cijenama i kontaktom */
     .price-card-blue {
         background-color: rgba(28, 131, 225, 0.1);
         border-left: 5px solid #1f77b4;
@@ -325,11 +325,31 @@ with price_col2:
 
 st.markdown("---")
 
-# ---- KONTAKT PODACI ----
+# ---- KONTAKT PODACI U PLAVOM BOX-U ----
 st.markdown("## Kontaktirajte nas")
 st.write("Imate pitanje ili želite da naručite licencu? Slobodno nas kontaktirajte:")
 st.write("")
 
-st.markdown("🔹 **Email 1:** magicamp@bluewin.ch")
-st.markdown("🔹 **Email 2:** magy@usa.com")
-st.markdown("🔹 **Telefon:** 063 310 850")
+st.markdown(
+    """
+    <div class="price-card-blue">
+        <h3 style="margin-bottom: 5px; margin-top: 0px;">📞 Direktan kontakt</h3>
+        <p style="color: #A9A9A9; font-size: 0.95rem; margin-top: 0px; margin-bottom: 0px;">Brza podrška i informacije o naručivanju licence</p>
+        <div class="price-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div class="price-item">
+                <div class="price-label">Email adresa 1</div>
+                <div style="font-size: 1.1rem; font-weight: bold; color: #1f77b4; margin-top: 4px;">magicamp@bluewin.ch</div>
+            </div>
+            <div class="price-item">
+                <div class="price-label">Email adresa 2</div>
+                <div style="font-size: 1.1rem; font-weight: bold; color: #1f77b4; margin-top: 4px;">magy@usa.com</div>
+            </div>
+            <div class="price-item">
+                <div class="price-label">Telefon za podršku</div>
+                <div style="font-size: 1.1rem; font-weight: bold; color: #1f77b4; margin-top: 4px;">063 310 850</div>
+            </div>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
