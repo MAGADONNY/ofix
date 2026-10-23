@@ -325,27 +325,11 @@ with price_col2:
 
 st.markdown("---")
 
-# ---- KONTAKT SEKCIJA (FORMA I PODACI JEDNO PORED DRUGOG) ----
+# ---- KONTAKT PODACI ----
 st.markdown("## Kontaktirajte nas")
-st.write("Imate pitanje ili želite da naručite licencu?")
+st.write("Imate pitanje ili želite da naručite licencu? Slobodno nas kontaktirajte:")
 st.write("")
 
-form_col, info_col = st.columns(2, gap="large")
-
-with form_col:
-    with st.form("kontakt_forma"):
-        ime = st.text_input("Vaše ime / Naziv firme")
-        email = st.text_input("Vaš Email")
-        poruka = st.text_area("Poruka")
-        poslato = st.form_submit_button("Pošalji poruku", use_container_width=True)
-
-        if poslato:
-            st.success("Hvala! Vaša poruka je uspešno poslata.")
-
-with info_col:
-    st.markdown("### Direktan kontakt")
-    st.write("Možete nas kontaktirati direktno putem email-a ili telefona:")
-    st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown("🔹 **Email 1:** magicamp@bluewin.ch")
-    st.markdown("🔹 **Email 2:** magy@usa.com")
-    st.markdown("🔹 **Telefon:** 063 310 850")
+st.markdown("🔹 **Email 1:** magicamp@bluewin.ch")
+st.markdown("🔹 **Email 2:** magy@usa.com")
+st.markdown("🔹 **Telefon:** 063 310 850")
