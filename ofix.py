@@ -212,4 +212,140 @@ with col_tekst:
         """
         <div class="versions-grid">
             <div class="version-card-custom">
-                <h4 style
+                <h4 style="margin-top: 0px; margin-bottom: 4px; font-size: 1.1rem;">🔹 OFIX STANDARD</h4>
+                <p style="color: #A9A9A9; font-size: 0.85rem; margin-top: 0px; margin-bottom: 12px;">Standardni model fakturisanja</p>
+                <p style="margin-bottom: 0px;">Mogućnost odobravanja rabata na <b>ceo iznos računa</b>.</p>
+            </div>
+            <div class="version-card-custom">
+                <h4 style="margin-top: 0px; margin-bottom: 4px; font-size: 1.1rem;">🔹 OFIX RABAT</h4>
+                <p style="color: #A9A9A9; font-size: 0.85rem; margin-top: 0px; margin-bottom: 12px;">Napredni model fakturisanja</p>
+                <p style="margin-bottom: 0px;">Mogućnost <b>različitog rabata na svaku stavku</b> na računu.</p>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    st.info(
+        "💡 **Napomena:** Jedina razlika između verzija je ta što RABAT verzija "
+        "omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa.\n\n"
+        "🔸 **Podrška:** Za obe verzije besplatna tehnička podrška autora."
+    )
+
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    # ---- DUGME ZA PREUZIMANJE ----
+    st.download_button(
+        label="📥 Preuzmi Besplatni Demo (20MB)",
+        data=b"Demo verzija fajl placeholder",
+        file_name="OFIX_Demo_Setup.exe",
+        mime="application/octet-stream",
+        use_container_width=True
+    )
+
+# ----- DIJALOG ZA OTVARANJE SLIKE PREKO CELOG EKRANA -----
+@st.dialog("Prikaz slike u velikom formatu", width="large")
+def prikazi_veliku_sliku(putanja_slike, naslov):
+    st.image(putanja_slike, caption=naslov, use_container_width=True)
+
+# ----- BLOK SLIKE DESNO -----
+with col_slike:
+    st.markdown("### Prikaz programa")
+  
+    # Slika 1
+    st.image("1.JPG", use_container_width=True)
+    if st.button("🔍 Glavni ekran i navigacija", key="btn1", use_container_width=True):
+        prikazi_veliku_sliku("1.JPG", "Glavni ekran i navigacija")
+
+    # Slika 2
+    st.image("2.JPG", use_container_width=True)
+    if st.button("🔍 Forma baze artikala", key="btn2", use_container_width=True):
+        prikazi_veliku_sliku("2.JPG", "Forma baze artikala")
+
+    # Slika 3
+    st.image("3.JPG", use_container_width=True)
+    if st.button("🔍 Forma za kreiranje računa", key="btn3", use_container_width=True):
+        prikazi_veliku_sliku("3.JPG", "Forma za kreiranje računa")
+
+    # Slika 4
+    st.image("4.JPG", use_container_width=True)
+    if st.button("🔍 Izgled gotovog računa", key="btn4", use_container_width=True):
+        prikazi_veliku_sliku("4.JPG", "Izgled gotovog računa")
+
+st.markdown("---")
+
+# ---- CENE I LICENCE ----
+st.markdown("## Način kupovine i cena")
+st.write("Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).")
+st.write("")
+
+price_col1, price_col2 = st.columns(2, gap="large")
+
+with price_col1:
+    st.markdown(
+        """
+        <div class="price-card-blue">
+            <h3 style="margin-bottom: 0px; margin-top: 0px;">🏷️ OFIX STANDARD</h3>
+            <p style="color: #A9A9A9; font-size: 0.9rem; margin-top: 2px; margin-bottom: 0px;">Za standardno fakturisanje na ceo račun</p>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="price-label">Godišnja pretplata</div>
+                    <div class="price-value">59 €</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-label">Trajna licenca</div>
+                    <div class="price-value">249 €</div>
+                </div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+with price_col2:
+    st.markdown(
+        """
+        <div class="price-card-blue">
+            <h3 style="margin-bottom: 0px; margin-top: 0px;">🏷️ OFIX RABAT</h3>
+            <p style="color: #A9A9A9; font-size: 0.9rem; margin-top: 2px; margin-bottom: 0px;">Za napredno fakturisanje po pojedinačnim stavkama</p>
+            <div class="price-grid">
+                <div class="price-item">
+                    <div class="price-label">Godišnja pretplata</div>
+                    <div class="price-value">89 €</div>
+                </div>
+                <div class="price-item">
+                    <div class="price-label">Trajna licenca</div>
+                    <div class="price-value">349 €</div>
+                </div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+st.markdown("---")
+
+# ---- KONTAKT SEKCIJA (FORMA I PODACI JEDNO PORED DRUGOG) ----
+st.markdown("## Kontaktirajte nas")
+st.write("Imate pitanje ili želite da naručite licencu?")
+st.write("")
+
+form_col, info_col = st.columns(2, gap="large")
+
+with form_col:
+    with st.form("kontakt_forma"):
+        ime = st.text_input("Vaše ime / Naziv firme")
+        email = st.text_input("Vaš Email")
+        poruka = st.text_area("Poruka")
+        poslato = st.form_submit_button("Pošalji poruku", use_container_width=True)
+
+        if poslato:
+            st.success("Hvala! Vaša poruka je uspešno poslata.")
+
+with info_col:
+    st.markdown("### Direktan kontakt")
+    st.write("Možete nas kontaktirati direktno putem email-a ili telefona u bilo kom trenutku:")
+    st.markdown("<br>", unsafe_allow_html=True)
+    st.markdown("🔹 **Email 1:** magicamp@bluewin.ch")
+    st.markdown("🔹 **Email 2:** magy@usa.com")
+    st.markdown("🔹 **Telefon:** 063 310 850")
