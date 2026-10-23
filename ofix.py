@@ -325,11 +325,7 @@ with price_col2:
 
 st.markdown("---")
 
-# ---- KONTAKT PODACI U PLAVOM BOX-U ----
-st.markdown("## Kontaktirajte nas")
-st.write("Imate pitanje ili želite da naručite licencu? Slobodno nas kontaktirajte:")
-st.write("")
-
+# ---- DIREKTAN KONTAKT U PLAVOM BOX-U ----
 st.markdown(
     """
     <div class="price-card-blue">
