@@ -326,4 +326,138 @@
                     </div>
                 </div>
 
-                <div class="custom-box" style="border-left-color: #f39c12
+                <div class="custom-box" style="border-left-color: #f39c12; background-color: rgba(243, 156, 18, 0.08);">
+                    💡 <b>Napomena:</b> Jedina razlika između verzija je ta što RABAT verzija omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa.<br><br>
+                    🔸 <b>Podrška:</b> Za obe verzije besplatna tehnička podrška autora.
+                </div>
+
+                <!-- MOGUĆNOST KORIŠĆENJA -->
+                <h3>Mogućnost korišćenja</h3>
+                <div class="custom-box">
+                    Mogućnost korišćenja u:<br><br>
+                    🔹 Trgovinskim radnjama<br>
+                    🔹 Uslužnim delatnostima<br>
+                    🔹 Magacinima<br>
+                    🔹 Export-import firmama<br>
+                    🔹 Proizvodnji itd...
+                </div>
+
+                <!-- PAYPAL NAPOMENA SA LOGOM -->
+                <div class="paypal-info">
+                    <span>Kao način plaćanja prihvatamo i</span>
+                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" alt="PayPal Logo">
+                    <strong>PayPal</strong> uplate.
+                </div>
+
+                <!-- AKCIONA DUGMAD -->
+                <div style="margin-top: 15px;">
+                    <a href="OFIX_Demo_Setup.exe" class="btn-custom" download>📥 Preuzmi Besplatni Demo (20MB)</a>
+                    <a href="https://www.youtube.com" target="_blank" class="btn-custom">▶️ Pogledajte video demonstraciju rada programa</a>
+                </div>
+            </div>
+
+            <!-- DESNA KOLONA: SLIKE BEZ DUGMADI I BEZ TEKSTA -->
+            <div class="col-slike">
+                <h3>Prikaz programa</h3>
+
+                <div class="screenshot-item">
+                    <img src="1.JPG" alt="Glavni ekran i navigacija" title="Klikni za uvećanje" onclick="openModal(this.src)">
+                </div>
+
+                <div class="screenshot-item">
+                    <img src="2.JPG" alt="Forma baze artikala" title="Klikni za uvećanje" onclick="openModal(this.src)">
+                </div>
+
+                <div class="screenshot-item">
+                    <img src="3.JPG" alt="Forma za kreiranje računa" title="Klikni za uvećanje" onclick="openModal(this.src)">
+                </div>
+
+                <div class="screenshot-item">
+                    <img src="4.JPG" alt="Izgled gotovog računa" title="Klikni za uvećanje" onclick="openModal(this.src)">
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- CENE I LICENCE -->
+        <h2>Način kupovine i cena</h2>
+        <p style="color: var(--muted-color); margin-bottom: 20px;">Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).</p>
+
+        <div class="price-grid-container">
+            <div class="price-card-blue">
+                <h3 style="margin: 0;">🏷️ OFIX STANDARD</h3>
+                <p style="color: var(--muted-color); font-size: 0.9rem; margin: 2px 0 0 0;">Mogucnost odobravanja rabata na ceo iznos racuna</p>
+                <div class="price-grid">
+                    <div class="price-item">
+                        <div class="price-label">Godišnja pretplata</div>
+                        <div class="price-value">59 €</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-label">Trajna licenca</div>
+                        <div class="price-value">249 €</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-card-blue">
+                <h3 style="margin: 0;">🏷️ OFIX RABAT</h3>
+                <p style="color: var(--muted-color); font-size: 0.9rem; margin: 2px 0 0 0;">Mogucnost razlicitog procenta rabata po stavkama </p>
+                <div class="price-grid">
+                    <div class="price-item">
+                        <div class="price-label">Godišnja pretplata</div>
+                        <div class="price-value">89 €</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-label">Trajna licenca</div>
+                        <div class="price-value">349 €</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- DIREKTAN KONTAKT -->
+        <div class="price-card-blue" style="margin-bottom: 40px;">
+            <h3 style="margin-top: 0; color: var(--primary-blue);">📞 Kontakt</h3>
+            <div class="contact-flex-container">
+                <div class="contact-flex-item">
+                    <div class="price-label">Email adresa 1</div>
+                    <div style="font-size: 1.1rem; font-weight: bold; color: var(--primary-blue); margin-top: 4px;">magicamp@bluewin.ch</div>
+                </div>
+                <div class="contact-flex-item">
+                    <div class="price-label">Email adresa 2</div>
+                    <div style="font-size: 1.1rem; font-weight: bold; color: var(--primary-blue); margin-top: 4px;">magy@usa.com</div>
+                </div>
+                <div class="contact-flex-item">
+                    <div class="price-label">Telefon za podršku</div>
+                    <div style="font-size: 1.1rem; font-weight: bold; color: var(--primary-blue); margin-top: 4px;">063 310 850</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL (POPUP ZA SLIKE) -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script>
+        // Funkcije za otvaranje i zatvaranje uvećane slike preko celog ekrana
+        function openModal(src) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            modal.style.display = "flex";
+            modalImg.src = src;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
