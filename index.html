@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFIX - Knjigovodstveno-kancelarijski program</title>
+    <style>
+        :root {
+            --bg-color: #0e1117;
+            --text-color: #fafafa;
+            --muted-color: #A9A9A9;
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --card-border: rgba(255, 255, 255, 0.2);
+            --primary-blue: #1f77b4;
+            --blue-bg: rgba(28, 131, 225, 0.1);
+            --blue-border: rgba(31, 119, 180, 0.3);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        /* Hero sekcija */
+        .hero-text-container {
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+
+        .hero-text-container h1 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+        }
+
+        .hero-text-container p {
+            font-size: 1.3rem;
+            color: var(--muted-color);
+            margin-top: 0;
+        }
+
+        .hero-banner {
+            max-width: 980px;
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        /* Grid raspored (slično Streamlit kolonama) */
+        .main-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .col-tekst {
+            flex: 1.3;
+            min-width: 300px;
+        }
+
+        .col-slike {
+            flex: 0.8;
+            min-width: 280px;
+        }
+
+        h2, h3, h4 {
+            color: var(--text-color);
+        }
+
+        /* Custom Box stilovi (slično tvom plavom box-u) */
+        .custom-box {
+            background-color: var(--blue-bg);
+            border-left: 5px solid var(--primary-blue);
+            border-top: 1px solid var(--blue-border);
+            border-right: 1px solid var(--blue-border);
+            border-bottom: 1px solid var(--blue-border);
+            padding: 1.2rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Verzije grid */
+        .versions-grid {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .version-card-custom {
+            flex: 1;
+            min-width: 220px;
+            border: 1px solid var(--card-border);
+            border-radius: 0.5rem;
+            padding: 1.2rem;
+            background-color: var(--card-bg);
+        }
+
+        /* Cene grid */
+        .price-grid-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .price-card-blue {
+            flex: 1;
+            min-width: 250px;
+            background-color: var(--blue-bg);
+            border-left: 5px solid var(--primary-blue);
+            border: 1px solid var(--blue-border);
+            padding: 1.2rem;
+            border-radius: 0.5rem;
+        }
+
+        .price-grid {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--blue-border);
+        }
+
+        .price-label {
+            font-size: 0.85rem;
+            color: var(--muted-color);
+            margin-bottom: 2px;
+        }
+
+        .price-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        /* Kontakt sekcija */
+        .contact-flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--blue-border);
+        }
+
+        .contact-flex-item {
+            flex: 1 1 200px;
+        }
+
+        /* Dugmad */
+        .btn-custom {
+            background-color: var(--primary-blue);
+            color: white;
+            border: none;
+            font-weight: bold;
+            font-size: 1.05rem;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            text-decoration: none;
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #155d8d;
+            box-shadow: 0 6px 12px rgba(31, 119, 180, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Galerija slika */
+        .screenshot-item {
+            margin-bottom: 15px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .screenshot-item img:hover {
+            opacity: 0.9;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--card-border);
+            margin: 30px 0;
+        }
+
+        /* Modal (Popup za slike) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 6px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Mobilna prilagođavanja */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .hero-text-container h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HERO SEKCIJA -->
+        <div class="hero-text-container">
+            <h1>OFIX – Knjigovodstveno-kancelarijski program</h1>
+            <p>Efikasan alat za brzo izdavanje A4 računa i evidenciju poslovanja.</p>
+        </div>
+
+        <!-- BANER -->
+        <img src="banner.jpg" alt="OFIX Baner" class="hero-banner" onerror="this.style.display='none'">
+
+        <!-- GLAVNI SADRŽAJ: DVA STUBA -->
+        <div class="main-grid">
+            
+            <!-- LEVA KOLONA: TEKST -->
+            <div class="col-tekst">
+                <h2>O programu OFIX</h2>
+                <p style="line-height: 1.6;">
+                    <strong>OFIX</strong> je knjigovodstveno-kancelarijski program, namenjen za brzo i jednostavno izdavanje računa i predračuna. Idealan je alat za svakodnevnu upotrebu vlasnicima i osoblju malih i srednjih preduzeća, zanatskih, trgovinskih i uslužnih radnji, komisiona i veleprodaja.
+                </p>
+
+                <h3>Ključne funkcije</h3>
+                <div class="custom-box">
+                    🔹 <b>Baza podataka:</b> kupaca, artikala, dobavljača, dokumenata<br><br>
+                    🔹 <b>Evidencija:</b> stanja lagera, potraživanja i dugovanja.<br><br>
+                    🔹 <b>Izveštaji:</b> automatski izveštaji po kupcu, datumu, artiklu<br><br>
+                    🔹 <b>Jednostavnost:</b> prilagođeno korisnicima bez IT predznanja<br><br>
+                    🔹 <b>Veoma brz:</b> veličina 20MB, radi i bez interneta i na starijim računarima
+                </div>
+
+                <h3>Napomene</h3>
+                <div style="line-height: 1.6; margin-bottom: 20px;">
+                    🔸 <b>Microsoft ACCESS:</b> Potreban za pokretanje.<br>
+                    🔸 <b>e-fakture:</b> Program ne služi za izdavanje e-faktura.<br>
+                    🔸 <b>Instalacija:</b> Neograničen broj računara.<br>
+                </div>
+
+                <h3>Nudimo dve verzije OFIX-a</h3>
+                <div class="versions-grid">
+                    <div class="version-card-custom">
+                        <h4 style="margin-top: 0; margin-bottom: 4px;">🔹 OFIX STANDARD</h4>
+                        <p style="color: var(--muted-color); font-size: 0.85rem; margin-top: 0; margin-bottom: 12px;">Standardni model fakturisanja</p>
+                        <p style="margin: 0; font-size: 0.95rem;">Mogućnost odobravanja rabata na <b>ceo iznos računa</b>.</p>
+                    </div>
+                    <div class="version-card-custom">
+                        <h4 style="margin-top: 0; margin-bottom: 4px;">🔹 OFIX RABAT</h4>
+                        <p style="color: var(--muted-color); font-size: 0.85rem; margin-top: 0; margin-bottom: 12px;">Napredni model fakturisanja</p>
+                        <p style="margin: 0; font-size: 0.95rem;">Mogućnost <b>različitog rabata na svaku stavku</b> na računu.</p>
+                    </div>
+                </div>
+
+                <div class="custom-box" style="border-left-color: #f39c12; background-color: rgba(243, 156, 18, 0.08);">
+                    💡 <b>Napomena:</b> Jedina razlika između verzija je ta što RABAT verzija omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa.<br><br>
+                    🔸 <b>Podrška:</b> Za obe verzije besplatna tehnička podrška autora.
+                </div>
+
+                <!-- AKCIONA DUGMAD -->
+                <div style="margin-top: 25px;">
+                    <a href="OFIX_Demo_Setup.exe" class="btn-custom" download>📥 Preuzmi Besplatni Demo (20MB)</a>
+                    <a href="https://www.youtube.com" target="_blank" class="btn-custom">▶️ Pogledajte video demonstraciju rada programa</a>
+                </div>
+            </div>
+
+            <!-- DESNA KOLONA: SLIKE (GALERIJA) -->
+            <div class="col-slike">
+                <h3>Prikaz programa</h3>
+
+                <div class="screenshot-item">
+                    <img src="1.JPG" alt="Glavni ekran i navigacija" onclick="openModal(this.src)">
+                    <button class="btn-custom" style="margin-top: 8px; font-size: 0.9rem; padding: 0.5rem;" onclick="openModal('1.JPG')">🔍 Glavni ekran i navigacija</button>
+                </div>
+
+                <div class="screenshot-item">
+                    <img src="2.JPG" alt="Forma baze artikala" onclick="openModal(this.src)">
+                    <button class="btn-custom" style="margin-top: 8px; font-size: 0.9rem; padding: 0.5rem;" onclick="openModal('2.JPG')">🔍 Forma baze artikala</button>
+                </div>
+
+                <div class="screenshot-item">
+                    <img src="3.JPG" alt="Forma za kreiranje računa" onclick="openModal(this.src)">
+                    <button class="btn-custom" style="margin-top: 8px; font-size: 0.9rem; padding: 0.5rem;" onclick="openModal('3.JPG')">🔍 Forma za kreiranje računa</button>
+                </div>
+
+                <div class="screenshot-item">
+                    <img src="4.JPG" alt="Izgled gotovog računa" onclick="openModal(this.src)">
+                    <button class="btn-custom" style="margin-top: 8px; font-size: 0.9rem; padding: 0.5rem;" onclick="openModal('4.JPG')">🔍 Izgled gotovog računa</button>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- CENE I LICENCE -->
+        <h2>Način kupovine i cena</h2>
+        <p style="color: var(--muted-color); margin-bottom: 20px;">Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).</p>
+
+        <div class="price-grid-container">
+            <div class="price-card-blue">
+                <h3 style="margin: 0;">🏷️ OFIX STANDARD</h3>
+                <p style="color: var(--muted-color); font-size: 0.9rem; margin: 2px 0 0 0;">Za standardno fakturisanje na ceo račun</p>
+                <div class="price-grid">
+                    <div class="price-item">
+                        <div class="price-label">Godišnja pretplata</div>
+                        <div class="price-value">59 €</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-label">Trajna licenca</div>
+                        <div class="price-value">249 €</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-card-blue">
+                <h3 style="margin: 0;">🏷️ OFIX RABAT</h3>
+                <p style="color: var(--muted-color); font-size: 0.9rem; margin: 2px 0 0 0;">Za napredno fakturisanje po pojedinačnim stavkama</p>
+                <div class="price-grid">
+                    <div class="price-item">
+                        <div class="price-label">Godišnja pretplata</div>
+                        <div class="price-value">89 €</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-label">Trajna licenca</div>
+                        <div class="price-value">349 €</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- DIREKTAN KONTAKT -->
+        <div class="price-card-blue" style="margin-bottom: 40px;">
+            <h3 style="margin-top: 0; color: var(--primary-blue);">📞 Direktan kontakt</h3>
+            <div class="contact-flex-container">
+                <div class="contact-flex-item">
+                    <div class="price-label">Email adresa 1</div>
+                    <div style="font-size: 1.1rem; font-weight: bold; color: var(--primary-blue); margin-top: 4px;">magicamp@bluewin.ch</div>
+                </div>
+                <div class="contact-flex-item">
+                    <div class="price-label">Email adresa 2</div>
+                    <div style="font-size: 1.1rem; font-weight: bold; color: var(--primary-blue); margin-top: 4px;">magy@usa.com</div>
+                </div>
+                <div class="contact-flex-item">
+                    <div class="price-label">Telefon za podršku</div>
+                    <div style="font-size: 1.1rem; font-weight: bold; color: var(--primary-blue); margin-top: 4px;">063 310 850</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL (POPUP ZA SLIKE) -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <script>
+        // Funkcije za otvaranje i zatvaranje uvećane slike preko celog ekrana
+        function openModal(src) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            modal.style.display = "flex";
+            modalImg.src = src;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
