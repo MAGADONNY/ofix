@@ -57,7 +57,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
-        /* Grid raspored (slično Streamlit kolonama) */
+        /* Grid raspored */
         .main-grid {
             display: flex;
             gap: 30px;
@@ -78,7 +78,7 @@
             color: var(--text-color);
         }
 
-        /* Custom Box stilovi (slično tvom plavom box-u) */
+        /* Custom Box stilovi */
         .custom-box {
             background-color: var(--blue-bg);
             border-left: 5px solid var(--primary-blue);
@@ -203,24 +203,34 @@
             transform: translateY(-2px);
         }
 
-        /* Galerija slika */
+        /* Galerija slika - Uređena estetika */
         .screenshot-item {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            padding: 10px;
-            border-radius: 6px;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
         }
 
         .screenshot-item img {
             width: 100%;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
-            transition: opacity 0.2s;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
         .screenshot-item img:hover {
-            opacity: 0.9;
+            opacity: 0.95;
+            transform: scale(1.01);
+        }
+
+        .screenshot-caption {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--muted-color);
+            font-weight: 500;
         }
 
         hr {
@@ -321,6 +331,56 @@
                         <h4 style="margin-top: 0; margin-bottom: 4px;">🔹 OFIX RABAT</h4>
                         <p style="color: var(--muted-color); font-size: 0.85rem; margin-top: 0; margin-bottom: 12px;">Napredni model fakturisanja</p>
                         <p style="margin: 0; font-size: 0.95rem;">Mogućnost <b>različitog %rabata na svaku stavku</b> na računu.</p>
+                    </div>
+                </div>
+
+                <div class="custom-box" style="border-left-color: #f39c12; background-color: rgba(243, 156, 18, 0.08);">
+                    💡 <b>Napomena:</b> Jedina razlika između verzija je ta što RABAT verzija omogućava različit rabat za svaku stavku na računu, a STANDARD rabat na ceo iznos računa.<br><br>
+                    🔸 <b>Podrška:</b> Za obe verzije besplatna tehnička podrška autora.
+                </div>
+
+                <!-- MOGUĆNOST KORIŠĆENJA -->
+                <h3>Mogućnost korišćenja</h3>
+                <div class="custom-box">
+                    Mogućnost korišćenja u:<br><br>
+                    🔹 Trgovinskim radnjama<br>
+                    🔹 Uslužnim delatnostima<br>
+                    🔹 Magacinima<br>
+                    🔹 Export-import firmama<br>
+                    🔹 Proizvodnji itd...
+                </div>
+
+                <!-- PAYPAL NAPOMENA SA LOGOM -->
+                <div class="paypal-info">
+                    <span>Kao način plaćanja prihvatamo i</span>
+                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" alt="PayPal Logo">
+                    <strong>PayPal</strong> uplate.
+                </div>
+
+                <!-- AKCIONA DUGMAD -->
+                <div style="margin-top: 15px;">
+                    <a href="OFIX_Demo_Setup.exe" class="btn-custom" download>📥 Preuzmi Besplatni Demo (20MB)</a>
+                    <a href="https://www.youtube.com" target="_blank" class="btn-custom">▶️ Pogledajte video demonstraciju rada programa</a>
+                </div>
+            </div>
+
+            <!-- DESNA KOLONA: SLIKE (GALERIJA BEZ DUGMADI, SA KLIKOM NA SLIKU) -->
+            <div class="col-slike">
+                <h3>Prikaz programa</h3>
+
+                <div class="screenshot-item">
+                    <img src="1.JPG" alt="Glavni ekran i navigacija" title="Klikni za uvećanje" onclick="openModal(this.src)">
+                    <div class="screenshot-caption">🔍 Glavni ekran i navigacija (klikni za uvećanje)</div>
+                </div>
+
+                <div class="screenshot-item">
+                    <img src="2.JPG" alt="Forma baze artikala" title="Klikni za uvećanje" onclick="openModal(this.src)">
+                    <div class="screenshot-caption">🔍 Forma baze artikala (klikni za uvećanje)</div>
+                </div>
+
+                <div class="screenshot-item">
+                    <img src="3.JPG" alt="Forma za kreiranje računa" title="Klikni za uvećanje" onclick="openModal(
+"margin: 0; font-size: 0.95rem;">Mogućnost <b>različitog %rabata na svaku stavku</b> na računu.</p>
                     </div>
                 </div>
 
