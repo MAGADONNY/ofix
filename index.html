@@ -159,6 +159,24 @@
             flex: 1 1 200px;
         }
 
+        /* PayPal info linija */
+        .paypal-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 0.8rem 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .paypal-info img {
+            height: 20px;
+            vertical-align: middle;
+        }
+
         /* Dugmad */
         .btn-custom {
             background-color: var(--primary-blue);
@@ -311,7 +329,7 @@
                     🔸 <b>Podrška:</b> Za obe verzije besplatna tehnička podrška autora.
                 </div>
 
-                <!-- NOVI BOX: MOGUĆNOST KORIŠĆENJA -->
+                <!-- MOGUĆNOST KORIŠĆENJA -->
                 <h3>Mogućnost korišćenja</h3>
                 <div class="custom-box">
                     Mogućnost korišćenja u:<br><br>
@@ -322,8 +340,15 @@
                     🔹 Proizvodnji itd...
                 </div>
 
-                <!-- AKCIONA DUGMAD (POMERENA NA DOLE) -->
-                <div style="margin-top: 25px;">
+                <!-- PAYPAL NAPOMENA SA LOGOM -->
+                <div class="paypal-info">
+                    <span>Kao način plaćanja prihvatamo i</span>
+                    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" alt="PayPal Logo">
+                    <strong>PayPal</strong> uplate.
+                </div>
+
+                <!-- AKCIONA DUGMAD -->
+                <div style="margin-top: 15px;">
                     <a href="OFIX_Demo_Setup.exe" class="btn-custom" download>📥 Preuzmi Besplatni Demo (20MB)</a>
                     <a href="https://www.youtube.com" target="_blank" class="btn-custom">▶️ Pogledajte video demonstraciju rada programa</a>
                 </div>
@@ -350,91 +375,4 @@
 
                 <div class="screenshot-item">
                     <img src="4.JPG" alt="Izgled gotovog računa" onclick="openModal(this.src)">
-                    <button class="btn-custom" style="margin-top: 8px; font-size: 0.9rem; padding: 0.5rem;" onclick="openModal('4.JPG')">🔍 Izgled gotovog računa</button>
-                </div>
-            </div>
-
-        </div>
-
-        <hr>
-
-        <!-- CENE I LICENCE -->
-        <h2>Način kupovine i cena</h2>
-        <p style="color: var(--muted-color); margin-bottom: 20px;">Godišnja pretplata & Trajna kupovina. Autor pruža besplatnu tehničku podršku godinu dana (telefonom, emailom ili putem TeamViewer-a).</p>
-
-        <div class="price-grid-container">
-            <div class="price-card-blue">
-                <h3 style="margin: 0;">🏷️ OFIX STANDARD</h3>
-                <p style="color: var(--muted-color); font-size: 0.9rem; margin: 2px 0 0 0;">Mogucnost odobravanja rabata na ceo iznos racuna</p>
-                <div class="price-grid">
-                    <div class="price-item">
-                        <div class="price-label">Godišnja pretplata</div>
-                        <div class="price-value">59 €</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-label">Trajna licenca</div>
-                        <div class="price-value">249 €</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="price-card-blue">
-                <h3 style="margin: 0;">🏷️ OFIX RABAT</h3>
-                <p style="color: var(--muted-color); font-size: 0.9rem; margin: 2px 0 0 0;">Mogucnost razlicitog procenta rabata po stavkama </p>
-                <div class="price-grid">
-                    <div class="price-item">
-                        <div class="price-label">Godišnja pretplata</div>
-                        <div class="price-value">89 €</div>
-                    </div>
-                    <div class="price-item">
-                        <div class="price-label">Trajna licenca</div>
-                        <div class="price-value">349 €</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <hr>
-
-        <!-- DIREKTAN KONTAKT -->
-        <div class="price-card-blue" style="margin-bottom: 40px;">
-            <h3 style="margin-top: 0; color: var(--primary-blue);">📞 Kontakt</h3>
-            <div class="contact-flex-container">
-                <div class="contact-flex-item">
-                    <div class="price-label">Email adresa 1</div>
-                    <div style="font-size: 1.1rem; font-weight: bold; color: var(--primary-blue); margin-top: 4px;">magicamp@bluewin.ch</div>
-                </div>
-                <div class="content-flex-item" style="flex: 1 1 200px;">
-                    <div class="price-label">Email adresa 2</div>
-                    <div style="font-size: 1.1rem; font-weight: bold; color: var(--primary-blue); margin-top: 4px;">magy@usa.com</div>
-                </div>
-                <div class="contact-flex-item">
-                    <div class="price-label">Kontakt telefon autora</div>
-                    <div style="font-size: 1.1rem; font-weight: bold; color: var(--primary-blue); margin-top: 4px;">063 310 850</div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- MODAL (POPUP ZA SLIKE) -->
-    <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modalImg">
-    </div>
-
-    <script>
-        // Funkcije za otvaranje i zatvaranje uvećane slike preko celog ekrana
-        function openModal(src) {
-            const modal = document.getElementById("imageModal");
-            const modalImg = document.getElementById("modalImg");
-            modal.style.display = "flex";
-            modalImg.src = src;
-        }
-
-        function closeModal() {
-            document.getElementById("imageModal").style.display = "none";
-        }
-    </script>
-</body>
-</html>
+                    <button class="btn-custom" style="margin-top: 8px; font-size: 0.9rem; padding: 0.5rem;" onclick="openModal('4.JPG')">🔍
